@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Licorice&display=swap');
+
+.main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 100%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow-x: hidden;
+
+    &.blurred {
+      filter: blur(2px);
+      overflow-y: hidden;
+    }
+  }
+  
+
+.showed {
+    border-radius: 0;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); 
+}
+
+.header {
+    position: relative;
+    z-index: 1;
+    
+    
+    .content {
+        position: relative;
+        width: 100%;
+        padding: 1rem auto;
+        z-index: 1;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.02);
+        }
+        
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); // Adjust the opacity as needed
+        filter: blur(50px); // Adjust the blur intensity as needed
+        transition: all 0.3s ease;
+        z-index: -1; // Ensure the overlay stays behind the content
+        opacity: 0; // Initially hide the overlay
+      }
+    }
+  
+    .content:hover::before {
+      opacity: 1; // Show the overlay on hover
+    }
+    
+    .content {
+      text-align: center;
+    
+    .logo-text {
+        font-family: "Licorice", cursive;
+        font-weight: 800;
+    }
+  }
+}
+  
+  .mac-window{
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0;
+    bottom: 0; 
+    border-radius: 5px;
+    height: 100%;
+    max-height: 80vh;
+    width: 100%;
+    min-width: auto;
+    border-radius: 10px;
+    max-width: 60%;
+    box-shadow: 0 15px 20px rgba(black, 0.25);
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) scale(0);
+    opacity: 0;
+    transition: all 0.25s;
+    z-index: 999;
+    &.active{
+      transform: translateY(-50%) translateX(-50%) scale(1);
+      opacity: 1;
+    }
+    &.minimize{
+      top: 125%;
+      transform: translateY(-50%) translateX(-50%) scale(1);
+      opacity: 1;
+      transition: all 0.5s;
+      &:hover{
+        top: 120%;
+        transition: all 0.5s;
+      }
+    }
+    &.maximize{
+      height:100%;
+      max-height:100%;
+      width: 100%;
+      max-width: 100%;
+      transform: translateY(-50%) translateX(-50%) scale(1);
+    }
+    .title-bar{
+      height: 26px;
+      padding-top: 2px;
+      background: linear-gradient(to top, purple, pink);
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid rgb(180, 180, 180);
+      width: 100%;
+      overflow: auto;
+      clear: both;
+      .buttons{
+        height: 100%;
+        width: 51px;
+        float: left;
+        margin-left: 9px;
+        transition: all 0.3s ease;
+        .close{
+          float: left;
+          $size: 10px;
+          height: $size;
+          width: $size;
+          border-radius: 50%;
+          margin-top: (20-$size)/2;
+          background: rgb(251, 73, 72);
+          border: solid 1px rgba(214, 46, 48, 0.15);
+          
+          position: relative;
+          &:before{
+            content:'';
+            position: absolute;
+            height: 1px;
+            width: 8px;
+            background: rgb(54,0,0);
+            top:50%;
+            left:50%;
+            transform: translateY(-50%) translateX(-50%) rotate(45deg);
+            opacity:0;
+          }
+          &:after{
+            content:'';
+            position: absolute;
+            height: 1px;
+            width: 8px;
+            background: rgb(54,0,0);
+            top:50%;
+            left:50%;
+            transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+            opacity:0;
+          }
+        }
+        .minimize{
+          @extend .close;
+          background: rgb(253, 178, 37);
+          margin-left: (51/3/2)*1px;
+          border-color: rgba(213, 142, 27, 0.15);
+          
+          position: relative;
+          &:before{
+            content:'';
+            position: absolute;
+            height: 1px;
+            width: 8px;
+            background: rgb(134,69,2);
+            top:50%;
+            left:50%;
+            transform: translateY(-50%) translateX(-50%);
+          }
+          &:after{
+            display: none;
+          }
+        }
+        .maximize{
+          @extend .close;
+          float: right;
+          background: rgb(42, 200, 51);
+          border-color: rgba(30, 159, 32, 0.15);
+          &:before{
+            width: 6px;
+            height: 6px;
+            background: rgb(11, 84, 1);
+            transform: translateY(-50%) translateX(-50%);
+            border: solid rgb(42, 200, 51) 1px;
+            border-radius: 2px;
+          }
+          &:after{
+            width: 10px;
+            height:2px;
+            background: rgb(42, 200, 51);
+            transform: translateY(-50%) translateX(-50%) rotate(45deg);
+          }
+        }
+        &:hover{
+          .close:before{
+            opacity: 1;
+          }
+          .close:after{
+            opacity: 1;
+          }
+        }
+      }
+        .title{
+          overflow: hidden;
+          height: 100%;
+          text-align: center;
+          margin-right: 9px+51px;
+          font-family: ' Helvetica Neue', helvetica, arial, sans-serif;
+          line-height: 21px;
+          font-size: 13px;
+          font-weight: bold;
+          color: #fff;
+        }
+    }
+    .window{
+      background: white;
+      overflow-y: scroll;
+      height: 100%;
+    }
+  }
+
+  @media screen and (max-width: 482px) {
+    .mac-window{
+      min-width: 80%;
+    }
+    
+  }
+
+
