@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from '../public/logo.png';
+import headerVideo from '../public/header-animation.mp4'
 import './assets/styles/css/index.css';
 import './assets/styles/css/window.css';
 import { Fade, Slide } from "react-awesome-reveal";
@@ -54,7 +55,7 @@ const Header = ({ setCalculatorActive }) => { // Receive setCalculatorActive as 
     <>
       <div id="header" className={`header z-50 relative`}>
         <div className="relative top-0 w-full h-90vh flex flex-col justify-center items-start z-20">
-          <video autoPlay loop muted src="../public/header-animation.mp4" type="video/mp4" className="absolute top-0 h-90vh w-full object-cover z-0"></video>
+          <video autoPlay loop muted src={headerVideo} type="video/mp4" className="absolute top-0 h-90vh w-full object-cover z-0"></video>
           <Fade>
             <div className="content text-white flex flex-col justify-center items-start p-10 z-30">
               <div className="logo-container flex items-center mb-8">
