@@ -10,7 +10,7 @@
     transform: translate(-50%, -50%) scale(0);
     border-radius: 100%;
     opacity: 0;
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow-x: hidden;
 
     &.blurred {
@@ -115,11 +115,10 @@
     .title-bar{
       height: 26px;
       padding-top: 2px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
       background: linear-gradient(to top, purple, pink);
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid rgb(180, 180, 180);
-      width: 100%;
-      overflow: auto;
+      width: 100.112%;
       clear: both;
       .buttons{
         height: 100%;
@@ -136,47 +135,48 @@
           margin-top: (20-$size)/2;
           background: rgb(251, 73, 72);
           border: solid 1px rgba(214, 46, 48, 0.15);
-          
           position: relative;
           &:before{
             content:'';
             position: absolute;
             height: 1px;
-            width: 8px;
-            background: rgb(54,0,0);
+            width: 6px;
+            background: purple;
             top:50%;
             left:50%;
             transform: translateY(-50%) translateX(-50%) rotate(45deg);
             opacity:0;
+            transition: 0.2s ease;
           }
           &:after{
             content:'';
             position: absolute;
             height: 1px;
-            width: 8px;
-            background: rgb(54,0,0);
+            width: 6px;
+            background: purple;
             top:50%;
             left:50%;
             transform: translateY(-50%) translateX(-50%) rotate(-45deg);
             opacity:0;
+            transition: 0.2s ease;
           }
         }
         .minimize{
           @extend .close;
           background: rgb(253, 178, 37);
-          margin-left: (51/3/2)*1px;
+          margin-left:  10.5px;
           border-color: rgba(213, 142, 27, 0.15);
-          
           position: relative;
           &:before{
             content:'';
             position: absolute;
             height: 1px;
-            width: 8px;
-            background: rgb(134,69,2);
+            width: 6px;
+            background: purple;
             top:50%;
             left:50%;
             transform: translateY(-50%) translateX(-50%);
+            transition: 0.2s ease;
           }
           &:after{
             display: none;
@@ -194,12 +194,14 @@
             transform: translateY(-50%) translateX(-50%);
             border: solid rgb(42, 200, 51) 1px;
             border-radius: 2px;
+            transition: 0.2s ease;
           }
           &:after{
             width: 10px;
             height:2px;
             background: rgb(42, 200, 51);
             transform: translateY(-50%) translateX(-50%) rotate(45deg);
+            transition: 0.2s ease;
           }
         }
         &:hover{

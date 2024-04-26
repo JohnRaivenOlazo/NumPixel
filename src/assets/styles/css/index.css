@@ -15,25 +15,29 @@
 
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #ffb4bc #000000;
-  }
-
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 16px;
+    width: 10px;
   }
 
   *::-webkit-scrollbar-track {
     background: #000000;
   }
 
+  .window::-webkit-scrollbar-track {
+    background: pink;
+  }
+
   *::-webkit-scrollbar-thumb {
-    background-color: #ffb4bc;
-    border-radius: 10px;
-    border: 3px solid #ffffff;
+    background-color: rgb(147 51 234);
+    border-radius: 5px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+
+
+    background-color: rgb(144, 25, 255);
+    border-radius: 5px;
   }
 
 /* ========================================================================== */
@@ -88,8 +92,8 @@
 /* ========================================================================== */
 /* TAILWIND TWEAKS */
 
-.h-90vh{
-  height: 90vh;
+.h-screenplus{
+  height: 105vh;
 }
 
 .bg-theme {

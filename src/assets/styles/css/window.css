@@ -9,7 +9,7 @@
   transform: translate(-50%, -50%) scale(0);
   border-radius: 100%;
   opacity: 0;
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow-x: hidden;
 }
 .main.blurred {
@@ -106,11 +106,10 @@
 .mac-window .title-bar {
   height: 26px;
   padding-top: 2px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   background: linear-gradient(to top, purple, pink);
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid rgb(180, 180, 180);
-  width: 100%;
-  overflow: auto;
+  width: 100.112%;
   clear: both;
 }
 .mac-window .title-bar .buttons {
@@ -134,27 +133,29 @@
   content: "";
   position: absolute;
   height: 1px;
-  width: 8px;
-  background: rgb(54, 0, 0);
+  width: 6px;
+  background: purple;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%) rotate(45deg);
   opacity: 0;
+  transition: 0.2s ease;
 }
 .mac-window .title-bar .buttons .close:after, .mac-window .title-bar .buttons .maximize:after, .mac-window .title-bar .buttons .minimize:after {
   content: "";
   position: absolute;
   height: 1px;
-  width: 8px;
-  background: rgb(54, 0, 0);
+  width: 6px;
+  background: purple;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%) rotate(-45deg);
   opacity: 0;
+  transition: 0.2s ease;
 }
 .mac-window .title-bar .buttons .minimize {
   background: rgb(253, 178, 37);
-  margin-left: 8.5px;
+  margin-left: 10.5px;
   border-color: rgba(213, 142, 27, 0.15);
   position: relative;
 }
@@ -162,11 +163,12 @@
   content: "";
   position: absolute;
   height: 1px;
-  width: 8px;
-  background: rgb(134, 69, 2);
+  width: 6px;
+  background: purple;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
+  transition: 0.2s ease;
 }
 .mac-window .title-bar .buttons .minimize:after {
   display: none;
@@ -183,12 +185,14 @@
   transform: translateY(-50%) translateX(-50%);
   border: solid rgb(42, 200, 51) 1px;
   border-radius: 2px;
+  transition: 0.2s ease;
 }
 .mac-window .title-bar .buttons .maximize:after {
   width: 10px;
   height: 2px;
   background: rgb(42, 200, 51);
   transform: translateY(-50%) translateX(-50%) rotate(45deg);
+  transition: 0.2s ease;
 }
 .mac-window .title-bar .buttons:hover .close:before, .mac-window .title-bar .buttons:hover .minimize:before, .mac-window .title-bar .buttons:hover .maximize:before {
   opacity: 1;

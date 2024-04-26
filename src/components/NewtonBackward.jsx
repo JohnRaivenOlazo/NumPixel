@@ -118,7 +118,7 @@ const NewtonBackward = () => {
   
   return (
     <div className="calculator max-w-md mx-auto p-4 bg-white shadow-md rounded-md overflow-x-auto">
-      <h2 className="text-lg font-bold mb-4">Backward Difference Interpolation</h2>
+      <h2 className="text-lg font-bold mb-4 text-purple-800 uppercase">Backward Difference Interpolation</h2>
       {/* Input fields */}
       {/* X Values */}
       <div className="input-container mb-4">
@@ -126,7 +126,7 @@ const NewtonBackward = () => {
         <input
           type="text"
           className="w-full p-2 border border-gray-300 rounded-md"
-          placeholder="Enter x values separated by space or comma"
+          placeholder="Enter x values separated by space..."
           value={xValuesInput}
           onChange={(e) => setXValuesInput(e.target.value)}
         />
@@ -137,7 +137,7 @@ const NewtonBackward = () => {
         <input
           type="text"
           className="w-full p-2 border border-gray-300 rounded-md"
-          placeholder="Enter y values separated by space or comma"
+          placeholder="Enter y values separated by space..."
           value={yValuesInput}
           onChange={(e) => setYValuesInput(e.target.value)}
         />

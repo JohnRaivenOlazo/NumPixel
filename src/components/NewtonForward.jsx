@@ -129,7 +129,7 @@ interpolatedValue += term;
   
   return (
     <div className="calculator max-w-md mx-auto p-4 bg-white shadow-md rounded-md overflow-x-auto">
-      <h2 className="text-lg font-bold mb-4">Forward Difference Interpolation</h2>
+      <h2 className="text-lg font-bold mb-4 text-purple-800 uppercase">Forward Difference Interpolation</h2>
       {/* Input fields */}
       {/* X Values */}
       <div className="input-container mb-4">
@@ -137,7 +137,7 @@ interpolatedValue += term;
         <input
           type="text"
           className="w-full p-2 border border-gray-300 rounded-md"
-          placeholder="Enter x values separated by space or comma"
+          placeholder="Enter x values separated by space..."
           value={xValuesInput}
           onChange={(e) => setXValuesInput(e.target.value)}
         />
@@ -148,14 +148,14 @@ interpolatedValue += term;
         <input
           type="text"
           className="w-full p-2 border border-gray-300 rounded-md"
-          placeholder="Enter y values separated by space or comma"
+          placeholder="Enter y values separated by space..."
           value={yValuesInput}
           onChange={(e) => setYValuesInput(e.target.value)}
         />
       </div>
       {/* Interpolation Point */}
       <div className="input-container mb-4">
-        <label className="block mb-1">Enter (X) Interpolation Point:</label>
+        <label className="block mb-1">Enter Interpolation Point:</label>
         <input
           type="text"
           className="w-full p-2 border border-gray-300 rounded-md"
@@ -263,7 +263,7 @@ interpolatedValue += term;
       )}
       {result && (
         <div className="result mt-4">
-          <label className="block mb-1"><strong>Forward Difference</strong></label>
+          <label className="block mb-1"><strong>Newton Forward Difference</strong></label>
           <p className="text-sm font-semibold">Formula</p>
           <p className='text-xs mb-3'>
             {"y₀ + "}

@@ -6,6 +6,11 @@ import './assets/styles/css/window.css';
 import { Fade, Slide } from "react-awesome-reveal";
 
 const Header = ({ setCalculatorActive }) => { // Receive setCalculatorActive as a prop
+  
+  const handleLearnMoreClick = () => {
+    const featuresSection = document.getElementById('features');
+    featuresSection.scrollIntoView({ behavior: 'smooth' });
+  }
 
   useEffect(() => {
     const openModal = document.querySelector('.openModal');
@@ -54,19 +59,21 @@ const Header = ({ setCalculatorActive }) => { // Receive setCalculatorActive as 
   return (
     <>
       <div id="header" className={`header z-50 relative`}>
-        <div className="relative top-0 w-full h-90vh flex flex-col justify-center items-start z-20">
-          <video autoPlay loop muted src={headerVideo} type="video/mp4" className="absolute top-0 h-90vh w-full object-cover z-0"></video>
+        <div className="relative top-0 w-full h-screenplus flex flex-col justify-center items-start z-20">
+          <video autoPlay loop muted src={headerVideo} type="video/mp4" className="absolute top-0 h-full w-full object-cover z-0"></video>
           <Fade>
-            <div className="content text-white flex flex-col justify-center items-start p-10 z-30">
-              <div className="logo-container flex items-center mb-8">
+            <div className="content text-white flex flex-col justify-center items-start p-10 z-30 mb-10">
+              <div className="logo-container flex items-center mb-4">
                 <img src={logo} alt="Logo" className="logo w-20 lg:w-28 h-auto mr-4" />
                 <span className="logo-text text-3xl lg:text-5xl font-semibold font-licorice text-white">NumPixel</span>
               </div>
-              <h1 className="text-3xl lg:text-5xl font-bold mb-4 text-left">Elevate Your Math Skills to New Heights</h1>
-              <h2 className="text-lg lg:text-lg mb-8 text-left">Unlock the Full Potential of Numerical Analysis with NumPixel - Your Modern Solution for Complex Mathematical Computations</h2>
-              <div className="flex flex-col lg:flex-row justify-center lg:justify-start gap-4">
-                <button className="openModal bg-purple-600 text-white font-semibold py-3 px-6 lg:py-4 lg:px-8 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Access Calculator</button>
-                <button className="learnMore bg-purple-600 text-white font-semibold py-0.5 px-6 lg:py-1 lg:px-8 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 mt-4 lg:mt-0 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2">Learn More</button>
+              <h1 className="text-3xl lg:text-5xl font-bold mb-4 text-left">Elevate Math Calculations to New Heights</h1>
+              <h2 className="text-md lg:text-lg mb-8 text-left">Your Modern Solution for Complex Mathematical Computations</h2>
+              <div className="flex flex-col lg:flex-row justify-center lg:justify-start gap-0 lg:gap-4">
+                <button className="openModal bg-purple-600 text-pink-100 text-sm lg:text-lg font-semibold py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Start Calculating</button>
+                <button className="learnMore bg-purple-600 text-pink-100 text-sm lg:text-lg font-semibold py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 mt-4 lg:mt-0 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                onClick={handleLearnMoreClick}
+                >Learn More</button>
               </div>
             </div>
           </Fade>
