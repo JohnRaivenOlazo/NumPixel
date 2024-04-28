@@ -140,9 +140,9 @@
 
 .loading-hidden {
   transform: scale(0) translateY(0);
-  background: none;
+  background: rgba(0, 0, 0, 0);
   border-radius: 100%;
-  transition: all 0.3s ease;
+  transition: all 1s ease;
 }
 
 
