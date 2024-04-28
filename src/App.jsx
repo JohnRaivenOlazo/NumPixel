@@ -11,11 +11,19 @@ import Footer from './Footer.jsx';
 
 const App = () => {
   const [calculatorActive, setCalculatorActive] = useState(false);
+
+  const [isShown, setIsShown] = useState(false);
+
+	useEffect(() => {
+	  setTimeout(() => {
+		setIsShown(true);
+	  }, 3000);
+	}, []);
   
   return (
     <>
       <PreLoader />
-      <div className={`main showed ${calculatorActive && 'blurred'}`}>
+      <div className={`main ${isShown && 'showed'} ${calculatorActive && 'blurred'}`}>
         <Header setCalculatorActive={setCalculatorActive} />
         <About />
         <SolutionHighlights />
