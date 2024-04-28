@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import Header from './Header.jsx';
-import Features from './Features.jsx'
+import About from './About.jsx'
 import LoadingScreen from './loadingScreen.jsx';
 import Window from './Window.jsx';
 import './assets/styles/css/index.css';
@@ -24,7 +24,7 @@ const App = () => {
       <LoadingScreen />
       <div className={`main ${isShown && 'showed'} ${calculatorActive ? 'blurred' : ''}`}>
         <Header setCalculatorActive={setCalculatorActive} /> {/* Pass setCalculatorActive as a prop */}
-        <Features />
+        <About />
         <SolutionHighlights />
         <Footer />
       </div>

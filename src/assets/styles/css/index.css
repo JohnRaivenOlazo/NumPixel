@@ -9,6 +9,9 @@
   padding: 0;
   list-style: none;
   background: #000;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+
   text-decoration: none;
   box-sizing: border-box;
 }

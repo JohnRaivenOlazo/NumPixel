@@ -18,7 +18,7 @@ const SolutionHighlights = () => {
               <div className="solution-icon mb-4">
                 <FontAwesomeIcon icon={faCog} className="text-pink-400 text-4xl" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-pink-100">
+              <h3 className="text-xl font-semibold mb-4 text-white">
                 Streamlined Workflow
               </h3>
               <p className="text-pink-100">
@@ -29,7 +29,7 @@ const SolutionHighlights = () => {
               <div className="solution-icon mb-4">
                 <FontAwesomeIcon icon={faChartLine} className="text-pink-400 text-4xl" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-pink-100">
+              <h3 className="text-xl font-semibold mb-4 text-white">
               Enhanced Accuracy
               </h3>
               <p className="text-pink-100">
@@ -40,7 +40,7 @@ const SolutionHighlights = () => {
               <div className="solution-icon mb-4">
                 <FontAwesomeIcon icon={faPalette} className="text-pink-400 text-4xl" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-pink-100">
+              <h3 className="text-xl font-semibold mb-4 text-white">
                 Flexible Customization
               </h3>
               <p className="text-pink-100">
@@ -52,7 +52,7 @@ const SolutionHighlights = () => {
           <div className="mt-12">
         <Fade>
             <p className="text-lg text-white max-w-3xl text-center mx-auto">
-              Ready to start its approach? Experience the power of <span className="text-pink-400 font-semibold">NumPixel</span> now!
+              <span className="font-semibold">Ready to start its approach?</span> Experience the power of <span className="text-pink-400 font-semibold">NumPixel</span> now!
             </p>
         </Fade>
           </div>
