@@ -23,7 +23,7 @@ const Header = ({ setCalculatorActive }) => { // Receive setCalculatorActive as 
       macWindow.classList.remove('hidden');
       macWindow.classList.remove('minimize');
       macWindow.classList.add('active');
-      setCalculatorActive(true);
+      setCalculatorActive(true); // Update calculatorActive state to true
     };
   
     const handleCloseButtonClick = () => {
