@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog, faChartLine, faPalette, faHeart } from '@fortawesome/free-solid-svg-icons';
 
-const SolutionHighlights = () => {
+const Solution = () => {
   return (
     <div className="solution-highlights bg-theme py-12 pt-20">
       <div className="container mx-auto px-4">
@@ -77,4 +77,4 @@ const SolutionHighlights = () => {
   );
 };
 
-export default SolutionHighlights;
+export default Solution;

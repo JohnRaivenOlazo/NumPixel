@@ -6,7 +6,7 @@ import About from './About.jsx'
 import PreLoader from './PreLoader.jsx';
 import Window from './Window.jsx';
 import './assets/styles/css/index.css';
-import SolutionHighlights from './SolutionHighlights.jsx';
+import Solution from './Solution.jsx';
 import Footer from './Footer.jsx';
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
 	useEffect(() => {
 	  setTimeout(() => {
 		setIsShown(true);
-	  }, 3700);
+	  }, 3800);
 	}, []);
   
   return (
@@ -26,7 +26,7 @@ const App = () => {
       <div className={`main ${isShown && 'showed'} ${calculatorActive && 'blurred'}`}>
         <Header setCalculatorActive={setCalculatorActive} />
         <About />
-        <SolutionHighlights />
+        <Solution />
         <Footer />
       </div>
       <Window setCalculatorActive={setCalculatorActive} />
