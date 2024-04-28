@@ -17,7 +17,7 @@ const App = () => {
 	useEffect(() => {
 	  setTimeout(() => {
 		setIsShown(true);
-	  }, 3000);
+	  }, 3700);
 	}, []);
   
   return (
