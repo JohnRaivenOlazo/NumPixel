@@ -3,7 +3,7 @@ import logo from '../public/logo.png';
 import headerVideo from '../public/Header.mp4'
 import './assets/styles/css/index.css';
 import './assets/styles/css/window.css';
-import { Fade } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const Header = ({ setCalculatorActive }) => { // Receive setCalculatorActive as a prop
   

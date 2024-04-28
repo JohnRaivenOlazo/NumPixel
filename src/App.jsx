@@ -8,26 +8,15 @@ import Window from './Window.jsx';
 import './assets/styles/css/index.css';
 import SolutionHighlights from './SolutionHighlights.jsx';
 import Footer from './Footer.jsx';
-import headerVideo from '../public/Header.mp4';
 
 const App = () => {
-  const [isShown, setIsShown] = useState(false);
   const [calculatorActive, setCalculatorActive] = useState(false);
-
-  useEffect(() => {
-    // Preload Header
-    const video = new Image();
-    video.src = headerVideo;
-    setTimeout(() => {
-      setIsShown(true);
-    }, 3800);
-  }, []);
-
+  
   return (
     <>
       <PreLoader />
-      <div className={`main ${isShown && 'showed'} ${calculatorActive ? 'blurred' : ''}`}>
-        <Header setCalculatorActive={setCalculatorActive} /> {/* Pass setCalculatorActive as a prop */}
+      <div className={`main showed ${calculatorActive && 'blurred'}`}>
+        <Header setCalculatorActive={setCalculatorActive} />
         <About />
         <SolutionHighlights />
         <Footer />
