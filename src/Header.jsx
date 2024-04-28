@@ -60,7 +60,7 @@ const Header = ({ setCalculatorActive }) => { // Receive setCalculatorActive as 
     <>
       <div id="header" className={`header z-50 relative`}>
         <div className="relative top-0 w-full h-screenplus flex flex-col justify-center items-start z-20">
-          <video autoPlay loop muted preload="metadata" src={headerVideo} type="video/mp4" className="absolute top-0 h-full w-full object-cover z-0  opacity-50"></video>
+          <video autoPlay loop muted preload="auto" src={headerVideo} type="video/mp4" className="absolute top-0 h-full w-full object-cover z-0  opacity-50"></video>
           <Fade>
             <div className="content text-white flex flex-col justify-center items-start p-10 z-30 mb-10">
               <div className="logo-container flex items-center mb-4">
