@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from '../public/logo.png';
-import headerVideo from '../public/header-animation.mp4'
+import headerVideo from '../public/Header.mp4'
 import './assets/styles/css/index.css';
 import './assets/styles/css/window.css';
 import { Fade } from "react-awesome-reveal";
@@ -23,7 +23,7 @@ const Header = ({ setCalculatorActive }) => { // Receive setCalculatorActive as 
       macWindow.classList.remove('hidden');
       macWindow.classList.remove('minimize');
       macWindow.classList.add('active');
-      setCalculatorActive(true); // Update calculatorActive state to true
+      setCalculatorActive(true);
     };
   
     const handleCloseButtonClick = () => {

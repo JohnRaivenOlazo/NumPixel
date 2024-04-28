@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Fade, Slide} from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
-import NewtonImage from '../public/Newton.jfif';
+import NewtonImage from '../public/Newton.png';
 import LagrangeImage from '../public/Lagrange.png';
 import DividedDifference from './components/Newton/NewtonDivided';
 import NewtonForward from './components/Newton/NewtonForward';

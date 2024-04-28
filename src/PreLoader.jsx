@@ -1,10 +1,7 @@
-// LoadingScreen.jsx
-
 import React, { useState, useEffect } from "react"
 import "./assets/styles/css/index.css"
-import Logo from '../public/logo.png'
 
-const LoadingScreen = () => {
+const PreLoader = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -42,4 +39,4 @@ const LoadingScreen = () => {
   )
 }
 
-export default LoadingScreen
+export default PreLoader
