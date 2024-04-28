@@ -24,10 +24,9 @@ const App = () => {
       setTimeout(() => {
         setIsShowingLoading(false);
         setIsMainVisible(true);
-      }, 3000); // Show main content after 3 seconds
+      }, 3000);
     });
 
-    // Clean-up function to remove event listener
     return () => {
       video.removeEventListener('loadeddata', () => setIsVideoPreloaded(true));
     };
@@ -35,7 +34,7 @@ const App = () => {
 
   return (
     <>
-      {!isMainVisible && isShowingLoading && <LoadingScreen />} {/* Show loading screen for 3 seconds */}
+      {!isMainVisible && isShowingLoading && <LoadingScreen />}
       <div className={`main ${isMainVisible && 'showed'} ${calculatorActive ? 'blurred' : ''}`}>
         <Header setCalculatorActive={setCalculatorActive} /> {/* Pass setCalculatorActive as a prop */}
         <About />
