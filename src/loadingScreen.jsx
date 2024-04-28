@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react"
 import "./assets/styles/css/index.css"
 import Logo from '../public/logo.png'
 
-const loadingScreen = () => {
+const LoadingScreen = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -42,4 +42,4 @@ const loadingScreen = () => {
   )
 }
 
-export default loadingScreen
+export default LoadingScreen
