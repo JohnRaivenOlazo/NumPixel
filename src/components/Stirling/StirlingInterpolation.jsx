@@ -1,5 +1,38 @@
 import React, { useState } from 'react';
 
+// if (Table[1] && Table[1][x0Index - 0] && Table[1][x0Index - 1] != null) {
+//   termCoefficient = p / factorial(1);
+//   interpolatedValue += termCoefficient * (parseFloat(Table[1][x0Index]) + parseFloat(Table[1][x0Index - 1]) / 2);
+// }
+// if (Table[2] && Table[2][x0Index - 1] != null) {
+//   termCoefficient = p**2 / factorial(2);
+//   interpolatedValue += termCoefficient * parseFloat(Table[2][x0Index - 1]);
+// }
+// if (Table[3] && Table[3][x0Index - 1] && Table[3][x0Index - 2] != null) {
+//   termCoefficient = p * (p**2 - 1**2) / factorial(3);
+//   interpolatedValue += termCoefficient * parseFloat(Table[3][x0Index - 1]) + parseFloat(Table[3][x0Index - 2]) / 2;
+// }
+// if (Table[4] && Table[4][x0Index - 2] != null) {
+//   termCoefficient = p**2 * (p**2 - 1**2) / factorial(4);
+//   interpolatedValue += termCoefficient * parseFloat(Table[4][x0Index - 2]);
+// }
+// if (Table[5] && Table[5][x0Index - 2] && Table[5][x0Index - 3] != null) {
+//   termCoefficient = p**2 * (p**2 - 1**2) * (p**2 - 2**2) / factorial(5);
+//   interpolatedValue += termCoefficient * parseFloat(Table[5][x0Index - 2]) + parseFloat(Table[5][x0Index - 3]) / 2;
+// }
+// if (Table[6] && Table[6][x0Index - 3] != null) {
+//   termCoefficient = p**2 * (p**2 - 1**2) * (p**2 - 2**2) / factorial(6);
+//   interpolatedValue += termCoefficient * parseFloat(Table[6][x0Index - 3]);
+// }
+// if (Table[7] && Table[7][x0Index - 3] && Table[7][x0Index - 4] != null) {
+//   termCoefficient = p**2 * (p**2 - 1**2) * (p**2 - 2**2) * (p**2 - 3**2) / factorial(7);
+//   interpolatedValue += termCoefficient * parseFloat(Table[7][x0Index - 3]) + parseFloat(Table[7][x0Index - 4]) / 2;
+// }
+// if (Table[8] && Table[8][x0Index - 4] != null) {
+//   termCoefficient = p**2 * (p**2 - 1**2) * (p**2 - 2**2) * (p**2 - 3**2) / factorial(8);
+//   interpolatedValue += termCoefficient * parseFloat(Table[8][x0Index - 4]);
+// }
+
 const StirlingInterpolation = () => {
   const [xValuesInput, setXValuesInput] = useState('');
   const [yValuesInput, setYValuesInput] = useState('');
@@ -13,13 +46,26 @@ const StirlingInterpolation = () => {
   const [nearestIndex, setNearestIndex] = useState('');
   const [x1, setX1] = useState('');
   const [y0, setY0] = useState('');
+  const [yArray, setYArray] = useState([]); // Define yArray state
   const [superscript] = useState(["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"]);
-  const [isInterpolationBeforeMid, setIsInterpolationBeforeMid] = useState(false);
+  const [interpolationPoint, setInterpolationPoint] = useState('');
 
-  // Function to calculate Stirling's interpolation
+  const Fraction = ({ numerator, denominator }) => {
+    return (
+      <>
+        {" "}
+        <div className="fraction">
+          <span>{numerator}</span>
+          <span>{denominator}</span>
+        </div>
+      </>
+    );
+  }
+
   const calculateInterpolation = () => {
     const xArray = xValuesInput.replace(/,/g, '').split(/\s+/).map(Number);
     const yArray = yValuesInput.replace(/,/g, '').split(/\s+/).map(Number);
+    setYArray(yArray);
     const interpolationPoint = parseFloat(interpolationPointInput.replace(/,/g, ''));
 
     // Input validation
@@ -39,40 +85,51 @@ const StirlingInterpolation = () => {
     }
 
     // Constructing differences table with appropriate order
-    const differencesTable = [[...yArray.map(val => val.toFixed(decimalPlaces))]];
+    const Table = [[...yArray.map(val => val)]];
     for (let i = 1; i <= xArray.length - 1; i++) {
       const newRow = [];
-      for (let j = 0; j < differencesTable[i - 1].length - 1; j++) {
-        newRow.push((differencesTable[i - 1][j + 1] - differencesTable[i - 1][j]).toFixed(decimalPlaces));
+      for (let j = 0; j < Table[i - 1].length - 1; j++) {
+        newRow.push((Table[i - 1][j + 1] - Table[i - 1][j]).toFixed(decimalPlaces));
       }
-      differencesTable.push(newRow);
+      Table.push(newRow);
     }
 
     const h = xArray[1] - xArray[0];
     const p = (interpolationPoint - xArray[x0Index]) / h;
 
     let interpolatedValue = yArray[x0Index];
-    let term = 0;
 
-    for (let i = 1; i < differencesTable.length; i++) {
-      if (differencesTable.length > i && differencesTable[i][x0Index] != null) {
-        let product = 1;
-        for (let j = 0; j < i; j++) {
-          product *= (p - j);
+    for (let term = 1; term < Table.length; term++) {
+      if (term % 2 === 1) {
+        if (Table[term] && Table[term][x0Index - (term - 1)] && Table[term][x0Index - term] != null) {
+          let termCoefficient = p;
+
+          for (let i = 1; i < term; i++) {
+            termCoefficient *= (p ** 2 - i ** 2);
+          }
+          termCoefficient /= factorial(term);
+          let termValue = parseFloat(Table[term][x0Index - (term - 1)]) + parseFloat(Table[term][x0Index - term]) / 2;
+          interpolatedValue += termCoefficient * termValue;
         }
-        term += parseFloat(differencesTable[i][x0Index]) * product / factorial(i);
       } else {
-        break;
+        if (Table[term] && Table[term][x0Index - (term - 1)] != null) {
+          let termCoefficient = p ** 2;
+          for (let i = 2; i < term; i++) {
+            termCoefficient *= (p ** 2 - i ** 2);
+          }
+          termCoefficient /= factorial(term);
+          let termValue = parseFloat(Table[term][x0Index - (term - 1)]);
+          interpolatedValue += termCoefficient * termValue;
+        }
       }
     }
-
-    interpolatedValue += term;
 
     // Setting state
     setHValue(h.toFixed(decimalPlaces));
     setPValue(p.toFixed(decimalPlaces));
     setResult(interpolatedValue.toFixed(decimalPlaces));
-    setTableData(differencesTable);
+    setInterpolationPoint(interpolationPoint);
+    setTableData(Table);
     setNearestIndex(x0Index);
     setX0(xArray[x0Index]);
     setY0(yArray[x0Index]);
@@ -144,7 +201,6 @@ const StirlingInterpolation = () => {
         Calculate
       </button>
 
-      {/* Render content based on interpolation method */}
       {result && (
         <div className="interpolation-method mt-4">
           <div className="result mt-4">
@@ -196,57 +252,72 @@ const StirlingInterpolation = () => {
               </table>
             </div>
           )}
+
           <div className="result mt-4">
             <label className="block mb-1"><strong>Stirling Interpolation</strong></label>
             <p className="text-sm font-semibold">Formula</p>
             <p className='text-xs mb-3'>
-              {`y₀ + p/1! (∆y₀ + ∆y-₁/2) + p²/2! (∆²y-₁) + p(p²-1)/3! (∆y³-₁ + ∆y³-₂/2) + p²(p²-1)/4! ∆y⁴-₂ ...`}
+              {"y₀ + "}
+              <Fraction numerator={"p"} denominator={"1!"} /> <Fraction numerator={"(∆y₀ + ∆y-₁)"} denominator={"2"} />
+              {" + "}
+              <Fraction numerator={"p²"} denominator={"2!"} /> (∆²y-₁) + <Fraction numerator={"p(p²-1²)"} denominator={"3!"} /> <Fraction numerator={"(∆y³-₁ + ∆y³-₂)"} denominator={"2"} />
+              {" + "}
+              <Fraction numerator={"p²(p²-1²)"} denominator={"4!"} /> ∆y⁴-₂
+              {" + "}
+              <Fraction numerator={"p²(p²-1²)(p²-2²)"} denominator={"5!"} /> <Fraction numerator={"(∆y⁵-₂ + ∆y⁵-₃)"} denominator={"2"} /> ...
             </p>
-            <p className="text-sm font-semibold">Substituted Values</p>
-            <p className='text-sm'>
-            {y0}
-{tableData.slice(1).map((row, i) => {
-  const interpolatedDiff1 = row[nearestIndex];
-  const interpolatedDiff2 = row[nearestIndex - 1];
-  const interpolatedDiff3 = row[nearestIndex - 2];
-  const factorialVal = factorial(i + 1);
-  const productTerm = Array.from({ length: i + 1 }, (_, index) => `(${pValue} - ${index})`).join(' ');
-  if (interpolatedDiff1 != null) {
-    let terms = [];
-    terms.push(
-      <div key={`term-${i}-1`} className="fraction">
-        <span>{pValue}</span>
-        <span>1</span>
-      </div>,
-      `(${interpolatedDiff1}`
-    );
-    if (interpolatedDiff2 != null) {
-      terms.push(` + ${interpolatedDiff2}/2!)`);
-    }
-    if (interpolatedDiff3 != null) {
-      terms.push(
-        ` + `,
-        <div key={`term-${i}-2`} className="fraction">
-          <span>{pValue}²</span>
-          <span>{factorialVal}</span>
-        </div>,
-        `(${interpolatedDiff3}/2!)`
-      );
-    }
-    if (i > 0 && interpolatedDiff3 != null && interpolatedDiff2 != null) {
-      terms.push(
-        ` + `,
-        <div key={`term-${i}-3`} className="fraction">
-          <span>{pValue}({pValue}² - 1)/3!</span>
-          <span>6</span>
-        </div>,
-        `(${interpolatedDiff3} + ${interpolatedDiff2}/2)`
-      );
-    }
-    return terms;
-  }
-})}
-            </p>
+            <div className="text-sm font-semibold">Substituted Values</div>
+            <div className="text-sm">
+              {`${y0}`}
+              {tableData[1] && tableData[1][nearestIndex] && tableData[1][nearestIndex - 1] != null && (
+                <>
+                  {" +"}
+                  <Fraction numerator={`${pValue}`} denominator={factorial(1)} />
+                  <Fraction numerator={`(${tableData[1][nearestIndex]} + ${tableData[1][nearestIndex - 1]})`} denominator={"2"} />
+                </>
+              )}
+              {tableData[2] && tableData[2][nearestIndex - 1] != null && (
+                <>
+                  {" +"}
+                  <Fraction numerator={`${pValue}²`} denominator={factorial(2)} />
+                  {` (${tableData[2][nearestIndex - 1]})`}
+                </>
+              )}
+              {tableData[3] && tableData[3][nearestIndex - 1] && tableData[3][nearestIndex - 2] != null && (
+                <>
+                  {" +"}
+                  <Fraction numerator={`${pValue}(${pValue}²-1²)`} denominator={factorial(3)} />
+                  <Fraction numerator={`(${tableData[3][nearestIndex - 1]} + ${tableData[3][nearestIndex - 2]})`} denominator={"2"} />
+                </>
+              )}
+              {tableData[4] && tableData[4][nearestIndex - 2] != null && (
+                <>
+                  {" +"}
+                  <Fraction numerator={`${pValue}(${pValue}²-1²)`} denominator={factorial(4)} />
+                  {` (${tableData[4][nearestIndex - 2]})`}
+                </>
+              )}
+              {tableData[5] && tableData[5][nearestIndex - 2] && tableData[5][nearestIndex - 3] != null && (
+                <>
+                  {" +"}
+                  <Fraction numerator={`${pValue}(${pValue}²-1²)(${pValue}²-2²)`} denominator={factorial(5)} />
+                  <Fraction numerator={`(${tableData[5][nearestIndex - 2]} + ${tableData[5][nearestIndex - 3]})`} denominator={"2"} />
+                </>
+              )}
+              {tableData[6] && tableData[6][nearestIndex - 3] != null && (
+                <>
+                  {" +"}
+                  <Fraction numerator={`${pValue}(${pValue}²-1²)(${pValue}²-2²)`} denominator={factorial(6)} />
+                  {` (${tableData[6][nearestIndex - 3]})`}
+                </>
+              )}
+              {tableData[7] && tableData[7][nearestIndex - 3] && tableData[7][nearestIndex - 4] != null && (
+                <>
+                  <span> ... </span>
+                </>
+              )}
+            </div>
+
             <label className="block mb-1 font-bold">Result:</label>
             <span className="font-bold underline">{result}</span>
           </div>

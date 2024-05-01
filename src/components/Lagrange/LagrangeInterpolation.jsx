@@ -23,18 +23,18 @@ const LagrangeInterpolation = () => {
   const LinearFraction = ({ numerator, denominator }) => {
     return (
       <>
-      <div className='fraction'>
-      <span>
+        <div className='fraction'>
+          <span>
             {numerator}
-        </span>
-        <span>
+          </span>
+          <span>
             {denominator}
-            </span>
-      </div>
-    </>
+          </span>
+        </div>
+      </>
     );
   }
-  
+
   const calculateInterpolation = () => {
     const xArray = xValuesInput.replace(/,/g, '').split(/\s+/).map(Number);
     const yArray = yValuesInput.replace(/,/g, '').split(/\s+/).map(Number);
@@ -78,30 +78,30 @@ const LagrangeInterpolation = () => {
     //    FOR RENDERING PURPOSE 
     let interpolatedValuePrint = [];
     for (let i = 0; i < xArray.length; i++) {
-        let term = yArray[i];
-        let numerator = [];
-        let denominator = [];
-        for (let j = 0; j < xArray.length; j++) {
-            if (j !== i) {
-                numerator.push(`(${interpolationPoint} - ${xArray[j]})`);
-                denominator.push(`(${xArray[i]} - ${xArray[j]})`);
-            }
+      let term = yArray[i];
+      let numerator = [];
+      let denominator = [];
+      for (let j = 0; j < xArray.length; j++) {
+        if (j !== i) {
+          numerator.push(`(${interpolationPoint} - ${xArray[j]})`);
+          denominator.push(`(${xArray[i]} - ${xArray[j]})`);
         }
+      }
 
-        let numeratorStr = numerator.join('') || '1'; // If no terms in the numerator, set it to 1
-        let denominatorStr = denominator.join('') || '1'; // If no terms in the denominator, set it to 1
-        let fraction = <LinearFraction numerator={numeratorStr} denominator={denominatorStr} />;
-    
-        interpolatedValuePrint.push(
-            <span key={`term-${i}`}>
-                {term} * {fraction}
-            </span>
-        );
-        if (i !== xArray.length - 1) {
-            interpolatedValuePrint.push(" + ");
-        }
+      let numeratorStr = numerator.join('') || '1'; // If no terms in the numerator, set it to 1
+      let denominatorStr = denominator.join('') || '1'; // If no terms in the denominator, set it to 1
+      let fraction = <LinearFraction numerator={numeratorStr} denominator={denominatorStr} />;
+
+      interpolatedValuePrint.push(
+        <span key={`term-${i}`}>
+          {term} * {fraction}
+        </span>
+      );
+      if (i !== xArray.length - 1) {
+        interpolatedValuePrint.push(" + ");
+      }
     }
-    
+
     setTableData(differencesTable);
     setResult(interpolatedValue.toFixed(decimalPlaces));
     setResultFormula(interpolatedValuePrint);
@@ -184,11 +184,11 @@ const LagrangeInterpolation = () => {
             <div className="result mt-4">
               <label className="block mb-1"><strong>Formula</strong></label>
               <p className="text-xs mb-3">
-                 {"f(x) = y₀ "} 
-                 <LinearFraction numerator={`(x - x₁)(x - x₂)...(x - xₙ)`} denominator={`(x₀ - x₁)(x₀ - x₂)...(x₀ - xₙ)`} />
-                 {" + y₁ "}
-                 <LinearFraction numerator={`(x - x₀)(x - x₂)...(x - xₙ)`} denominator={`(x₁ - x₀)(x₁ - x₂)...(x₁ - xₙ)`} />
-                 {" ... "}
+                {"f(x) = y₀ "}
+                <LinearFraction numerator={`(x - x₁)(x - x₂)...(x - xₙ)`} denominator={`(x₀ - x₁)(x₀ - x₂)...(x₀ - xₙ)`} />
+                {" + y₁ "}
+                <LinearFraction numerator={`(x - x₀)(x - x₂)...(x - xₙ)`} denominator={`(x₁ - x₀)(x₁ - x₂)...(x₁ - xₙ)`} />
+                {" ... "}
               </p>
               <label className="block mb-1 font-bold">Substituted Values</label>
               <span className="text-sm">{resultFormula}</span>

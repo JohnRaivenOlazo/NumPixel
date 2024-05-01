@@ -46,7 +46,7 @@ const NewtonDivided = () => {
 
     const order = tableData[0].length - 2;
     let substitutedValues = '';
-  
+
     for (let i = 1; i <= order; i++) {
       const term = tableData[0][i + 1].toFixed(decimalPlaces);
       const factors = xValuesInput
@@ -55,7 +55,7 @@ const NewtonDivided = () => {
         .slice(0, i)
         .map((x, index) => `(${interpolationPointInput} - ${x})`)
         .join('');
-  
+
       substitutedValues += term !== 0 ? `${term} * ${factors}` : '0';
       if (i !== order) substitutedValues += ' + ';
     }
@@ -112,7 +112,7 @@ const NewtonDivided = () => {
       >
         Calculate
       </button>
-      { xValuesInput && yValuesInput && (
+      {xValuesInput && yValuesInput && (
         <div className="mt-4">
           <p className="mb-2"><strong>The value of table for x and y:</strong></p>
           <table className="border border-gray-400">
@@ -142,7 +142,7 @@ const NewtonDivided = () => {
                 <th className="border border-gray-400 p-2">x</th>
                 <th className="border border-gray-400 p-2">y</th>
                 <th className="border border-gray-400 p-2">△y</th>
-                {Array.from({ length: tableData[0].length - 3}, (_, index) => (
+                {Array.from({ length: tableData[0].length - 3 }, (_, index) => (
                   <th key={`difference-${index}`} className="border border-gray-400 p-2">{`△${index + 2}y`}</th>
                 ))}
               </tr>
@@ -163,15 +163,15 @@ const NewtonDivided = () => {
       )}
       {result && (
         <>
-        <div className="result mt-4">
-          <label className="block mb-1"><strong>Newton Divided Difference</strong></label>
-          <p className="text-sm font-semibold">Formula</p>
+          <div className="result mt-4">
+            <label className="block mb-1"><strong>Newton Divided Difference</strong></label>
+            <p className="text-sm font-semibold">Formula</p>
             <p>f(x) = y₀ + (x-x₀) [x₀x₁] + (x-x₀)(x-x₁) [x₀x₁x₂] ...</p>
-        </div>
-        <div className="result mt-4">
-          <p className="text-sm font-semibold">Substituted Values</p>
-          {renderSubstitutedValues()}
-        </div>
+          </div>
+          <div className="result mt-4">
+            <p className="text-sm font-semibold">Substituted Values</p>
+            {renderSubstitutedValues()}
+          </div>
           <div className="result mt-4">
             <h3 className="font-bold">Result:</h3>
             <p>f({interpolationPointInput}) = <span className='font-bold underline'>{result}</span></p>
