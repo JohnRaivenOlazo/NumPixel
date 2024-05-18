@@ -17,13 +17,12 @@ const App = () => {
 
   useEffect(() => {
     const handleVideoLoad = () => {
-      console.log('Video loaded, stopping preloader');
       setTimeout(() => {
         setIsLoading(false);
         setTimeout(() => {
           setIsShown(true);
         }, 0);
-      }, 3500); // Adjust this delay as needed
+      }, 3500);
     };
 
     // Preload the video
