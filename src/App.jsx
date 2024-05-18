@@ -12,11 +12,15 @@ import Footer from './Footer.jsx';
 const App = () => {
   const [calculatorActive, setCalculatorActive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isShown, setIsShown] = useState(false);
 
   useEffect(() => {
     const Loading = () => {
       setTimeout(() => {
         setIsLoading(false);
+        setTimeout(() => {
+          setIsShown(true);
+        }, 0);
       }, 3800);
     };
 
@@ -29,7 +33,7 @@ const App = () => {
     </>
   ) : (
     <>
-          <div className={`main ${calculatorActive ? 'blurred' : ''}`}>
+      <div className={`main ${isShown ? 'showed' : ''} ${calculatorActive ? 'blurred' : ''}`}>
         <Header setCalculatorActive={setCalculatorActive} />
         <About />
         <Solution />
