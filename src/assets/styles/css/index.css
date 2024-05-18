@@ -126,23 +126,12 @@
   transition: all 1s ease;
 }
 
-.loader-title {
-  font-family: "Pixelify Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: bold;
-  font-style: normal;
-  margin-top: 10rem;
-  color: #fff;
-  z-index: 2;
-  font-size: 2rem;
-  position: absolute;
-}
-
 .loading-hidden {
-  transform: scale(0) translateY(0);
-  border-radius: 100%;
-  transition: all 1s ease;
-}
+	transform: scale(0) translate3d(0, 0, 0);
+	border-radius: 100%;
+	transition: all 1s ease;
+  }
+  
 
 
 
