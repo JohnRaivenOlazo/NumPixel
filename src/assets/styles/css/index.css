@@ -138,7 +138,6 @@
 
 .loading-hidden {
   transform: scale(0) translateY(0);
-  background: rgba(0, 0, 0, 0);
   border-radius: 100%;
   transition: all 1s ease;
 }
