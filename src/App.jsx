@@ -14,19 +14,28 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isShown, setIsShown] = useState(false);
 
-  const handleVideoLoad = () => {
-    console.log('Video loaded, stopping preloader');
-    setTimeout(() => {
-      setIsLoading(false);
-      setTimeout(() => {
-        setIsShown(true);
-      }, 500);
-    }, 3800); // Adjust this delay as needed
-  };
-
-  // Call handleVideoLoad after the component is mounted
   useEffect(() => {
-    handleVideoLoad();
+    const handleVideoLoad = () => {
+      console.log('Video loaded, stopping preloader');
+      setTimeout(() => {
+        setIsLoading(false);
+        setTimeout(() => {
+          setIsShown(true);
+        }, 500);
+      }, 3800); // Adjust this delay as needed
+    };
+
+    // Preload the video
+    const video = document.createElement('video');
+    video.src = '../public/Header.mp4';
+    video.preload = 'auto';
+    video.addEventListener('canplaythrough', handleVideoLoad);
+    video.load();
+
+    // Clean up
+    return () => {
+      video.removeEventListener('canplaythrough', handleVideoLoad);
+    };
   }, []);
 
   return (
@@ -36,7 +45,7 @@ const App = () => {
       ) : (
         <>
           <div className={`main ${isShown ? 'showed' : ''} ${calculatorActive ? 'blurred' : ''}`}>
-            <Header setCalculatorActive={setCalculatorActive} onVideoLoad={handleVideoLoad} />
+            <Header setCalculatorActive={setCalculatorActive} />
             <About />
             <Solution />
             <Footer />

@@ -5,28 +5,8 @@ import './assets/styles/css/index.css';
 import './assets/styles/css/window.css';
 import { Fade } from 'react-awesome-reveal';
 
-const Header = ({ setCalculatorActive, onVideoLoad }) => {
+const Header = ({ setCalculatorActive }) => {
   const videoRef = useRef(null);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
-  useEffect(() => {
-    const handleCanPlayThrough = () => {
-      setIsVideoLoaded(true);
-      onVideoLoad();
-    };
-  
-    const videoElement = videoRef.current;
-    if (videoElement) {
-      videoElement.addEventListener('canplaythrough', handleCanPlayThrough);
-    }
-  
-    return () => {
-      if (videoElement) {
-        videoElement.removeEventListener('canplaythrough', handleCanPlayThrough);
-      }
-    };
-  }, [onVideoLoad]);
-  
 
   useEffect(() => {
     const openModal = document.querySelector('.openModal');
@@ -82,7 +62,7 @@ const Header = ({ setCalculatorActive, onVideoLoad }) => {
           loop
           playsInline
           preload="auto"
-          className={`absolute top-0 h-full w-full object-cover z-0 opacity-50 ${isVideoLoaded ? 'video-loaded' : ''}`}
+          className={`absolute top-0 h-full w-full object-cover z-0`}
         >
           <source src={headerVideo} type="video/mp4" />
         </video>
