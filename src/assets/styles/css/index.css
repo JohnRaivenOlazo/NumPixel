@@ -122,6 +122,8 @@
   height: 80px;
   animation: spin 1s steps(1) infinite;
   box-sizing: border-box;
+  border-radius: 0;
+  transition: all 1s ease;
 }
 
 .loader-title {
