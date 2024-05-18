@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import Header from './Header.jsx';
@@ -14,14 +14,16 @@ const App = () => {
   const [calculatorActive, setCalculatorActive] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isShown, setIsShown] = useState(false);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const video = document.createElement('video');
     video.src = headerVideo;
     video.preload = 'auto';
+    videoRef.current = video;
 
-    const handleVideoLoad = () => {
-      // Add delay after video is loaded
+    const handleCanPlayThrough = () => {
+      // Delay for better UX
       setTimeout(() => {
         setIsLoading(false);
         setTimeout(() => {
@@ -30,11 +32,13 @@ const App = () => {
       }, 3800);
     };
 
-    video.addEventListener('loadeddata', handleVideoLoad);
+    video.addEventListener('canplaythrough', handleCanPlayThrough);
 
     return () => {
       // Clean up event listener
-      video.removeEventListener('loadeddata', handleVideoLoad);
+      if (videoRef.current) {
+        videoRef.current.removeEventListener('canplaythrough', handleCanPlayThrough);
+      }
     };
   }, []);
 
