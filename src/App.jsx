@@ -30,12 +30,12 @@ const App = () => {
     const video = document.createElement('video');
     video.src = headerVideo;
     video.preload = 'auto';
-    video.addEventListener('canplaythrough', handleVideoLoad);
+    video.addEventListener('loadeddata', handleVideoLoad);
     video.load();
 
     // Clean up
     return () => {
-      video.removeEventListener('canplaythrough', handleVideoLoad);
+      video.removeEventListener('loadeddata', handleVideoLoad);
     };
   }, []);
 
