@@ -8,7 +8,7 @@ import Window from './Window.jsx';
 import './assets/styles/css/index.css';
 import Solution from './Solution.jsx';
 import Footer from './Footer.jsx';
-import headerVideo from '../public/Header.mp4'; // Import video source
+import headerVideo from '../public/Header.mp4';
 
 const App = () => {
   const [calculatorActive, setCalculatorActive] = useState(false);
@@ -16,7 +16,7 @@ const App = () => {
   const [isShown, setIsShown] = useState(false);
 
   useEffect(() => {
-    const video = document.createElement('video'); // Create video element
+    const video = document.createElement('video');
     video.src = headerVideo;
     video.preload = 'auto';
 
@@ -27,7 +27,7 @@ const App = () => {
         setTimeout(() => {
           setIsShown(true);
         }, 0);
-      }, 3800); // Adjust the delay time as needed
+      }, 3800);
     };
 
     video.addEventListener('loadeddata', handleVideoLoad);
