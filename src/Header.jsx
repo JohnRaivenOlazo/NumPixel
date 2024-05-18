@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import logo from '../public/logo.png';
 import headerVideo from '../public/Header.mp4';
 import './assets/styles/css/index.css';
@@ -7,9 +7,11 @@ import { Fade } from 'react-awesome-reveal';
 
 const Header = ({ setCalculatorActive, onVideoLoad }) => {
   const videoRef = useRef(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
     const handleCanPlayThrough = () => {
+      setIsVideoLoaded(true);
       onVideoLoad();
     };
   
@@ -80,7 +82,7 @@ const Header = ({ setCalculatorActive, onVideoLoad }) => {
           loop
           playsInline
           preload="auto"
-          className="absolute top-0 h-full w-full object-cover z-0 opacity-50"
+          className={`absolute top-0 h-full w-full object-cover z-0 opacity-50 ${isVideoLoaded ? 'video-loaded' : ''}`}
         >
           <source src={headerVideo} type="video/mp4" />
         </video>

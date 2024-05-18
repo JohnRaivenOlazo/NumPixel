@@ -41,6 +41,12 @@
     border-radius: 5px;
   }
 
+  /* Add a transition effect for the video */
+.video-loaded {
+	transition: opacity 1s ease;
+  }
+  
+
 /* ========================================================================== */
 /*   FRACTIONS */
 .fraction {
