@@ -23,7 +23,7 @@ const App = () => {
         setTimeout(() => {
           setIsShown(true);
         }, 0);
-      }, 3800); // Adjust this delay as needed
+      }, 3500); // Adjust this delay as needed
     };
 
     // Preload the video
