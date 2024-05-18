@@ -20,7 +20,7 @@ const App = () => {
       setIsLoading(false);
       setTimeout(() => {
         setIsShown(true);
-      }, 0);
+      }, 1000);
     }, 3800); // Adjust this delay as needed
   };
   handleVideoLoad();
