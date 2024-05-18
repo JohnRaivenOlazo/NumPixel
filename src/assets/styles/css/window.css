@@ -2,25 +2,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Licorice&display=swap");
 .main {
   position: absolute;
-  width: 0;
-  height: 0;
   border-radius: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 100%;
-  transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 0;
+  transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   overflow-x: hidden;
 }
 .main.showed {
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
   opacity: 1;
 }
 .main.blurred {
-  filter: blur(2px);
   overflow-y: hidden;
 }
 
