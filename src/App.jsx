@@ -8,6 +8,7 @@ import Window from './Window.jsx';
 import './assets/styles/css/index.css';
 import Solution from './Solution.jsx';
 import Footer from './Footer.jsx';
+import headerVideo from '../public/Header.mp4';
 
 const App = () => {
   const [calculatorActive, setCalculatorActive] = useState(false);
@@ -27,7 +28,7 @@ const App = () => {
 
     // Preload the video
     const video = document.createElement('video');
-    video.src = '../public/Header.mp4';
+    video.src = headerVideo;
     video.preload = 'auto';
     video.addEventListener('canplaythrough', handleVideoLoad);
     video.load();
