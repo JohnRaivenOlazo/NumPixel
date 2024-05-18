@@ -5,15 +5,10 @@ const PreLoader = ({ onVideoLoad }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Update isLoading state when the video is loaded
-    if (onVideoLoad) {
-      setIsLoading(true);
-    }
-
     // Add a delay before setting isLoading to false
     const delayTimeout = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Adjust the delay time as needed
+    }, 3000);
 
     // Clear the timeout when the component unmounts or when the video is loaded
     return () => {
