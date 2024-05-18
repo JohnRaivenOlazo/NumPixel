@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import Header from './Header.jsx';
@@ -23,20 +23,27 @@ const App = () => {
       }, 500);
     }, 3800); // Adjust this delay as needed
   };
-  handleVideoLoad();
-  
 
-  return isLoading ? (
-    <PreLoader />
-  ) : (
+  // Call handleVideoLoad after the component is mounted
+  useEffect(() => {
+    handleVideoLoad();
+  }, []);
+
+  return (
     <>
-      <div className={`main ${isShown ? 'showed' : ''} ${calculatorActive ? 'blurred' : ''}`}>
-        <Header setCalculatorActive={setCalculatorActive} onVideoLoad={handleVideoLoad} />
-        <About />
-        <Solution />
-        <Footer />
-      </div>
-      <Window setCalculatorActive={setCalculatorActive} />
+      {isLoading ? (
+        <PreLoader />
+      ) : (
+        <>
+          <div className={`main ${isShown ? 'showed' : ''} ${calculatorActive ? 'blurred' : ''}`}>
+            <Header setCalculatorActive={setCalculatorActive} onVideoLoad={handleVideoLoad} />
+            <About />
+            <Solution />
+            <Footer />
+          </div>
+          <Window setCalculatorActive={setCalculatorActive} />
+        </>
+      )}
     </>
   );
 };
