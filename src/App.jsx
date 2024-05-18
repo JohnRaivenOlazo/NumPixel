@@ -22,7 +22,7 @@ const App = () => {
         setIsLoading(false);
         setTimeout(() => {
           setIsShown(true);
-        }, 500);
+        }, 0);
       }, 3800); // Adjust this delay as needed
     };
 
