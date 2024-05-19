@@ -6,7 +6,7 @@ import './assets/styles/css/index.css';
 const PreLoader = () => {
   return (
     <div className="loader-container">
-      <div className={`page loading-hidden`}>
+      <div className={`page`}>
         <div className="loadContainer">
           <div className="loadInner">
             <div className="loadCircle">
