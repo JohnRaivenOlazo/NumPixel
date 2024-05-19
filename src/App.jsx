@@ -18,11 +18,11 @@ const App = () => {
   useEffect(() => {
     const handleVideoLoad = () => {
       setTimeout(() => {
-        setIsLoading(false);
+        setIsShown(true);
         setTimeout(() => {
-          setIsShown(true);
-        }, 0);
-      }, 3800);
+          setIsLoading(false);
+        }, 3800);
+      }, 0);
     };
 
     // Preload the video
