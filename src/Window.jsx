@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './assets/styles/css/window.css'
-import Main from './Main.jsx'
+import WindowContent from './WindowContent.jsx'
 
 const Window = ({ calculatorActive, setCalculatorActive }) => {
 
@@ -34,7 +34,7 @@ const Window = ({ calculatorActive, setCalculatorActive }) => {
         <div className="title">Numerical Methods</div>
       </div>
       <div className="window">
-        <Main handleCalculatorClick={handleCalculatorClick} />
+        <WindowContent handleCalculatorClick={handleCalculatorClick} />
       </div>
     </div>
   )

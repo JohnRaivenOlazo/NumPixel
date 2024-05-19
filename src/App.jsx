@@ -8,7 +8,7 @@ import Window from './Window.jsx';
 import './assets/styles/css/index.css';
 import Solution from './Solution.jsx';
 import Footer from './Footer.jsx';
-import headerVideo from '../public/Header.mp4';
+import headerVideo from '/Header.mp4';
 
 const App = () => {
   const [calculatorActive, setCalculatorActive] = useState(false);

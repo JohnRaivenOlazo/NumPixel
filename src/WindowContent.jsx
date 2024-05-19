@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
-import NewtonImage from '../public/Newton.png';
-import LagrangeImage from '../public/Lagrange.png';
+import NewtonImage from '/Newton.png';
+import LagrangeImage from '/Lagrange.png';
 import DividedDifference from './components/Newton/NewtonDivided';
 import NewtonForward from './components/Newton/NewtonForward';
 import NewtonBackward from './components/Newton/NewtonBackward';
 import LagrangeInterpolation from './components/Lagrange/LagrangeInterpolation';
-import Stirling from '../public/Stirling.png';
+import Stirling from '/Stirling.png';
 import StirlingInterpolation from './components/Stirling/StirlingInterpolation';
 
-const Main = () => {
+const WindowContent = () => {
   const [selectedInterpolation, setSelectedInterpolation] = useState(null);
   const [previousSelection, setPreviousSelection] = useState(null);
 
@@ -120,4 +120,4 @@ const Main = () => {
   );
 }
 
-export default Main;
+export default WindowContent
