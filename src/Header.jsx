@@ -6,7 +6,6 @@ import './assets/styles/css/window.css';
 import { Fade } from 'react-awesome-reveal';
 
 const Header = ({ setCalculatorActive }) => {
-  const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -53,11 +52,6 @@ const Header = ({ setCalculatorActive }) => {
     };
   }, [setCalculatorActive]);
 
-    // Callback for video loaded metadata
-    const handleVideoLoaded = () => {
-      setVideoLoaded(true);
-    };
-
   return (
     <div id="header" className="header z-50 relative">
       <div className="relative top-0 w-full h-screenplus flex flex-col justify-center items-start z-20">
@@ -68,8 +62,7 @@ const Header = ({ setCalculatorActive }) => {
           loop
           playsInline
           preload="auto"
-          className={`absolute top-0 h-full w-full object-cover z-0 opacity-0 ${videoLoaded && 'video-loaded'}`}
-          onLoadedMetadata={handleVideoLoaded}
+          className={`absolute top-0 h-full w-full object-cover z-0`}
         >
           <source src={headerVideo} type="video/mp4" />
         </video>

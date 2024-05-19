@@ -8,7 +8,7 @@ const PreLoader = ({ onVideoLoad }) => {
     // Add a delay before setting isLoading to false
     const delayTimeout = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 3300);
 
     // Clear the timeout when the component unmounts or when the video is loaded
     return () => {
