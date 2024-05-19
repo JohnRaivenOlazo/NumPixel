@@ -39,7 +39,7 @@ const Footer = () => {
           <a href="#header" className="text-sm text-gray-300 hover:text-white transition duration-300">Back to Top</a>
         </div>
         <div className="text-sm text-center text-gray-300 mt-4">
-          © {new Date().getFullYear()} NumPixel. All Rights Reserved.
+          © {new Date().getFullYear()} NumPixel. &nbsp;All Rights Reserved.
         </div>
       </div>
     </footer>
