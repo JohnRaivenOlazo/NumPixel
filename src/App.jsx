@@ -23,7 +23,7 @@ const App = () => {
         setTimeout(() => {
           setIsLoading(false);
         }, 0);
-      }, 10000);
+      }, 5000);
     };
 
     // Preload the video
