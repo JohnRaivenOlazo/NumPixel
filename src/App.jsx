@@ -21,8 +21,8 @@ const App = () => {
         setIsShown(true);
         setTimeout(() => {
           setIsLoading(false);
-        }, 3800);
-      }, 0);
+        }, 0);
+      }, 3800);
     };
 
     // Preload the video

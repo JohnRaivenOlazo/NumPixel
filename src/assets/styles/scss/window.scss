@@ -29,9 +29,9 @@
   }
   .video-loaded {
     opacity: 1;
-    transition: opacity 1s ease-in-out; /* Adjust the duration and easing as needed */
+    transition: opacity 0.3s ease-in-out; /* Adjust the duration and easing as needed */
   }
-  
+
 .header {
     position: relative;
     z-index: 1;
