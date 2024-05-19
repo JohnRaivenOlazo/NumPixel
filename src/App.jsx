@@ -8,6 +8,7 @@ import Window from './Window.jsx';
 import './assets/styles/css/index.css';
 import Solution from './Solution.jsx';
 import Footer from './Footer.jsx';
+import logo from '/logo.png';
 import headerVideo from '/Header.mp4';
 
 const App = () => {
@@ -31,6 +32,10 @@ const App = () => {
     video.preload = 'auto';
     video.addEventListener('loadedmetadata', handleVideoLoad);
     video.load();
+
+    const logoImage = new Image();
+    logoImage.src = logo;
+    logoImage.onload = handleVideoLoad;
 
     // Clean up
     return () => {
