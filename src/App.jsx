@@ -30,7 +30,7 @@ const App = () => {
     const video = document.createElement('video');
     video.src = headerVideo;
     video.preload = 'auto';
-    video.addEventListener('loadedmetadata', handleVideoLoad);
+    video.addEventListener('canplay', handleVideoLoad);
     video.load();
 
     const logoImage = new Image();
@@ -39,7 +39,7 @@ const App = () => {
 
     // Clean up
     return () => {
-      video.removeEventListener('loadedmetadata', handleVideoLoad);
+      video.removeEventListener('canplay', handleVideoLoad);
     };
   }, []);
 
