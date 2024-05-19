@@ -29,12 +29,12 @@ const App = () => {
     const video = document.createElement('video');
     video.src = headerVideo;
     video.preload = 'auto';
-    video.addEventListener('canplay', handleVideoLoad);
+    video.addEventListener('loadedmetadata', handleVideoLoad);
     video.load();
 
     // Clean up
     return () => {
-      video.removeEventListener('canplay', handleVideoLoad);
+      video.removeEventListener('loadedmetadata', handleVideoLoad);
     };
   }, []);
 
