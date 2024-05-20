@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import './assets/styles/css/actionbutton.css';
+import openWindow from './hooks/openWindow';
 
-const PrivacyPolicy = ({ isOpen, togglePrivacyPolicy }) => {
+const PrivacyPolicy = ({ toggleActionButton , togglePrivacyPolicy }) => {
+  const handleClick = () => {
+    togglePrivacyPolicy();
+    toggleActionButton();
+  };
+
+  openWindow();
+
+  const handleOpenCalculatorClick = () => {
+    setCalculatorActive(true);
+  };
+
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === 'Escape') {
+          togglePrivacyPolicy();
+          toggleActionButton();
+      }
+    };
+
+    document.addEventListener('keydown', handleEsc);
+
+    return () => {
+      document.removeEventListener('keydown', handleEsc);
+    };
+  }, [togglePrivacyPolicy, toggleActionButton]);
+
   return (
-      <div className={`fixed inset-0 z-50 bg-white rounded-lg p-8 shadow-lg w-3/4 h-3/4 max-w-lg overflow-auto ${isOpen ? '' : 'hidden'}`}>
-        <button className="absolute top-0 right-0 p-2 z-50" onClick={togglePrivacyPolicy}>
-          <svg className="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300">
+      <div className="relative bg-white rounded-lg p-8 shadow-lg w-3/4 max-w-lg h-3/4 overflow-auto transition-transform duration-300 transform translate-y-0">
+        <button className="fixed top-0 right-0 p-4 z-50" onClick={handleClick}>
+          <svg className="h-6 w-6 text-gray-500 hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -19,6 +48,7 @@ const PrivacyPolicy = ({ isOpen, togglePrivacyPolicy }) => {
           <p className="mb-4">This policy is effective as of 1 January 2024.</p>
         </div>
       </div>
+    </div>
   );
 };
 

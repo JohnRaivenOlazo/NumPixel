@@ -5,52 +5,9 @@ import './assets/styles/css/index.css';
 import './assets/styles/css/window.css';
 import { Fade } from 'react-awesome-reveal';
 
-const Header = ({ setCalculatorActive }) => {
+
+const Header = () => {
   const videoRef = useRef(null);
-
-  useEffect(() => {
-    const openModal = document.querySelector('.openModal');
-    const closeButton = document.querySelector('.close');
-    const minimizeButton = document.querySelector('.minimize');
-    const maximizeButton = document.querySelector('.maximize');
-    const macWindow = document.querySelector('.mac-window');
-
-    const handleOpenModalClick = () => {
-      macWindow.classList.remove('hidden');
-      macWindow.classList.remove('minimize');
-      macWindow.classList.add('active');
-      setCalculatorActive(true);
-    };
-
-    const handleCloseButtonClick = () => {
-      macWindow.classList.remove('active');
-      macWindow.classList.remove('maximize');
-      macWindow.classList.remove('minimize');
-      setCalculatorActive(false);
-    };
-
-    const handleMinimizeButtonClick = () => {
-      macWindow.classList.toggle('minimize');
-      macWindow.classList.remove('maximize');
-    };
-
-    const handleMaximizeButtonClick = () => {
-      macWindow.classList.toggle('maximize');
-      macWindow.classList.remove('minimize');
-    };
-
-    openModal.addEventListener('click', handleOpenModalClick);
-    closeButton.addEventListener('click', handleCloseButtonClick);
-    minimizeButton.addEventListener('click', handleMinimizeButtonClick);
-    maximizeButton.addEventListener('click', handleMaximizeButtonClick);
-
-    return () => {
-      openModal.removeEventListener('click', handleOpenModalClick);
-      closeButton.removeEventListener('click', handleCloseButtonClick);
-      minimizeButton.removeEventListener('click', handleMinimizeButtonClick);
-      maximizeButton.removeEventListener('click', handleMaximizeButtonClick);
-    };
-  }, [setCalculatorActive]);
 
   return (
     <div id="header" className="header z-50 relative">
@@ -75,7 +32,7 @@ const Header = ({ setCalculatorActive }) => {
             <h1 className="text-3xl lg:text-5xl font-bold mb-4 text-left">Elevate Math Calculations to New Heights</h1>
             <h2 className="text-md lg:text-lg mb-8 text-left">Your Modern Solution for Complex Mathematical Computations</h2>
             <div className="flex flex-col lg:flex-row justify-center lg:justify-start gap-0 lg:gap-4">
-              <button className="openModal font-semibold font-sans bg-purple-900 bg-gradient-to-b from-purple-500 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-200 ease focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+              <button className="openWindow font-semibold font-sans bg-purple-900 bg-gradient-to-b from-purple-500 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-200 ease focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 Start Calculating
               </button>
               <button
