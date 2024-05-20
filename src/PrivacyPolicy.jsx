@@ -7,10 +7,6 @@ const PrivacyPolicy = ({ toggleActionButton , togglePrivacyPolicy }) => {
     toggleActionButton();
   };
 
-  const handleOpenCalculatorClick = () => {
-    setCalculatorActive(true);
-  };
-
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.key === 'Escape') {
