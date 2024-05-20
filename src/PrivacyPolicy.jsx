@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import './assets/styles/css/actionbutton.css';
-import openWindow from './hooks/openWindow';
 
 const PrivacyPolicy = ({ toggleActionButton , togglePrivacyPolicy }) => {
   const handleClick = () => {
     togglePrivacyPolicy();
     toggleActionButton();
   };
-
-  openWindow();
 
   const handleOpenCalculatorClick = () => {
     setCalculatorActive(true);
