@@ -30,7 +30,7 @@ const ActionButton = ( {setCalculatorActive} ) => {
 
   return (
     <>
-        {isPrivacyPolicyOpen && <PrivacyPolicy toggleActionButton={toggleActionButton} togglePrivacyPolicy={togglePrivacyPolicy} />}
+        {isPrivacyPolicyOpen && <PrivacyPolicy toggleActionButton={toggleActionButton} togglePrivacyPolicy={togglePrivacyPolicy} />} {/* Pass isOpen prop */}
       <div 
         id="actionBtn" 
         className={`action-button bg-gradient-to-b from-purple-900 to-black ${isOpen ? 'actionsBoxOpen' : ''}`} 
@@ -39,7 +39,7 @@ const ActionButton = ( {setCalculatorActive} ) => {
         <div className="action-button-content">
           <div className="action-button-content-inner">
             <h2>How can we help you?</h2>
-            <a className="openWindow btn">Open Calculator</a>
+            <a className="openWindow btn">Open Calculator</a> {/*PUT THE OPENMODAL ALL FUNCTIONALITIES HERE */}
             <a className="btn" href="#">Changelog</a>
             <a className="btn" href="#" onClick={togglePrivacyPolicy}>Privacy Policy</a>
           </div>

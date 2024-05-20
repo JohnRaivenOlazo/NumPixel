@@ -50,7 +50,10 @@ const App = () => {
         <PreLoader />
       ) : (
         <>
+        <div className={`${calculatorActive && 'hidden'}`}>
+
           <ActionButton setCalculatorActive={setCalculatorActive}/>
+        </div>
           <div className={`main ${isShown && 'showed'} ${calculatorActive && 'blurred'}`}>
             <Header setCalculatorActive={setCalculatorActive} />
             <About />
