@@ -12,7 +12,7 @@ const Solution = () => {
             Discover its Unique Solutions
           </h2>
         </Fade>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
   <Fade cascade damping={0.2}>
     <div className="solution-card bg-purple-800 rounded-lg shadow-lg p-8 flex flex-col items-center justify-center text-center transition duration-300 transform hover:scale-105">
       <div className="solution-icon mb-4">

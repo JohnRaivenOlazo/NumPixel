@@ -19,6 +19,7 @@
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 10px;
+	transition: all 0.3s ease;
   }
 
   *::-webkit-scrollbar-track {
@@ -26,20 +27,19 @@
   }
 
   .window::-webkit-scrollbar-track {
-    background: pink;
+    background: rgb(140, 27, 140);
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: rgb(147 51 234);
+    background-color: rgb(147, 51, 234);
+    background: linear-gradient(to bottom, rgb(147, 51, 234), rgb(0, 0, 0));
     border-radius: 5px;
   }
 
   *::-webkit-scrollbar-thumb:hover {
-
-
-    background-color: rgb(144, 25, 255);
-    border-radius: 5px;
+    background: linear-gradient(to bottom, rgb(132, 0, 255), rgb(0, 0, 0));
   }
+
   
 
 /* ========================================================================== */
@@ -268,4 +268,3 @@
 		-moz-transform: rotate(360deg);
 	}
 }
-

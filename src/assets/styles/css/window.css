@@ -114,6 +114,7 @@
   background: linear-gradient(to top, purple, pink);
   width: 100.112%;
   clear: both;
+  user-select: none;
 }
 .mac-window .title-bar .buttons {
   height: 100%;

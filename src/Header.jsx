@@ -75,12 +75,11 @@ const Header = ({ setCalculatorActive }) => {
             <h1 className="text-3xl lg:text-5xl font-bold mb-4 text-left">Elevate Math Calculations to New Heights</h1>
             <h2 className="text-md lg:text-lg mb-8 text-left">Your Modern Solution for Complex Mathematical Computations</h2>
             <div className="flex flex-col lg:flex-row justify-center lg:justify-start gap-0 lg:gap-4">
-              <button className="openModal font-semibold font-sans bg-purple-600 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+              <button className="openModal font-semibold font-sans bg-purple-900 bg-gradient-to-b from-purple-500 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-200 ease focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 Start Calculating
               </button>
               <button
-                className="learnMore font-semibold font-sans bg-purple-600 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 mt-4 lg:mt-0 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
-                onClick={() => console.log('Learn More clicked')}
+                className="learnMore font-semibold font-sans bg-gradient-to-b from-purple-800 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-900 transition-all duration-200 ease mt-4 lg:mt-0 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
               >
                 Learn More
               </button>

@@ -1,0 +1,116 @@
+@charset "UTF-8";
+.action-button {
+  display: block;
+  position: fixed;
+  width: 4em;
+  height: 4em;
+  z-index: 10;
+  padding: 1em;
+  bottom: 1em;
+  right: 2em;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0.1em 0 0.25em rgba(0, 0, 0, 0.15), 0.2em 0 1em rgba(0, 0, 0, 0.2);
+  animation: Pop 5s ease infinite;
+  transition: all 0.3s ease;
+  box-shadow: 1px 1px 10px #000;
+}
+.action-button:hover {
+  animation-play-state: paused;
+}
+.action-button::after {
+  content: "";
+  background: url("/logo.png") no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: all 400ms ease-out;
+}
+.action-button.actionsBoxOpen::after {
+  filter: none;
+  transform: scale(1.4);
+}
+.action-button.actionsBoxOpen:hover::after {
+  filter: brightness(1.2);
+}
+
+@keyframes Pop {
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.action-button-content {
+  background-color: white;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  z-index: 15;
+  bottom: 2em;
+  right: 2em;
+  transform-origin: bottom right;
+  transition: box-shadow 50ms ease-out, border-radius 50ms ease-out 25ms, width 90ms ease-in, height 60ms ease-in;
+}
+.action-button-content .action-button-content-inner {
+  opacity: 0;
+  transition: opacity 30ms ease-out 0;
+  padding: 40px;
+}
+.action-button-content .action-button-content-inner h2 {
+  color: black;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+.action-button-content .action-button-content-inner .btn {
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  color: purple;
+  border: 1px solid purple;
+  border-radius: 3px;
+  margin-bottom: 1.5em;
+  transition: color 50ms linear, background 50ms linear;
+  text-decoration: none;
+}
+.action-button-content .action-button-content-inner .btn:hover {
+  color: white;
+  background: purple;
+}
+.action-button-content .action-button-content-inner::after {
+  content: "⌟";
+  position: absolute;
+  font-size: 25px;
+  top: 5px;
+  right: 15px;
+  color: #666;
+  pointer-events: auto;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.actionsBoxOpen .action-button-content {
+  pointer-events: none;
+  width: 400px;
+  height: 300px;
+  cursor: default;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  border-radius: 0;
+  bottom: 2em;
+  right: 2em;
+  transform-origin: bottom right;
+  transition: box-shadow 50ms ease-in 100ms, border-radius 50ms ease-in 100ms, width 150ms ease-in, height 150ms ease-in;
+}
+.actionsBoxOpen .action-button-content .action-button-content-inner {
+  opacity: 1;
+  transition: opacity 100ms ease-out 200ms;
+}
+.actionsBoxOpen .action-button-content .action-button-content-inner .btn {
+  pointer-events: auto;
+}
+
+/*# sourceMappingURL=actionbutton.css.map */

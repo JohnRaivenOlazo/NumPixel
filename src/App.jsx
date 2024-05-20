@@ -10,6 +10,7 @@ import Solution from './Solution.jsx';
 import Footer from './Footer.jsx';
 import logo from '/logo.png';
 import headerVideo from '/Header.mp4';
+import ActionButton from './ActionButton.jsx';
 
 const App = () => {
   const [calculatorActive, setCalculatorActive] = useState(false);
@@ -49,7 +50,8 @@ const App = () => {
         <PreLoader />
       ) : (
         <>
-          <div className={`main ${isShown ? 'showed' : ''} ${calculatorActive ? 'blurred' : ''}`}>
+            <ActionButton />
+          <div className={`main ${isShown && 'showed'} ${calculatorActive && 'blurred'}`}>
             <Header setCalculatorActive={setCalculatorActive} />
             <About />
             <Solution />

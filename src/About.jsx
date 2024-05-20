@@ -6,7 +6,7 @@ import { faCog, faChartLine, faPalette, faClock, faDesktop } from '@fortawesome/
 const About = () => {
   return (
     <>
-    <div id="features" className="features-section bg-theme py py-24 relative z-20">
+    <div id="features" className="features-section bg-theme py py-24 relative z-20 m-0 -mb-1">
     <Fade>
       <div className="container mx-auto px-4">
         <Fade triggerOnce={false}>
