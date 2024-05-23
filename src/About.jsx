@@ -6,12 +6,12 @@ import './assets/styles/css/About.css';
 import Interpolation from '/Interpolation-Image.png';
 
 const interpolationMethods = [
-  "Newton's Forward Difference",
-  "Stirling's Forward Difference",
-  "Gauss's Forward Difference",
-  "Newton's Backward Difference",
-  "Stirling's Backward Difference",
-  "Gauss's Backward Difference",
+  "Newton's Forward",
+  "Stirling's Forward",
+  "Gauss's Forward",
+  "Newton's Backward",
+  "Stirling's Backward",
+  "Gauss's Backward",
   "Lagrange",
   "Hermite",
   "Divided Differences",
