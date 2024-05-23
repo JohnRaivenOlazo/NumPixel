@@ -2,15 +2,20 @@ import React, { useState, useEffect, useRef } from "react";
 import { Slide } from "react-awesome-reveal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop, faClock } from '@fortawesome/free-solid-svg-icons';
-import './assets/styles/css/About.css'; // Ensure you create this CSS file for animations
+import './assets/styles/css/About.css';
 import Interpolation from '/Interpolation-Image.png';
 
 const interpolationMethods = [
-  "Newton's Interpolation",
-  "Stirling's Interpolation",
-  "Gauss's Interpolation",
-  "Lagrange Interpolation",
-  "Hermite Interpolation"
+  "Newton's Forward Difference",
+  "Stirling's Forward Difference",
+  "Gauss's Forward Difference",
+  "Newton's Backward Difference",
+  "Stirling's Backward Difference",
+  "Gauss's Backward Difference",
+  "Lagrange",
+  "Hermite",
+  "Divided Differences",
+  "Central Difference"
 ];
 
 const About = () => {
@@ -94,7 +99,7 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <Slide direction="left">
               <div className="flex justify-center">
-                <div className="feature-card bg-purple-800 rounded-lg shadow-lg p-8 h-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                <div className="feature-card bg-gradient-to-bl from-purple-800 rounded-lg shadow-lg p-8 h-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                   <div className="flex items-start gap-3">
                     <FontAwesomeIcon icon={faDesktop} className="text-pink-400 text-4xl -m-1" /> 
                     <h3 className="text-xl font-semibold mb-4 text-white">Immaculate User Interface</h3>
@@ -109,7 +114,7 @@ const About = () => {
             </Slide>
             <Slide direction="right">
               <div className="flex justify-center">
-                <div className="feature-card bg-purple-800 rounded-lg shadow-lg p-8 h-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                <div className="feature-card bg-gradient-to-br from-purple-800 rounded-lg shadow-lg p-8 h-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                   <div className="flex items-start gap-3">
                     <FontAwesomeIcon icon={faClock} className="text-pink-400 text-4xl -m-1" /> 
                     <h3 className="text-xl font-semibold mb-4 text-white">
@@ -132,14 +137,14 @@ const About = () => {
             </p>
             <div className="flex flex-col md:flex-row gap-2 lg:gap-8 mt-8 items-start md:items-center">
               <div className="md:w-1/2 flex justify-center items-center">
-                <img src={Interpolation} alt="Interpolation Illustration" className="w-full rounded-lg shadow-lg" />
+                <img src={Interpolation} alt="Interpolation Illustration" className="w-full rounded-lg shadow-lg transition-all duration-300 ease hover:-skew-y-1 hover:scale-105" />
               </div>
               <div className="md:w-1/2 wheel-container outline-none" ref={wheelContainerRef} onWheel={handleWheel} tabIndex="0">
                 <div className="wheel">
                   {currentMethods.map((methodIndex, i) => (
                     <div
                       key={i}
-                      className={`wheel-item ${i === 1 ? 'active' : ''} ${transitioning && 'transitioning'} ${transitioning && transitionDirection === 'next' && i === 2 ? 'transitionNext' : ''} ${transitioning && transitionDirection === 'prev' && i === 0 ? 'transitionPrev' : ''}`} // Highlight the central item
+                      className={`wheel-item ${i === 1 && 'active'} ${transitioning && 'transitioning'} ${transitioning && transitionDirection === 'next' && i === 2 && 'transitionNext'} ${transitioning && transitionDirection === 'prev' && i === 0 && 'transitionPrev'}`} // Highlight the central item
                       onClick={i === 0 ? handlePrev : i === 2 ? handleNext : null}
                     >
                       {interpolationMethods[methodIndex]}
@@ -155,4 +160,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default About

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './assets/styles/css/actionbutton.css'; // Import SCSS file
-import PrivacyPolicy from './PrivacyPolicy'; // Import the PrivacyPolicy component
+import './assets/styles/css/actionbutton.css';
+import PrivacyPolicy from './PrivacyPolicy';
 
 const ActionButton = ( {setCalculatorActive} ) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,9 +20,7 @@ const ActionButton = ( {setCalculatorActive} ) => {
             setIsOpen(false);
         }
     };
-
     document.addEventListener('keydown', handleEsc);
-
     return () => {
         document.removeEventListener('keydown', handleEsc);
     };
@@ -30,16 +28,16 @@ const ActionButton = ( {setCalculatorActive} ) => {
 
   return (
     <>
-        {isPrivacyPolicyOpen && <PrivacyPolicy toggleActionButton={toggleActionButton} togglePrivacyPolicy={togglePrivacyPolicy} />} {/* Pass isOpen prop */}
+        {isPrivacyPolicyOpen && <PrivacyPolicy toggleActionButton={toggleActionButton} togglePrivacyPolicy={togglePrivacyPolicy} />}
       <div 
         id="actionBtn" 
-        className={`action-button bg-gradient-to-b from-purple-900 to-black ${isOpen ? 'actionsBoxOpen' : ''}`} 
+        className={`action-button bg-gradient-to-b from-purple-900 to-black ${isOpen && 'actionsBoxOpen'}`} 
         onClick={toggleActionButton}
       >
         <div className="action-button-content">
           <div className="action-button-content-inner">
             <h2>How can we help you?</h2>
-            <a className="openWindow btn">Open Calculator</a> {/*PUT THE OPENMODAL ALL FUNCTIONALITIES HERE */}
+            <a className="openWindow btn">Open Calculator</a>
             <a className="btn" href="#">Changelog</a>
             <a className="btn" href="#" onClick={togglePrivacyPolicy}>Privacy Policy</a>
           </div>

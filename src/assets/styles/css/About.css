@@ -28,12 +28,14 @@
   font-size: larger;
 }
 .wheel-container .wheel .wheel-item:nth-child(1) {
+  text-wrap: nowrap;
   transform: translateY(-60px);
 }
 .wheel-container .wheel .wheel-item:nth-child(2) {
   transform: rotate(0deg) translateY(0);
 }
 .wheel-container .wheel .wheel-item:nth-child(3) {
+  text-wrap: nowrap;
   transform: translateY(60px);
 }
 .wheel-container .wheel .wheel-item.transitionPrev {

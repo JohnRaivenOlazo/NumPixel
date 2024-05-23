@@ -24,9 +24,9 @@
         transition: all 0.3s ease;
         
         &:hover:nth-child(odd){font-size: larger; }
-        &:nth-child(1) { transform: translateY(-60px); }
+        &:nth-child(1) { text-wrap: nowrap; transform: translateY(-60px); }
         &:nth-child(2) { transform: rotate(0deg) translateY(0); }
-        &:nth-child(3) { transform: translateY(60px); }
+        &:nth-child(3) { text-wrap: nowrap; transform: translateY(60px); }
         &.transitionPrev { transform: translateY(-30px)};
         &.transitionNext { transform: translateY(30px)};
           
