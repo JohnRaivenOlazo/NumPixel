@@ -10,10 +10,10 @@ const Header = () => {
   const videoRef = useRef(null);
 
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    aboutSection.scrollIntoView({ behavior: 'smooth' });
-  };
-  
+    const About = document.getElementById('about');
+
+    About.scrollIntoView({ behavior: 'smooth' });
+  }
 
   return (
     <div id="header" className="header z-50 relative">
