@@ -37,8 +37,7 @@ const App = () => {
     const logoImage = new Image();
     logoImage.src = logo;
     logoImage.onload = handleVideoLoad;
-
-    // Clean up
+    
     return () => {
       video.removeEventListener('canplay', handleVideoLoad);
     };
