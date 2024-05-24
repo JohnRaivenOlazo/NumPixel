@@ -9,6 +9,12 @@ import { Fade } from 'react-awesome-reveal';
 const Header = () => {
   const videoRef = useRef(null);
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+  };
+  
+
   return (
     <div id="header" className="header z-50 relative">
       <div className="relative top-0 w-full h-screenplus flex flex-col justify-center items-start z-20">
@@ -37,6 +43,7 @@ const Header = () => {
               </button>
               <button
                 className="learnMore font-semibold font-sans bg-gradient-to-b from-purple-800 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-900 transition-all duration-200 ease mt-4 lg:mt-0 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                onClick={scrollToAbout}
               >
                 Learn More
               </button>
