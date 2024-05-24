@@ -78,6 +78,7 @@
     line-height: 0;
     transform: rotate(180deg);
 	z-index: 999;
+
 }
 
 .custom-shape-divider-bottom-1711856172 svg {
@@ -87,9 +88,34 @@
     height: 38px;
 }
 
-.custom-shape-divider-bottom-1711856172 .shape-fill {
-    fill: #0a0a0a;
+.custom-shape-divider-bottom-1711856172 .cloud1 {
+    /* fill: #0a0a0a; */
+	animation: moveShapes1 20s linear infinite alternate;
 }
+
+.custom-shape-divider-bottom-1711856172 .cloud2 {
+    /* fill: #0a0a0a; */
+	animation: moveShapes2 30s linear infinite alternate;
+}
+
+@keyframes moveShapes1 {
+	0% {
+	  transform: translateY(10px);
+	}
+	50% {
+	  transform: translateY(-50px);
+	}
+	100% {
+	  transform: translateY(8px);
+	}
+  }
+  
+  @keyframes moveShapes2 {
+	0% {transform: translate(-5%, 0);}
+	25% {transform: translate(-15%, -3%);}
+	50% {transform: translate(-30%, -6%);}
+	75% {transform: translate(-45%, -3%);}
+	100% {transform: translate(-55%, 0);}}  
 
 /* ========================================================================== */
 /* TAILWIND TWEAKS */

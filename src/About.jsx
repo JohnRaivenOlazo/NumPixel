@@ -91,7 +91,7 @@ const About = () => {
 
   return (
     <>
-      <div id="about" className="features-section bg-theme pt-24 pb-10 relative z-20 -mb-1">
+      <div id="about" className="features-section bg-black pt-24 pb-20 relative z-20 -mb-1">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-white text-center">About</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

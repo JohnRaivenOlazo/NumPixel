@@ -56,7 +56,7 @@ const App = () => {
           <div className={`main ${isShown && 'showed'} ${calculatorActive && 'blurred'}`}>
             <Header setCalculatorActive={setCalculatorActive} />
             <About />
-            <Solution />
+            <Solution setCalculatorActive={setCalculatorActive} />
             <Footer />
           </div>
           <Window setCalculatorActive={setCalculatorActive} />
