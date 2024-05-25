@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Fraction from '../Utils/Fraction'
 import { validateInputs } from '../Utils/Validation';
 import { Factorial } from '../Utils/Calculations';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 const NewtonForward = () => {
   const [xValuesInput, setXValuesInput] = useState('');
@@ -196,7 +196,8 @@ const NewtonForward = () => {
           />
         </div>
       </div>
-        {(result && xValuesInput && yValuesInput && hValue && interpolationPointInput) ? (
+      {(result && xValuesInput && yValuesInput && hValue && interpolationPointInput &&
+      [result, xValuesInput, yValuesInput, hValue, interpolationPointInput].every(val => !isNaN(parseFloat(val)))) ? (
       <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-white overflow-auto">
           <div className="mt-4">
             <p className="mb-2"><strong>The value of table for x and y:</strong></p>
@@ -359,9 +360,6 @@ const NewtonForward = () => {
             {error}
           </div>
         )}
-
-
-
       </>
   );
 }
