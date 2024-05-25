@@ -22,7 +22,7 @@ const Changelog = ({ toggleActionButton, toggleChangelog }) => {
       }, [toggleChangelog, toggleActionButton]);
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-90 z-50">
       <div className="bg-white rounded-lg shadow-lg max-w-md w-full h-3/5 p-6 relative overflow-y-auto">
         <button className="absolute top-3 right-3 text-gray-600 hover:text-gray-800" onClick={handleClick}>
           &times;

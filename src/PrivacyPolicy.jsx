@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './assets/styles/css/actionbutton.css';
 
-const PrivacyPolicy = ({ toggleActionButton , togglePrivacyPolicy }) => {
+const PrivacyPolicy = ({ toggleActionButton, togglePrivacyPolicy }) => {
   const handleClick = () => {
     togglePrivacyPolicy();
     toggleActionButton();
@@ -10,8 +10,8 @@ const PrivacyPolicy = ({ toggleActionButton , togglePrivacyPolicy }) => {
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.key === 'Escape') {
-          togglePrivacyPolicy();
-          toggleActionButton();
+        togglePrivacyPolicy();
+        toggleActionButton();
       }
     };
 
@@ -23,22 +23,39 @@ const PrivacyPolicy = ({ toggleActionButton , togglePrivacyPolicy }) => {
   }, [togglePrivacyPolicy, toggleActionButton]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300">
-      <div className="relative bg-white rounded-lg p-8 shadow-lg w-3/4 max-w-lg h-3/4 overflow-auto transition-transform duration-300 transform translate-y-0">
-        <button className="fixed top-0 right-0 p-4 z-50" onClick={handleClick}>
-          <svg className="h-6 w-6 text-gray-500 hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 transition-opacity duration-300">
+      <div className="relative bg-white rounded-lg p-8 shadow-2xl w-11/12 max-w-lg h-3/4 overflow-auto transition-transform duration-500 transform">
+        <button className="absolute top-4 right-4 p-2 z-50 hover:scale-110 transition-transform" onClick={handleClick}>
+          <svg className="h-6 w-6 text-gray-500 hover:text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        <h2 className="text-2xl font-bold mb-4">Privacy Policy</h2>
-        <div className="text-gray-700">
-          <p className="mb-4">Your privacy is important to us. It is our policy to respect your privacy regarding any information we may collect from you across our website.</p>
-          <p className="mb-4">We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent.</p>
-          <p className="mb-4">We don't share any personally identifying information publicly or with third-parties, except when required to by law.</p>
-          <p className="mb-4">Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.</p>
-          <p className="mb-4">You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services.</p>
-          <p className="mb-4">Your continued use of our website will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.</p>
-          <p className="mb-4">This policy is effective as of 1 January 2024.</p>
+        <h2 className="text-3xl font-extrabold mb-6 text-purple-800">Privacy Policy</h2>
+        <div className="text-gray-700 space-y-4">
+          <p>Welcome to NumPixel! We are committed to safeguarding your privacy and ensuring that your personal information is protected.</p>
+          
+          <h3 className="text-xl font-semibold text-purple-700">Information Collection</h3>
+          <p>We collect personal information only when necessary, using fair and transparent methods. This may include your name, email address, and other contact details provided with your consent.</p>
+          
+          <h3 className="text-xl font-semibold text-purple-700">Usage of Information</h3>
+          <p>Your information is used solely to provide the services you request, improve our offerings, and communicate with you. We do not sell, trade, or otherwise transfer your information to outside parties, except as required by law.</p>
+          
+          <h3 className="text-xl font-semibold text-purple-700">Data Security</h3>
+          <p>We implement robust security measures to protect your data from unauthorized access, alteration, disclosure, or destruction. Our systems are regularly reviewed and updated to maintain data security.</p>
+          
+          <h3 className="text-xl font-semibold text-purple-700">Third-Party Links</h3>
+          <p>Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these sites. We encourage you to review their privacy policies.</p>
+          
+          <h3 className="text-xl font-semibold text-purple-700">Your Rights</h3>
+          <p>You have the right to access, update, or delete your personal information at any time. You can also withdraw consent for us to use your data, with the understanding that this may affect the services we can provide.</p>
+          
+          <h3 className="text-xl font-semibold text-purple-700">Changes to This Policy</h3>
+          <p>We may update our privacy policy from time to time. We will notify you of any changes by posting the new policy on this page. We encourage you to review this policy periodically for any updates.</p>
+          
+          <h3 className="text-xl font-semibold text-purple-700">Contact Us</h3>
+          <p>If you have any questions or concerns about our privacy policy or practices, please reach out the developer!</p>
+          
+          <p className="text-sm text-gray-500">Effective Date: 1 January 2024</p>
         </div>
       </div>
     </div>
