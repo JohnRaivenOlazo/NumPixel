@@ -8,14 +8,13 @@ const Window = ({ calculatorActive, setCalculatorActive }) => {
     openWindow(setCalculatorActive);
 
   const handleClick = (e) => {
-    // Prevent the propagation of click events when calculator is active
     if (calculatorActive) {
       e.stopPropagation();
     }
   };
 
   const handleMinimizeClick = () => {
-    setCalculatorActive(prevState => !prevState); // Toggle calculatorActive
+    setCalculatorActive(prevState => !prevState);
   };
 
   const handleMaximizeClick = () => {

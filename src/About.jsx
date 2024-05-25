@@ -93,7 +93,10 @@ const About = () => {
     <>
       <div id="about" className="features-section bg-black pt-24 pb-20 relative z-20 -mb-1">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-white text-center">About</h2>
+          <Fade>
+
+          <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white text-center">About</h2>
+          </Fade>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <Slide direction="left">
               <div className="flex justify-center">

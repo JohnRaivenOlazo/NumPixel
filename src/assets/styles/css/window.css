@@ -85,6 +85,11 @@
   transition: all 0.25s;
   z-index: 999;
 }
+@media screen and (max-width: 700px) {
+  .mac-window {
+    max-width: 80%;
+  }
+}
 .mac-window.active {
   transform: translateY(-50%) translateX(-50%) scale(1);
   opacity: 1;
@@ -216,7 +221,6 @@
   color: #fff;
 }
 .mac-window .window {
-  background: white;
   overflow-y: scroll;
   height: 100%;
 }
