@@ -98,7 +98,7 @@ const About = () => {
           <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white text-center">About</h2>
           </Fade>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <Slide direction="left">
+            <Fade direction="left" triggerOnce>
               <div className="flex justify-center">
                 <div className="feature-card bg-gradient-to-bl from-purple-800 rounded-lg shadow-lg p-8 h-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                   <div className="flex items-start gap-3">
@@ -119,8 +119,8 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            </Slide>
-            <Slide direction="right">
+            </Fade>
+            <Fade direction="right" triggerOnce>
               <div className="flex justify-center">
                 <div className="feature-card bg-gradient-to-br from-purple-800 rounded-lg shadow-lg p-8 h-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                   <div className="flex items-start gap-3">
@@ -141,7 +141,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            </Slide>
+            </Fade>
           </div>
 
           <div className="mt-20">
