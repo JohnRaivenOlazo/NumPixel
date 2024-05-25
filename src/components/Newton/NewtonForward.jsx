@@ -14,15 +14,15 @@ const NewtonForward = () => {
   const [pValue, setPValue] = useState('');
   const [tableData, setTableData] = useState([]);
   const [nearestIndex, setNearestIndex] = useState('');
-  const [x0, setX0] = useState('');
-  const [y0, setY0] = useState('');
-  const [x1, setX1] = useState('');
+  const [x0Index, setX0Index] = useState('');
+  const [x, setX] = useState([]);
+  const [y, setY] = useState([]);
   const [error, setError] = useState('');
   const [superscript] = useState(["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"]);
   const [graphData, setGraphData] = useState([]);
 
   useEffect(() => {
-    if (xValuesInput && yValuesInput) {
+    if (xValuesInput && yValuesInput && interpolationPointInput) {
       const xArray = xValuesInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
       const yArray = yValuesInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
 
@@ -94,29 +94,6 @@ const NewtonForward = () => {
     const h = xArray[1] - xArray[0];
     const p = (interpolationPoint - xArray[x0Index]) / h;
 
-    //Initialize interpolated value with y0
-    // let interpolatedValue = yArray[x0Index];
-    // let term1, term2, term3, term4, term5 = 0;
-    // // Calculate the first order difference (i = 1)
-    // if (differencesTable.length > 1 && differencesTable[1][x0Index] != null) {
-    //   term1 = p * parseFloat(differencesTable[1][x0Index]) / Factorial(1);
-    // }else{
-    //   term1 = 0;
-    // }
-    // // Calculate the second order difference (i = 2)
-    // if (differencesTable.length > 2 && differencesTable[2][x0Index] != null) {
-    //   term2 = p * (p - 1) * parseFloat(differencesTable[2][x0Index]) / Factorial(2);
-    // }else{
-    //   term2 = 0;
-    // }
-    // // Calculate the third order difference (i = 3)
-    // if (differencesTable.length > 3 && differencesTable[3][x0Index] != null) {
-    //   term3 = p * (p - 1) * (p - 2) * parseFloat(differencesTable[3][x0Index]) / Factorial(3);
-    // }else{
-    //   term3 = 0;
-    // }
-    // interpolatedValue += term1 + term2 + term3 + term4 + term5;
-
     let interpolatedValue = yArray[x0Index];
     let term = 0;
 
@@ -139,16 +116,25 @@ const NewtonForward = () => {
     setResult(interpolatedValue.toFixed(decimalPlaces));
     setTableData(differencesTable);
     setNearestIndex(x0Index);
-    setX0(xArray[x0Index]);
-    setY0(yArray[x0Index]);
-    setX1(xArray[x0Index + 1]);
+    setX0Index(x0Index);
+    setX(xArray);
+    setY(yArray);
   };
+
+  const generateTermProduct = (pValue, n) => {
+    let product = `${pValue}`;
+    for (let i = 1; i < n; i++) {
+      product += ` (${pValue} - ${i})`;
+    }
+    return product;
+  }
 
 
   return (
     <>
-      <p className="text-2xl shadow-lg rounded-full font-bold mb-4 p-2 px-5 text-purple-900 text-center uppercase transition-all duration-300 ease transform hover:-translate-y-1">Newton's Forward</p>
-
+      <p className="text-2xl shadow-lg rounded-full font-bold mb-4 p-2 px-5 text-purple-900 text-center uppercase transition-all duration-300 ease transform hover:-translate-y-1">
+        Newton's Forward
+      </p>
       <div className="input-container mb-4">
         <label className="block mb-1 font-bold italic">x Values:</label>
         <input
@@ -197,8 +183,8 @@ const NewtonForward = () => {
         </div>
       </div>
       {(result && xValuesInput && yValuesInput && hValue && interpolationPointInput &&
-      [result, xValuesInput, yValuesInput, hValue, interpolationPointInput].every(val => !isNaN(parseFloat(val)))) ? (
-      <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-white overflow-auto">
+        [result, xValuesInput, yValuesInput, hValue, interpolationPointInput].every(val => !isNaN(parseFloat(val)))) ? (
+        <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-white overflow-auto">
           <div className="mt-4">
             <p className="mb-2"><strong>The value of table for x and y:</strong></p>
             <table className="border border-gray-400">
@@ -217,116 +203,71 @@ const NewtonForward = () => {
                 </tr>
               </thead>
             </table>
-            {tableData.length > 0 && (
-              <div className="table mt-4">
-                <h3 className="font-bold mb-2">Interpolation Table</h3>
-                <table className="border-collapse border border-gray-400">
-                  <thead>
-                    <tr>
-                      <th className="border border-gray-400 p-2">x</th>
-                      <th className="border border-gray-400 p-2">y</th>
-                      <th className="border border-gray-400 p-2">△y</th>
-                      {Array.from({ length: tableData[0].length - 2 }, (_, index) => (
-                        <th key={`difference-${index}`} className="border border-gray-400 p-2">{`△${getSuperscript(2 + index)}y`}</th>
+
+            <div className="table mt-4">
+              <h3 className="font-bold mb-2">Interpolation Table</h3>
+              <table className="border-collapse border border-gray-400">
+                <thead>
+                  <tr>
+                    <th className="border border-gray-400 p-2">x</th>
+                    <th className="border border-gray-400 p-2">y</th>
+                    <th className="border border-gray-400 p-2">△y</th>
+                    {Array.from({ length: tableData[0].length - 2 }, (_, index) => (
+                      <th key={`difference-${index}`} className="border border-gray-400 p-2">{`△${getSuperscript(2 + index)}y`}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {xValuesInput.trim().replace(/,/g, '').split(/\s+/).map((x, index) => (
+                    <tr key={`row-x-${index}`}>
+                      <td className="border border-gray-400 p-2">{x}</td>
+                      {tableData.map((row, rowIndex) => (
+                        <td key={`data-${rowIndex}-${index}`} className="border border-gray-400 p-2">
+                          {row[index]}
+                        </td>
                       ))}
                     </tr>
-                  </thead>
-                  <tbody>
-                    {xValuesInput.trim().replace(/,/g, '').split(/\s+/).map((x, index) => (
-                      <tr key={`row-x-${index}`}>
-                        <td className="border border-gray-400 p-2">{x}</td>
-                        {tableData.map((row, rowIndex) => (
-                          <td key={`data-${rowIndex}-${index}`} className="border border-gray-400 p-2">
-                            {row[index]}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                  ))}
+                </tbody>
+              </table>
 
-                <div className="result mt-4">
-                  <label className="block mb-1"><strong>h</strong> (Step Size / Interval)</label>
-                  <p>h = x₁ - x₀ = {x1} - {x0} = <span className='font-bold'>{hValue}</span></p>
-                </div>
-                <div className="result mt-4">
-                  <p>p =
-                    <Fraction numerator={"x - x₀"} denominator={"h"} addEquals />
-                    <Fraction numerator={`${interpolationPointInput} - ${x0}`} denominator={hValue} addEquals />
-                    <span className='font-bold'>{pValue}</span>
-                  </p>
-                </div>
+              <div className="result mt-4">
+                <label className="block mb-1"><strong>h</strong> (Step Size / Interval)</label>
+                <p>h = x₁ - x₀ = {x[x0Index+1]} - {x[x0Index]} = <span className='font-bold'>{hValue}</span></p>
               </div>
-            )}
+              <div className="result mt-4">
+                <p>p =
+                  <Fraction numerator={"x - x₀"} denominator={"h"} addEquals />
+                  <Fraction numerator={`${interpolationPointInput} - ${x[x0Index]}`} denominator={hValue} addEquals />
+                  <span className='font-bold'>{pValue}</span>
+                </p>
+              </div>
+            </div>
             <div className="result mt-4">
               <label className="block mb-1"><strong>Newton Forward Difference</strong></label>
               <p className="text-sm font-semibold">Formula</p>
               <p className='text-xs mb-3'>
                 {"y₀ + "}
-                <div className="fraction">
-                  <span>p</span>
-                  <span>1!</span>
-                </div>
-                {" (△y₀) + "}
-                <div className="fraction">
-                  <span>p (p - 1)</span>
-                  <span>2!</span>
-                </div>
-                {" (△²y₀) + "}
-                <div className="fraction">
-                  <span>p (p - 1) (p - 2)</span>
-                  <span>3!</span>
-                </div>
-                {" (△³y₀) ..."}
+                <Fraction numerator={"p"} denominator={"1!"} /> {" (△y₀) + "}
+                <Fraction numerator={"p (p - 1)"} denominator={"2!"} /> {" (△²y₀) + "}
+                <Fraction numerator={"p (p - 1) (p - 2)"} denominator={"3!"} /> {" (△³y₀) ..."}
               </p>
               <p className="text-sm font-semibold">Substituted Values</p>
               <p className='text-sm'>
-                {y0}
-                {tableData.length > 1 && tableData[1][nearestIndex] != null && (
-                  <>
-                    {" + "}
-                    <div className="fraction">
-                      <span>{pValue} ({tableData[1][nearestIndex]})</span>
-                      <span>1</span>
-                    </div>
-                  </>
-                )}
-                {tableData.length > 2 && tableData[2][nearestIndex] != null && (
-                  <>
-                    {" + "}
-                    <div className="fraction">
-                      <span>{pValue} ({pValue} - 1) ({tableData[2][nearestIndex]})</span>
-                      <span>2</span>
-                    </div>
-                  </>
-                )}
-                {tableData.length > 3 && tableData[3][nearestIndex] != null && (
-                  <>
-                    {" + "}
-                    <div className="fraction">
-                      <span>{pValue} ({pValue} - 1) ({pValue} - 2) ({tableData[3][nearestIndex]})</span>
-                      <span>6</span>
-                    </div>
-                  </>
-                )}
-                {tableData.length > 4 && tableData[4][nearestIndex] != null && (
-                  <>
-                    {" + "}
-                    <div className="fraction">
-                      <span>{pValue} ({pValue} - 1) ({pValue} - 2) ({pValue} - 3) ({tableData[4][nearestIndex]})</span>
-                      <span>24</span>
-                    </div>
-                  </>
-                )}
-                {tableData.length > 5 && tableData[5][nearestIndex] != null && (
-                  <>
-                    {" + "}
-                    <div className="fraction">
-                      <span>{pValue} ({pValue} - 1) ({pValue} - 2) ({pValue} - 3) ({pValue} - 4) {tableData[5][nearestIndex]}</span>
-                      <span>120</span>
-                    </div>
-                  </>
-                )}
+                {y[x0Index]}
+                {tableData.map((row, index) => {
+                  if (index === 0 || row[nearestIndex] == null) return null;
+                  return (
+                    <>
+                      {" + "}
+                      <Fraction
+                        key={index}
+                        numerator={`${generateTermProduct(pValue, index)} (${row[nearestIndex]})`}
+                        denominator={Factorial(index)}
+                      />
+                    </>
+                  );
+                })}
               </p>
               <label className="block mb-1 font-bold">Result:</label>
               <span className="font-bold text-lg text-red-500 rounded-md border-2 border-red-500 p-2 py-0">{result}</span>
@@ -354,13 +295,13 @@ const NewtonForward = () => {
               </LineChart>
             </div>
           </div>
-      </div>
-        ) : (
-          <div className="text-red-800 font-bold underline">
-            {error}
-          </div>
-        )}
-      </>
+        </div>
+      ) : (
+        <div className="text-red-800 font-bold underline">
+          {error}
+        </div>
+      )}
+    </>
   );
 }
 

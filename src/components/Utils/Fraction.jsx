@@ -1,4 +1,4 @@
-const Fraction = ({ numerator, denominator, addEquals }) => {
+const Fraction = ({ numerator, denominator, addEquals, addPlus }) => {
     return (
       <>
       {" "}
@@ -7,6 +7,7 @@ const Fraction = ({ numerator, denominator, addEquals }) => {
         <span>{denominator}</span>
       </div>
       {addEquals ? " = " : " "}
+      {addPlus ? " + " : " "}
       </>
     );
 }
