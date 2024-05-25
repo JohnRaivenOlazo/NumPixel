@@ -108,13 +108,13 @@ const About = () => {
                   <p className="text-pink-100 mb-4">
                     Experience ease of use with its well-crafted interface design, providing easier navigation and enjoyable user experience.
                   </p>
-                  <ul className="text-pink-100 space-y-2">
-                    <li>🌟 Intuitive layout with easy-to-access features</li>
-                    <li>🌟 Responsive design for all device sizes</li>
-                    <li>🌟 Quick access to frequently used tools</li>
-                    <li>🌟 Consistent and clean aesthetic throughout</li>
-                  </ul>
-                  <p className=" font-mono lowercase text-black text-sm mt-4 p-4 bg-white rounded-md">
+                  <ol className="text-pink-100 space-y-2 list-disc list-inside">
+                    <li>Intuitive layout with easy-to-access features</li>
+                    <li>Responsive design for all device sizes</li>
+                    <li>Quick access to frequently used tools</li>
+                    <li>Consistent and clean aesthetic throughout</li>
+                  </ol>
+                  <p className=" font-mono text-black text-sm mt-4 p-4 bg-white rounded-md">
                     Designed with user experience in mind, ensuring that tasks can be performed with ease and precision.
                   </p>
                 </div>
@@ -130,13 +130,13 @@ const About = () => {
                   <p className="text-pink-100 mb-4">
                     Watch mathematical computations with visually captivating real-time representations.
                   </p>
-                  <ul className="text-pink-100 space-y-2">
-                    <li>🌟 Interactive graphs and charts</li>
-                    <li>🌟 Dynamic updates as you input data</li>
-                    <li>🌟 Easy Navigation</li>
-                    <li>🌟 High-quality rendering for clarity</li>
+                  <ul className="text-pink-100 space-y-2 list-disc list-inside">
+                    <li>Interactive graphs and charts</li>
+                    <li>Dynamic updates as you input data</li>
+                    <li>Easy Navigation</li>
+                    <li>High-quality rendering for clarity</li>
                   </ul>
-                  <p className=" font-mono lowercase text-black text-sm mt-4 p-4 bg-white rounded-md">
+                  <p className=" font-mono text-black text-sm mt-4 p-4 bg-white rounded-md">
                     Enhance your understanding of complex data with our advanced visualization tools, designed to provide insights at a glance.
                   </p>
                 </div>
