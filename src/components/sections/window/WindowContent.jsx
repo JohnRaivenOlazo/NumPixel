@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import NewtonImage from '/Newton.png';
 import LagrangeImage from '/Lagrange.png';
-import DividedDifference from './components/Newton/NewtonDivided';
-import NewtonForward from './components/Newton/NewtonForward';
-import NewtonBackward from './components/Newton/NewtonBackward';
-import LagrangeInterpolation from './components/Lagrange/LagrangeInterpolation';
+import DividedDifference from '../../interpolation/NewtonDivided';
+import NewtonForward from '../../interpolation/NewtonForward';
+import NewtonBackward from '../../interpolation/NewtonBackward';
+import LagrangeInterpolation from '../../interpolation/LagrangeInterpolation';
 import Stirling from '/Stirling.png';
-import StirlingInterpolation from './components/Stirling/StirlingInterpolation';
+import StirlingInterpolation from '../../interpolation/StirlingInterpolation';
 
 const WindowContent = () => {
   const [selectedInterpolation, setSelectedInterpolation] = useState(null);

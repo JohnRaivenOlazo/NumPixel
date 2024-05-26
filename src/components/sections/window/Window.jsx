@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import './assets/styles/css/window.css'
+import '../../../assets/styles/css/window.css'
 import WindowContent from './WindowContent.jsx'
-import openWindow from './hooks/openWindow.jsx'
+import openWindow from '../../hooks/openWindow.jsx'
 
 const Window = ({ calculatorActive, setCalculatorActive }) => {
   

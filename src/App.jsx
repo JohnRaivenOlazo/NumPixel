@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
-import Header from './Header.jsx';
-import About from './About.jsx';
-import PreLoader from './PreLoader.jsx';
-import Window from './Window.jsx';
+
+import About from './components/sections/About.jsx';
+import Header from './components/sections/Header.jsx';
+import Solution from './components/sections/Solution.jsx';
+import Footer from './components/sections/Footer.jsx';
+import ActionButton from './components/sections/actionbutton/ActionButton.jsx'
+
+import PreLoader from './components/common/PreLoader.jsx';
+import Window from './components/sections/window/Window.jsx';
 import './assets/styles/css/index.css';
-import Solution from './Solution.jsx';
-import Footer from './Footer.jsx';
 import logo from '/logo.png';
 import headerVideo from '/Header.mp4';
-import ActionButton from './ActionButton.jsx';
 
 const App = () => {
   const [calculatorActive, setCalculatorActive] = useState(false);

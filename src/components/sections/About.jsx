@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Fade, Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDesktop, faClock } from "@fortawesome/free-solid-svg-icons";
-import "./assets/styles/css/About.css";
+import "../../assets/styles/css/About.css";
 import Interpolation from "/Interpolation-Image.png";
 
 const interpolationMethods = [
@@ -201,4 +201,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default About

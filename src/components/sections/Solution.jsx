@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog, faChartLine, faPalette, faHeart } from '@fortawesome/free-solid-svg-icons';
-import './assets/styles/css/Solution.css';
+import '../../assets/styles/css/Solution.css';
 
-const Solution = ( {setCalculatorActive} ) => {
+export const Solution = ( {setCalculatorActive} ) => {
   const handleButtonClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setCalculatorActive(true);
@@ -20,7 +20,7 @@ const Solution = ( {setCalculatorActive} ) => {
           </h2>
         </Fade>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
-          <Fade cascade damping={0.2}>
+          <Fade cascade triggerOnce damping={0.1}>
             <div className="solution-card bg-purple-800 rounded-lg shadow-lg p-8 flex flex-col items-center justify-center text-center transition duration-300 transform hover:scale-105">
               <div className="solution-icon mb-4">
                 <FontAwesomeIcon icon={faHeart} className="text-pink-400 text-4xl" />
@@ -84,4 +84,4 @@ const Solution = ( {setCalculatorActive} ) => {
   );
 };
 
-export default Solution;
+export default Solution

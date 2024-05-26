@@ -1,8 +1,8 @@
 // PreLoader.jsx
 
-import React, { useEffect, useState } from 'react';
-import './App'
-import './assets/styles/css/index.css';
+import React from 'react';
+import '../../App'
+import '../../assets/styles/css/index.css';
 const PreLoader = () => {
   return (
     <div className="loader-container">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './assets/styles/css/actionbutton.css';
+import '../../../assets/styles/css/actionbutton.css';
 import PrivacyPolicy from './PrivacyPolicy';
 import Changelog from './Changelog';
 
@@ -56,4 +56,4 @@ const ActionButton = ({ setCalculatorActive }) => {
   );
 };
 
-export default ActionButton;
+export default ActionButton

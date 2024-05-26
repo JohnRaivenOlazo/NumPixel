@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './assets/styles/css/actionbutton.css';
+import '../../../assets/styles/css/actionbutton.css';
 
 const PrivacyPolicy = ({ toggleActionButton, togglePrivacyPolicy }) => {
   const handleClick = () => {

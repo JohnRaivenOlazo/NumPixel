@@ -1,14 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import logo from '/logo.png';
 import headerVideo from '/Header.mp4';
-import './assets/styles/css/index.css';
-import './assets/styles/css/window.css';
+import '../../assets/styles/css/index.css';
+import '../../assets/styles/css/window.css';
 import { Fade } from 'react-awesome-reveal';
 
 
 const Header = () => {
-  const videoRef = useRef(null);
-
   const scrollToAbout = () => {
     const About = document.getElementById('about');
     About.scrollIntoView({ behavior: 'smooth' });
@@ -18,7 +16,6 @@ const Header = () => {
     <div id="header" className="header z-50 relative">
       <div className="relative top-0 w-full h-screen flex flex-col justify-center items-start z-20">
         <video
-          ref={videoRef}
           autoPlay
           muted
           loop
@@ -37,11 +34,11 @@ const Header = () => {
             <h1 className="text-3xl lg:text-5xl font-bold mb-4 text-left">Elevate Math Calculations to New Heights</h1>
             <h2 className="text-md lg:text-lg mb-8 text-left">Your Modern Solution for Complex Mathematical Computations</h2>
             <div className="flex flex-col lg:flex-row justify-center lg:justify-start gap-0 lg:gap-4">
-              <button className="openWindow font-semibold font-sans bg-purple-900 bg-gradient-to-b from-purple-500 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-200 ease focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+              <button className="openWindow font-semibold font-sans bg-gradient-to-b from-purple-500 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-500 transition-all duration-200 ease focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 Start Calculating
               </button>
               <button
-                className="learnMore font-semibold font-sans bg-gradient-to-b from-purple-800 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-900 transition-all duration-200 ease mt-4 lg:mt-0 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                className="learnMore font-semibold font-sans bg-gradient-to-b from-purple-800 text-pink-100 text-sm lg:text-lg py-3 px-5 lg:py-4 lg:px-6 rounded-full shadow-lg hover:bg-purple-800 transition-all duration-200 ease mt-4 lg:mt-0 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
                 onClick={scrollToAbout}
               >
                 Learn More
@@ -75,4 +72,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header

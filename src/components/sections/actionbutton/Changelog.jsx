@@ -39,4 +39,4 @@ const Changelog = ({ toggleActionButton, toggleChangelog }) => {
   );
 };
 
-export default Changelog;
+export default Changelog
