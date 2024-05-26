@@ -91,7 +91,7 @@ const WindowContent = () => {
                     Newton's Backward Difference Interpolation
                   </button>
                   <button
-                    className="bg-purple-400 bg-gradient-to-t from-purple-800 hover:bg-purple-500 hover:bg-purple-600 text-white font-semibold py-4 rounded-lg flex justify-center items-center transform transition duration-200 hover:scale-105 hover:drop-shadow-xl focus:outline-none w-full"
+                    className="bg-purple-400 bg-gradient-to-t from-purple-800 hover:bg-purple-500 text-white font-semibold py-4 rounded-lg flex justify-center items-center transform transition duration-200 hover:scale-105 hover:drop-shadow-xl focus:outline-none w-full"
                     onClick={() => handleInterpolationSelection('DividedDifference')}
                   >
                     Newton's Divided Difference Interpolation
