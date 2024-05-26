@@ -25,10 +25,8 @@ const PrivacyPolicy = ({ toggleActionButton, togglePrivacyPolicy }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 transition-opacity duration-300">
       <div className="relative bg-white rounded-lg p-8 shadow-2xl w-11/12 max-w-lg h-3/4 overflow-auto transition-transform duration-500 transform">
-        <button className="absolute top-4 right-4 p-2 z-50 hover:scale-110 transition-transform" onClick={handleClick}>
-          <svg className="h-6 w-6 text-gray-500 hover:text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+        <button className="absolute top-3 right-3 text-gray-600 hover:text-gray-800" onClick={handleClick}>
+          &times;
         </button>
         <h2 className="text-3xl font-extrabold mb-6 text-purple-800">Privacy Policy</h2>
         <div className="text-gray-700 space-y-4">

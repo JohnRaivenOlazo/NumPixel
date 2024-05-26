@@ -68,11 +68,7 @@ const NewtonForward = () => {
     const interpolationPoint = parseFloat(interpolationPointInput.replace(/,/g, ''));
 
     const error = validateInputs(xValuesInput, yValuesInput, interpolationPointInput, xArray, yArray);
-    if (error) {
-      setError(error);
-      setTableData([]);
-      return;
-    }
+    if (error) { setError(error); setTableData([]); }
 
     let x0Index = 0;
     for (let i = 1; i < xArray.length; i++) {
