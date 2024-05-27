@@ -1,30 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import Fraction from '../Utils/Fraction'
-import { validateInputs } from '../Utils/Validation';
-import { Factorial } from '../Utils/Calculations';
+import Fraction from '../utils/Fraction'
+import { Factorial } from '../utils/Calculations';
+import { validateInputs } from '../utils/Validation';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 const NewtonForward = () => {
-  const [xValuesInput, setXValuesInput] = useState('');
-  const [yValuesInput, setYValuesInput] = useState('');
+  const [xInput, setXInput] = useState('');
+  const [yInput, setYInput] = useState('');
   const [interpolationPointInput, setInterpolationPointInput] = useState('');
   const [decimalPlaces, setDecimalPlaces] = useState(0);
   const [result, setResult] = useState('');
-  const [hValue, setHValue] = useState('');
-  const [pValue, setPValue] = useState('');
-  const [tableData, setTableData] = useState([]);
-  const [nearestIndex, setNearestIndex] = useState('');
-  const [x0Index, setX0Index] = useState('');
+
   const [x, setX] = useState([]);
   const [y, setY] = useState([]);
+  const [x0, setX0] = useState('');
+  const [table, setTable] = useState([]);
+  const [graph, setgraph] = useState([]);
+  const [hValue, setHValue] = useState('');
+  const [pValue, setPValue] = useState('');
+  
   const [error, setError] = useState('');
+  const isError = validateInputs(xInput, yInput, interpolationPointInput, x, y);
+  
   const [superscript] = useState(["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"]);
-  const [graphData, setGraphData] = useState([]);
 
   useEffect(() => {
-    if (xValuesInput && yValuesInput && interpolationPointInput) {
-      const xArray = xValuesInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
-      const yArray = yValuesInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
+    if (result) {
+      let interpolation = document.querySelector(".interpolation-method, .error");
+      if (interpolation) {
+        interpolation.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [result]);
+
+  useEffect(() => {
+    if (xInput && yInput && interpolationPointInput) {
+      const xArray = xInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
+      const yArray = yInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
 
       const interpolationPoint = parseFloat(interpolationPointInput.replace(/,/g, ''));
       const interpolatedValue = parseFloat(result);
@@ -47,10 +59,10 @@ const NewtonForward = () => {
         y: interpolatedValue,
         Interpolated: true
       });
-
-      setGraphData(data);
+      setgraph(data);
     }
-  }, [xValuesInput, yValuesInput, interpolationPointInput, result]);
+  }, [xInput, yInput, interpolationPointInput, result]);
+
 
   const getSuperscript = (number) => {
     const digits = number.toString().split('').map(digit => parseInt(digit));
@@ -61,45 +73,47 @@ const NewtonForward = () => {
     return result;
   };
 
-  const calculateInterpolation = () => {
-    const xArray = xValuesInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
-    const yArray = yValuesInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
+  const calculate = () => {
+    if (isError) {
+      setError(isError);
+      setTable([]);
+    }
 
+    const xArray = xInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
+    const yArray = yInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
     const interpolationPoint = parseFloat(interpolationPointInput.replace(/,/g, ''));
 
-    const error = validateInputs(xValuesInput, yValuesInput, interpolationPointInput, xArray, yArray);
-    if (error) { setError(error); setTableData([]); }
 
-    let x0Index = 0;
+    let x0 = 0;
     for (let i = 1; i < xArray.length; i++) {
       if (interpolationPoint < xArray[i]) {
-        x0Index = i - 1;
+        x0 = i - 1;
         break;
       }
     }
 
-    const differencesTable = [[...yArray.map(val => val.toFixed(decimalPlaces))]];
+    const table = [[...yArray.map(val => val)]];
     for (let i = 1; i <= xArray.length - 1; i++) {
       const newRow = [];
-      for (let j = 0; j < differencesTable[i - 1].length - 1; j++) {
-        newRow.push((differencesTable[i - 1][j + 1] - differencesTable[i - 1][j]).toFixed(decimalPlaces));
+      for (let j = 0; j < table[i - 1].length - 1; j++) {
+        newRow.push((table[i - 1][j + 1] - table[i - 1][j]).toFixed(decimalPlaces));
       }
-      differencesTable.push(newRow);
+      table.push(newRow);
     }
 
-    const h = xArray[1] - xArray[0];
-    const p = (interpolationPoint - xArray[x0Index]) / h;
+    const h = xArray[x0 + 1] - xArray[x0];
+    const p = (interpolationPoint - xArray[x0]) / h;
 
-    let interpolatedValue = yArray[x0Index];
+    let interpolatedValue = yArray[x0];
     let term = 0;
 
-    for (let i = 1; i < differencesTable.length; i++) {
-      if (differencesTable.length > i && differencesTable[i][x0Index] != null) {
+    for (let i = 1; i < table.length; i++) {
+      if (table.length > i && table[i][x0] != null) {
         let product = 1;
         for (let j = 0; j < i; j++) {
           product *= (p - j);
         }
-        term += parseFloat(differencesTable[i][x0Index]) * product / Factorial(i);
+        term += parseFloat(table[i][x0]) * product / Factorial(i);
       } else {
         break;
       }
@@ -107,17 +121,16 @@ const NewtonForward = () => {
 
     interpolatedValue += term;
 
+    setX(xArray);
+    setY(yArray);
+    setTable(table);
+    setX0(x0);
     setHValue(h.toFixed(decimalPlaces));
     setPValue(p.toFixed(decimalPlaces));
     setResult(interpolatedValue.toFixed(decimalPlaces));
-    setTableData(differencesTable);
-    setNearestIndex(x0Index);
-    setX0Index(x0Index);
-    setX(xArray);
-    setY(yArray);
   };
 
-  const generateTermProduct = (pValue, n) => {
+  const substitutedValues = (pValue, n) => {
     let product = `${pValue}`;
     for (let i = 1; i < n; i++) {
       product += ` (${pValue} - ${i})`;
@@ -137,8 +150,8 @@ const NewtonForward = () => {
           type="text"
           className="w-full p-2 border border-purple-700 rounded-md"
           placeholder="Enter x values separated by space..."
-          value={xValuesInput}
-          onChange={(e) => setXValuesInput(e.target.value)}
+          value={xInput}
+          onChange={(e) => setXInput(e.target.value)}
         />
       </div>
       <div className="input-container mb-4">
@@ -147,8 +160,8 @@ const NewtonForward = () => {
           type="text"
           className="w-full p-2 border border-purple-700 rounded-md"
           placeholder="Enter y values separated by space..."
-          value={yValuesInput}
-          onChange={(e) => setYValuesInput(e.target.value)}
+          value={yInput}
+          onChange={(e) => setYInput(e.target.value)}
         />
       </div>
       <div className="input-container mb-4">
@@ -164,7 +177,7 @@ const NewtonForward = () => {
       <div className="input-container mb-4 flex items-center justify-start gap-3">
         <button
           className="bg-purple-500 hover:bg-purple-600 text-white p-4 rounded-full uppercase font-bold text-xs transition duration-300"
-          onClick={calculateInterpolation}
+          onClick={calculate}
         >
           Calculate
         </button>
@@ -178,46 +191,32 @@ const NewtonForward = () => {
           />
         </div>
       </div>
-      {(result && xValuesInput && yValuesInput && hValue && interpolationPointInput &&
-        [result, xValuesInput, yValuesInput, hValue, interpolationPointInput].every(val => !isNaN(parseFloat(val)))) ? (
+      {isError ? (
+        <div className="error text-red-800 font-bold underline">
+          {error}
+        </div>
+      ) : (
         <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-white overflow-auto">
           <div className="mt-4">
-            <p className="mb-2"><strong>The value of table for x and y:</strong></p>
-            <table className="border border-gray-400">
-              <thead>
-                <tr>
-                  <th className="border border-gray-400 p-2 font-bold">x</th>
-                  {xValuesInput.trim().replace(/,/g, '').split(/\s+/).map((x, index) => (
-                    <th key={`x-${index}`} className="border border-gray-400 font-normal p-2">{x}</th>
-                  ))}
-                </tr>
-                <tr>
-                  <th className="border border-gray-400 p-2 font-bold">y</th>
-                  {yValuesInput.trim().replace(/,/g, '').split(/\s+/).map((y, index) => (
-                    <td key={`y-${index}`} className="border border-gray-400 font-normal p-2">{y}</td>
-                  ))}
-                </tr>
-              </thead>
-            </table>
-
+            <label className="block mb-1"><strong>Newton Forward Difference</strong></label>
             <div className="table mt-4">
-              <h3 className="font-bold mb-2">Interpolation Table</h3>
+              <h3 className="font-bold mb-2">Interpolation table</h3>
               <table className="border-collapse border border-gray-400">
                 <thead>
                   <tr>
                     <th className="border border-gray-400 p-2">x</th>
                     <th className="border border-gray-400 p-2">y</th>
                     <th className="border border-gray-400 p-2">△y</th>
-                    {Array.from({ length: tableData[0].length - 2 }, (_, index) => (
+                    {Array.from({ length: table[0].length - 2 }, (_, index) => (
                       <th key={`difference-${index}`} className="border border-gray-400 p-2">{`△${getSuperscript(2 + index)}y`}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {xValuesInput.trim().replace(/,/g, '').split(/\s+/).map((x, index) => (
+                  {xInput.trim().replace(/,/g, '').split(/\s+/).map((x, index) => (
                     <tr key={`row-x-${index}`}>
                       <td className="border border-gray-400 p-2">{x}</td>
-                      {tableData.map((row, rowIndex) => (
+                      {table.map((row, rowIndex) => (
                         <td key={`data-${rowIndex}-${index}`} className="border border-gray-400 p-2">
                           {row[index]}
                         </td>
@@ -226,23 +225,24 @@ const NewtonForward = () => {
                   ))}
                 </tbody>
               </table>
-
               <div className="result mt-4">
                 <label className="block mb-1"><strong>h</strong> (Step Size / Interval)</label>
-                <p>h = x₁ - x₀ = {x[x0Index+1]} - {x[x0Index]} = <span className='font-bold'>{hValue}</span></p>
+                <p><strong className="text-lg">h</strong> = x₁ - x₀</p>
+                <p><strong className="text-lg">h</strong> = {x[x0 + 1]} - {x[x0]} = <span className='font-bold'>{hValue}</span></p>
               </div>
-              <div className="result mt-4">
-                <p>p =
-                  <Fraction numerator={"x - x₀"} denominator={"h"} addEquals />
-                  <Fraction numerator={`${interpolationPointInput} - ${x[x0Index]}`} denominator={hValue} addEquals />
+              <div className="result mt-4 text-sm">
+                <p><strong className="text-lg">p</strong> =
+                  <Fraction numerator={"x - x₀"} denominator={"h"} />
+                </p>
+                <p className="result text-sm"><strong className="text-lg">p</strong> =
+                  <Fraction numerator={`${interpolationPointInput} - ${x[x0]}`} denominator={hValue} addEquals />
                   <span className='font-bold'>{pValue}</span>
                 </p>
               </div>
             </div>
             <div className="result mt-4">
-              <label className="block mb-1"><strong>Newton Forward Difference</strong></label>
               <p className="text-sm font-semibold">Formula</p>
-              <p className='text-xs mb-3'>
+              <p className="bg-gray-100 text-sm p-4 rounded-lg shadow-lg mb-4">
                 {"y₀ + "}
                 <Fraction numerator={"p"} denominator={"1!"} /> {" (△y₀) + "}
                 <Fraction numerator={"p (p - 1)"} denominator={"2!"} /> {" (△²y₀) + "}
@@ -250,15 +250,15 @@ const NewtonForward = () => {
               </p>
               <p className="text-sm font-semibold">Substituted Values</p>
               <p className='text-sm'>
-                {y[x0Index]}
-                {tableData.map((row, index) => {
-                  if (index === 0 || row[nearestIndex] == null) return null;
+                {y[x0]}
+                {table.map((row, index) => {
+                  if (index === 0 || row[x0] == null) return null;
                   return (
                     <>
                       {" + "}
                       <Fraction
                         key={index}
-                        numerator={`${generateTermProduct(pValue, index)} (${row[nearestIndex]})`}
+                        numerator={`${substitutedValues(pValue, index)} (${row[x0]})`}
                         denominator={Factorial(index)}
                       />
                     </>
@@ -273,7 +273,7 @@ const NewtonForward = () => {
               <LineChart
                 width={300}
                 height={300}
-                data={graphData}
+                data={graph}
                 margin={{ top: 26, right: 15, left: 0, bottom: 26 }}
               >
                 <CartesianGrid strokeDasharray="1 1" />
@@ -291,10 +291,6 @@ const NewtonForward = () => {
               </LineChart>
             </div>
           </div>
-        </div>
-      ) : (
-        <div className="text-red-800 font-bold underline">
-          {error}
         </div>
       )}
     </>
