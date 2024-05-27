@@ -9,6 +9,7 @@ import Error from '../common/Error';
 import scrollOnCondition from '../hooks/scrollOnCondition';
 import updateGraph from '../hooks/updateGraph';
 import InterpolationGraph from '../common/InterpolationGraph';
+import Result from '../common/Result';
 
 const NewtonBackward = () => {
   const [xInput, setXInput] = useState('');
@@ -229,11 +230,10 @@ const NewtonBackward = () => {
                   </>
                 )}
               </p>
-              <label className="block mb-1 font-bold">Result:</label>
-              <span className="font-bold underline">{result}</span>
+              <Result result={result} interpolationPointInput={interpolationPointInput} />
+              <InterpolationGraph graph={graph} />
             </div>
           )}
-          <InterpolationGraph graph={graph} />
         </div>
       )}
     </>

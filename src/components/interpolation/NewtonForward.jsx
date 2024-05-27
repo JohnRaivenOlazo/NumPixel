@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Fraction from '../utils/Fraction'
 import { Factorial, Superscript } from '../utils/Calculations';
 import { validateInputs } from '../utils/Validation';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import InputForm from '../common/InputForm';
 import InterpolationTitle from '../common/InterpolationTitle';
 import Error from '../common/Error';
 import scrollOnCondition from '../hooks/scrollOnCondition';
 import updateGraph from '../hooks/updateGraph';
 import InterpolationGraph from '../common/InterpolationGraph';
+import Result from '../common/Result';
 
 const NewtonForward = () => {
   const [xInput, setXInput] = useState('');
@@ -182,9 +182,8 @@ const NewtonForward = () => {
                   );
                 })}
               </p>
-              <label className="block mb-1 font-bold">Result:</label>
-              <span className="font-bold text-lg text-red-500 rounded-md border-2 border-red-500 p-2 py-0">{result}</span>
             </div>
+            <Result result={result} interpolationPointInput={interpolationPointInput} />
             <InterpolationGraph graph={graph} />
           </div>
         </div>
