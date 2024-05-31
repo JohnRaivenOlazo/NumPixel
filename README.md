@@ -1,11 +1,11 @@
+![demo](https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/394df6c6-11e9-4ee5-9d17-a2eda6510d4e)
+
 <div align="center">
 <a href="https://numpixel.vercel.app">
 <img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/>
 </a>   
-<a href="https://numpixel.vercel.app"><h1>NumPixel</h1></a>
+<h1>NumPixel</h1>
 </div>
-
-![demo](https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/394df6c6-11e9-4ee5-9d17-a2eda6510d4e)
 
 <div align="center">
     <img src="https://skillicons.dev/icons?i=react,javascript,vite,scss" /><br>
