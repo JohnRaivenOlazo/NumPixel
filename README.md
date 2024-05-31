@@ -3,7 +3,6 @@
 <img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/>
 </a>   
 <h1>NumPixel</h1>
-<hr/>
 <img src="https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/66f34141-d159-46ba-aa1a-0afabdac7a3a" alt="NumPixel Demo">
 </div>
 
