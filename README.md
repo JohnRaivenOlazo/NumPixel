@@ -1,6 +1,6 @@
 # NumPixel - Advanced Numerical Computing Platform
 
-![NumPixel Logo](/logo.png)
+![NumPixel Logo]("/public/logo.png")
 
 ## Description
 NumPixel is an advanced numerical computing platform designed to elevate mathematical computations to new heights. With a sleek and intuitive user interface, real-time visualization tools, and a wide range of interpolation methods, NumPixel provides users with the precision and flexibility they need for complex mathematical analyses.
