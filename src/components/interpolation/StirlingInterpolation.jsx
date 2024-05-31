@@ -49,18 +49,21 @@ const StirlingInterpolation = () => {
   const [interpolationPointInput, setInterpolationPointInput] = useState('');
   const [decimalPlaces, setDecimalPlaces] = useState(0);
   const [result, setResult] = useState('');
-  const [hValue, setHValue] = useState('');
-  const [pValue, setPValue] = useState('');
-  const [table, setTable] = useState([]);
 
+  
   const [x, setX] = useState([]);
   const [y, setY] = useState([]);
   const [x0, setX0] = useState('');
+  const [table, setTable] = useState([]);
+  const [graph, setGraph] = useState([]);
+  const [hValue, setHValue] = useState('');
+  const [pValue, setPValue] = useState('');
 
   const [error, setError] = useState('');
   const isError = validateInputs(xInput, yInput, interpolationPointInput, x, y);
 
   scrollOnCondition(result, ".interpolation-method, .error");
+  updateGraph(xInput, yInput, interpolationPointInput, result, setGraph);
 
   const calculate = () => {
     if (isError) {
@@ -68,8 +71,8 @@ const StirlingInterpolation = () => {
       setTable([]);
     }
 
-    const xArray = xInput.replace(/,/g, '').split(/\s+/).map(Number);
-    const yArray = yInput.replace(/,/g, '').split(/\s+/).map(Number);
+    const xArray = xInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
+    const yArray = yInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
     const interpolationPoint = parseFloat(interpolationPointInput.replace(/,/g, ''));
 
     let x0 = 0;
@@ -257,6 +260,7 @@ const StirlingInterpolation = () => {
                 )}
               </div>
               <Result result={result} interpolationPointInput={interpolationPointInput} />
+              <InterpolationGraph graph={graph} />
             </div>
           </div>
         </div>

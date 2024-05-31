@@ -33,8 +33,8 @@ const NewtonDivided = () => {
       setTable([]);
     }
 
-    const xArray = xInput.replace(/,/g, '').split(/\s+/).map(Number);
-    const yArray = yInput.replace(/,/g, '').split(/\s+/).map(Number);
+    const xArray = xInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
+    const yArray = yInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
     const interpolationPoint = parseFloat(interpolationPointInput.replace(/,/g, ''));
 
     const table = [];
