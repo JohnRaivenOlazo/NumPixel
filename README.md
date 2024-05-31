@@ -1,6 +1,6 @@
 <div align="center"> 
-<img src="public/logo.png" alt="NumPixel Logo" width="100" height="100" style="float: left;"/>
-# NumPixel   
+<img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/>
+<h1>NumPixel</h1>   
 </div>
 
 <div align="center">
