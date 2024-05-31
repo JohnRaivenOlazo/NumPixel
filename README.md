@@ -4,7 +4,7 @@
     <img src="https://skillicons.dev/icons?i=react,javascript,vite,scss" /><br>
 </div>
 
-<div style="display: flex; align-items: center; text-align: center;">
+<div style="display: flex; align-items: center; text-align: center;" align="center">
   <img src="public/logo.png" alt="NumPixel Logo" width="100" height="100" />
   <p>
     NumPixel is an advanced numerical computing platform designed to elevate mathematical computations to new heights. With a sleek and intuitive user interface, real-time visualization tools, and a wide range of interpolation methods, NumPixel provides users with the precision and flexibility they need for complex mathematical analyses.
