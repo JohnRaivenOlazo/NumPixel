@@ -1,3 +1,4 @@
+<div align="center">
 <a href="https://numpixel.vercel.app">
 <img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/>
 </a>   
