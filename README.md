@@ -10,7 +10,7 @@
     NumPixel is an advanced numerical computing platform designed to elevate mathematical computations to new heights. With a sleek and intuitive user interface, real-time visualization tools, and a wide range of interpolation methods, NumPixel provides users with the precision and flexibility they need for complex mathematical analyses.
   </p>
 </div>
-
+**Visit the website [here](https://numpixel.vercel.app).**
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Features](#features)
