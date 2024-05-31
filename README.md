@@ -1,8 +1,7 @@
-<div align="center"> 
-<a href="https://numpixel.vercel.app">
-<img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/>
-</a>   
-<a href="https://numpixel.vercel.app"><h1>NumPixel</h1></a>
+<div align="center">
+<a href="https://numpixel.vercel.app"><img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/></a>   
+<h1>NumPixel</h1>
+<a href="https://numpixel.vercel.app"><img src="https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/46642be6-3b02-4cf3-aab9-39e20dce7d04" alt="NumPixel Demo"></a>  
 </div>
 
 <div align="center">
@@ -11,6 +10,8 @@
     NumPixel is an advanced numerical computing platform designed to elevate mathematical computations to new heights. With a sleek and intuitive user interface, real-time visualization tools, and a wide range of interpolation methods, NumPixel provides users with the precision and flexibility they need for complex mathematical analyses.
   </p>
 </div>
+
+**Visit the website [here](https://numpixel.vercel.app).**
 
 ## Table of Contents
 1. [Introduction](#introduction)
