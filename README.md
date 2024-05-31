@@ -1,6 +1,8 @@
 <div align="center"> 
+<a href="https://numpixel.vercel.app">
 <img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/>
-<h1>NumPixel</h1>   
+<h1>NumPixel</h1>
+</a>   
 </div>
 
 <div align="center">
@@ -16,9 +18,8 @@
 3. [Getting Started](#getting-started)
 4. [Usage](#usage)
 5. [Interpolation Methods](#interpolation-methods)
-6. [Technologies Used](#technologies-used)
-7. [Contributing](#contributing)
-8. [License](#license)
+6. [Contributing](#contributing)
+7. [License](#license)
 
 ## Introduction
 NumPixel is developed as a modern solution for mathematical computations, offering users an efficient and user-friendly platform to perform numerical analyses. Whether you're a student, researcher, or professional, NumPixel empowers you to explore mathematical concepts, visualize data, and obtain precise results with ease.
@@ -53,19 +54,6 @@ NumPixel offers a wide range of interpolation methods, including:
 - Hermite
 - Divided Differences
 - Central Difference
-
-## Technologies Used
-NumPixel is built with the following technologies:
-<div align="center">
-    <!-- Programming Languages -->
-    <img src="https://skillicons.dev/icons?i=javascript,scss" /><br>
-    <!-- Frameworks/Libraries -->
-    <img src="https://skillicons.dev/icons?i=react" /><br>
-    <!-- Build Tools -->
-    <img src="https://skillicons.dev/icons?i=vite" /><br>
-    <!-- Others -->
-    <img src="https://skillicons.dev/icons?i=react-awesome-reveal,fontawesome" /><br>
-</div>
 
 ## Contributing
 Welcome for contributions to enhance NumPixel and make it even more powerful. If you'd like to contribute, please follow these guidelines:
