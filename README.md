@@ -4,8 +4,6 @@
 <a href="https://numpixel.vercel.app"><h1>NumPixel</h1></a>
 </div>
 
-[![NumPixel Video Preview](https://d1yzeyilpfx2yv.cloudfront.net/v52ymp%2Fpreview%2F58303082%2Fmain_large.gif?response-content-disposition=inline%3Bfilename%3D%22main_large.gif%22%3B&response-content-type=image%2Fgif&Expires=1717163662&Signature=f79VilnttryimIcsoMPWagffRI16s~Pd2eAHDlMDLiGDt3xr7rdXyzU~RkS4pf9MZpeImmCf9Hik7thGq9yxJJwMl0wvkMAsFMXGa1zCWoH1AsjYPgktuPePZ4NUme-3C1GNIflEQDtuHepCZ92V~Qfd2oGc~bc5Dx7DjepsrlAxMH9Xgh90cfeYGUCnfh-qjx811hRerphNbJW--BrePG0LvC852Mf1RE3lhcR1ItwEGN7FbZhThUBK5YOiAaUJwv63tCNartzthcoHJo4wxiQfmysdwBQ1LpqhkxPgsp8i5UUCcsjvIRoEXfA1CpILSDtSbdWd4FIA~HqJHx2fZQ__&Key-Pair-Id=APKAJT5WQLLEOADKLHBQ)](https://pouch.jumpshare.com/preview/z_S53dQaUasbEQYg_ZEiKNMi51g2n7EnWM2qo2li_z_hP3fLO-9khWtgQch2BWpfGsjSzVRkpjGr0b9I2RA69oNWdg7jAL3iRsI57ZG3NLE)
-
 <div align="center">
     <img src="https://skillicons.dev/icons?i=react,javascript,vite,scss" /><br>
   <p>
