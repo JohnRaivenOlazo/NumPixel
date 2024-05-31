@@ -1,9 +1,7 @@
 <div align="center">
-<a href="https://numpixel.vercel.app">
-<img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/>
-</a>   
+<a href="https://numpixel.vercel.app"><img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/></a>   
 <h1>NumPixel</h1>
-<img src="https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/46642be6-3b02-4cf3-aab9-39e20dce7d04" alt="NumPixel Demo">
+<a href="https://numpixel.vercel.app"><img src="https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/46642be6-3b02-4cf3-aab9-39e20dce7d04" alt="NumPixel Demo"></a>  
 </div>
 
 <div align="center">
