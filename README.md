@@ -1,8 +1,7 @@
 # NumPixel - Advanced Numerical Computing Platform
 
-<img src="public/logo.png" alt="NumPixel Logo" width="200" height="200"/>
+![NumPixel Logo](public/logo.png)
 
-## Description
 NumPixel is an advanced numerical computing platform designed to elevate mathematical computations to new heights. With a sleek and intuitive user interface, real-time visualization tools, and a wide range of interpolation methods, NumPixel provides users with the precision and flexibility they need for complex mathematical analyses.
 
 ## Table of Contents
@@ -11,8 +10,9 @@ NumPixel is an advanced numerical computing platform designed to elevate mathema
 3. [Getting Started](#getting-started)
 4. [Usage](#usage)
 5. [Interpolation Methods](#interpolation-methods)
-6. [Contributing](#contributing)
-7. [License](#license)
+6. [Technologies Used](#technologies-used)
+7. [Contributing](#contributing)
+8. [License](#license)
 
 ## Introduction
 NumPixel is developed as a modern solution for mathematical computations, offering users an efficient and user-friendly platform to perform numerical analyses. Whether you're a student, researcher, or professional, NumPixel empowers you to explore mathematical concepts, visualize data, and obtain precise results with ease.
@@ -26,8 +26,8 @@ NumPixel is developed as a modern solution for mathematical computations, offeri
 To get started with NumPixel, follow these steps:
 1. Clone the repository to your local machine.
 2. Install the necessary dependencies using `npm install`.
-3. Start the development server with `npm start`.
-4. Open your browser and navigate to `http://localhost` to access NumPixel.
+3. Start the development server with `npm run dev`.
+4. Run `npm run node-sass` to compile SCSS files.
 
 ## Usage
 Once you have NumPixel up and running, you can:
@@ -48,12 +48,24 @@ NumPixel offers a wide range of interpolation methods, including:
 - Divided Differences
 - Central Difference
 
+## Technologies Used
+NumPixel is built with the following technologies:
+<div align="center">
+    <!-- Programming Languages -->
+    <img src="https://skillicons.dev/icons?i=javascript,scss" /><br>
+    <!-- Frameworks/Libraries -->
+    <img src="https://skillicons.dev/icons?i=react" /><br>
+    <!-- Build Tools -->
+    <img src="https://skillicons.dev/icons?i=vite" /><br>
+    <!-- Others -->
+    <img src="https://skillicons.dev/icons?i=react-awesome-reveal,fontawesome" /><br>
+</div>
+
 ## Contributing
-We welcome contributions from the community to enhance NumPixel and make it even more powerful. If you'd like to contribute, please follow these guidelines:
+Welcome for contributions to enhance NumPixel and make it even more powerful. If you'd like to contribute, please follow these guidelines:
 1. Fork the repository and create your branch.
 2. Make your contributions and ensure they adhere to the project's coding standards.
 3. Submit a pull request, describing the changes you've made and their purpose.
-4. Our team will review your pull request and provide feedback or merge it into the main branch.
 
 ## License
 NumPixel is licensed under the [MIT License](LICENSE).
