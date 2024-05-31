@@ -4,7 +4,7 @@
 <a href="https://numpixel.vercel.app"><h1>NumPixel</h1></a>
 </div>
 
-![demo](https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/a9726e02-a227-45f5-86e8-2f0f0ddc5fce)
+[![NumPixel Video Preview](https://link-to-your-preview-image.jpg)](https://pouch.jumpshare.com/preview/z_S53dQaUasbEQYg_ZEiKNMi51g2n7EnWM2qo2li_z_hP3fLO-9khWtgQch2BWpfGsjSzVRkpjGr0b9I2RA69oNWdg7jAL3iRsI57ZG3NLE)
 
 <div align="center">
     <img src="https://skillicons.dev/icons?i=react,javascript,vite,scss" /><br>
