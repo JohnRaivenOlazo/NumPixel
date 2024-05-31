@@ -11,7 +11,7 @@ $inner_color: purple;
   z-index: 10;
   padding: 1em;
   bottom: 1em;
-  right: 2em;
+  right: 2em; /* Default position */
   color: #fff;
   border-radius: 50%;
   cursor: pointer;
@@ -19,19 +19,19 @@ $inner_color: purple;
   animation: Pop 5s ease infinite;
   transition: all 0.3s ease;
   box-shadow: 1px 1px 10px #000;
-  &:hover{
+  &:hover {
     animation-play-state: paused;
   }
   
   &::after {
-      content: '';
-      background: url('/logo.png') no-repeat;
-      background-size: contain;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      transition: all 400ms ease-out;
+    content: '';
+    background: url('/logo.png') no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transition: all 400ms ease-out;
   }
 
   &.actionsBoxOpen::after {
@@ -44,14 +44,12 @@ $inner_color: purple;
 }
 
 @keyframes Pop {
-    50%{
-        transform: translateY(-20px);
-    }
-    
-    100% {
-        transform: translateY(0);
-    }
-    
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .action-button-content {
@@ -61,7 +59,7 @@ $inner_color: purple;
   position: absolute;
   z-index: 15;
   bottom: 2em;
-  right: 2em;
+  right: 2em; /* Default position */
   transform-origin: bottom right;
   transition: box-shadow 50ms ease-out, border-radius 50ms ease-out 25ms, width 90ms ease-in, height 60ms ease-in;
 
@@ -115,9 +113,13 @@ $inner_color: purple;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
   border-radius: 0;
   bottom: 2em;
-  right: 2em;
+  right: 2em; /* Default position */
   transform-origin: bottom right;
   transition: box-shadow 50ms ease-in 100ms, border-radius 50ms ease-in 100ms, width 150ms ease-in, height 150ms ease-in;
+
+  @media (max-width: 500px){
+    width: 90vw;
+  }
 
   .action-button-content-inner {
     opacity: 1;
@@ -126,5 +128,14 @@ $inner_color: purple;
     .btn {
       pointer-events: auto;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .action-button,
+  .action-button-content {
+    animation: none;
+    right: 50%;
+    transform: translateX(50%);
   }
 }

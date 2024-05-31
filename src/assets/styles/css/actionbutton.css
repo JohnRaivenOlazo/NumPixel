@@ -7,7 +7,7 @@
   z-index: 10;
   padding: 1em;
   bottom: 1em;
-  right: 2em;
+  right: 2em; /* Default position */
   color: #fff;
   border-radius: 50%;
   cursor: pointer;
@@ -52,7 +52,7 @@
   position: absolute;
   z-index: 15;
   bottom: 2em;
-  right: 2em;
+  right: 2em; /* Default position */
   transform-origin: bottom right;
   transition: box-shadow 50ms ease-out, border-radius 50ms ease-out 25ms, width 90ms ease-in, height 60ms ease-in;
 }
@@ -101,9 +101,14 @@
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
   border-radius: 0;
   bottom: 2em;
-  right: 2em;
+  right: 2em; /* Default position */
   transform-origin: bottom right;
   transition: box-shadow 50ms ease-in 100ms, border-radius 50ms ease-in 100ms, width 150ms ease-in, height 150ms ease-in;
+}
+@media (max-width: 500px) {
+  .actionsBoxOpen .action-button-content {
+    width: 90vw;
+  }
 }
 .actionsBoxOpen .action-button-content .action-button-content-inner {
   opacity: 1;
@@ -111,6 +116,15 @@
 }
 .actionsBoxOpen .action-button-content .action-button-content-inner .btn {
   pointer-events: auto;
+}
+
+@media (max-width: 500px) {
+  .action-button,
+  .action-button-content {
+    animation: none;
+    right: 50%;
+    transform: translateX(50%);
+  }
 }
 
 /*# sourceMappingURL=actionbutton.css.map */
