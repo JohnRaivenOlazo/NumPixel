@@ -1,6 +1,6 @@
 # NumPixel - Advanced Numerical Computing Platform
 
-![NumPixel Logo](public/logo.png)
+<img src="public/logo.png" alt="NumPixel Logo" width="200" height="200"/>
 
 ## Description
 NumPixel is an advanced numerical computing platform designed to elevate mathematical computations to new heights. With a sleek and intuitive user interface, real-time visualization tools, and a wide range of interpolation methods, NumPixel provides users with the precision and flexibility they need for complex mathematical analyses.
@@ -27,7 +27,7 @@ To get started with NumPixel, follow these steps:
 1. Clone the repository to your local machine.
 2. Install the necessary dependencies using `npm install`.
 3. Start the development server with `npm start`.
-4. Open your browser and navigate to `http://localhost:3000` to access NumPixel.
+4. Open your browser and navigate to `http://localhost` to access NumPixel.
 
 ## Usage
 Once you have NumPixel up and running, you can:
