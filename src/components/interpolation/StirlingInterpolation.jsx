@@ -95,6 +95,7 @@ const StirlingInterpolation = () => {
     let interpolatedValue = yArray[x0];
 
     for (let term = 1; term < table.length; term++) {
+      if (table.length > term && table[term][x0] != null) {
       if (term % 2 === 1) {
         if (table[term] && table[term][x0 - (term - 1)] && table[term][x0 - term] != null) {
           let termCoefficient = p;
@@ -103,7 +104,7 @@ const StirlingInterpolation = () => {
             termCoefficient *= (p ** 2 - i ** 2);
           }
           termCoefficient /= Factorial(term);
-          let termValue = parseFloat(table[term][x0 - (term - 1)]) + parseFloat(table[term][x0 - term]) / 2;
+          let termValue = (parseFloat(table[term][x0 - (term - 1)]) + parseFloat(table[term][x0 - term])) / 2;
           interpolatedValue += termCoefficient * termValue;
         }
       } else {
@@ -116,6 +117,8 @@ const StirlingInterpolation = () => {
           let termValue = parseFloat(table[term][x0 - (term - 1)]);
           interpolatedValue += termCoefficient * termValue;
         }
+      }}else{
+        break;
       }
     }
 
@@ -204,7 +207,7 @@ const StirlingInterpolation = () => {
               </p>
               <div className="text-sm font-semibold">Substituted Values</div>
               <div className="text-sm">
-                {`${y[x0]}`}
+                {y[x0]}
                 {table[1] && table[1][x0] && table[1][x0 - 1] != null && (
                   <>
                     {" +"}

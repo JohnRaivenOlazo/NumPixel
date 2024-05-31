@@ -125,7 +125,9 @@ const NewtonForward = () => {
                     <th className="border border-gray-400 p-2">y</th>
                     <th className="border border-gray-400 p-2">△y</th>
                     {Array.from({ length: table[0].length - 2 }, (_, index) => (
-                      <th key={`difference-${index}`} className="border border-gray-400 p-2">{`△`}<Superscript number={2 + index} />{'y'}</th>
+                      <th key={`difference-${index}`} className="border border-gray-400 p-2">
+                        {`△`}<Superscript number={2 + index} />{'y'}
+                      </th>
                     ))}
                   </tr>
                 </thead>
