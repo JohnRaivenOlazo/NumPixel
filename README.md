@@ -1,4 +1,4 @@
-![demo](https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/063669ba-8808-40e8-8254-3e2133a65c39)
+![demo](https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/66f34141-d159-46ba-aa1a-0afabdac7a3a)
 
 <div align="center">
 <a href="https://numpixel.vercel.app">
