@@ -1,10 +1,9 @@
-<div align="center"> 
 <a href="https://numpixel.vercel.app">
 <img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/>
 </a>   
 <a href="https://numpixel.vercel.app"><h1>NumPixel</h1></a>
 </div>
-
+![2024-05-31 21-20-06](https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/f29df721-ae43-409a-9f37-da20ab3962b6)<div align="center"> 
 <div align="center">
     <img src="https://skillicons.dev/icons?i=react,javascript,vite,scss" /><br>
   <p>
