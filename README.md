@@ -1,7 +1,7 @@
-<h1> 
+<div align="center"> 
 <img src="public/logo.png" alt="NumPixel Logo" width="100" height="100" style="float: left;"/>
 # NumPixel   
-</h1>
+</div>
 
 <div align="center">
     <img src="https://skillicons.dev/icons?i=react,javascript,vite,scss" /><br>
