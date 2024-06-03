@@ -28,7 +28,7 @@ const NewtonForward = () => {
   const [error, setError] = useState('');
   const isError = validateInputs(xInput, yInput, interpolationPointInput, x, y);
 
-  scrollOnCondition(result, ".interpolation-method, .error");
+  scrollOnCondition(result, ".interpolation-method, .error"); 
   updateGraph(xInput, yInput, interpolationPointInput, result, setGraph);
 
   const calculate = () => {
