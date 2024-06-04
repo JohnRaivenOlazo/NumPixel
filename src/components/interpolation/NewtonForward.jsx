@@ -124,19 +124,19 @@ const NewtonForward = () => {
                     <th className="border border-gray-400 p-2">x</th>
                     <th className="border border-gray-400 p-2">y</th>
                     <th className="border border-gray-400 p-2">△y</th>
-                    {Array.from({ length: table[0].length - 2 }, (_, index) => (
-                      <th key={`difference-${index}`} className="border border-gray-400 p-2">
+                    {Array.from({ length: x.length - 2 }, (_, index) => (
+                      <th key={index} className="border border-gray-400 p-2">
                         {`△`}<Superscript number={2 + index} />{'y'}
                       </th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
-                  {xInput.trim().replace(/,/g, '').split(/\s+/).map((x, index) => (
-                    <tr key={`row-x-${index}`}>
+                  {x.map((x, index) => (
+                    <tr key={index}>
                       <td className="border border-gray-400 p-2">{x}</td>
                       {table.map((row, rowIndex) => (
-                        <td key={`data-${rowIndex}-${index}`} className="border border-gray-400 p-2">
+                        <td key={rowIndex} className="border border-gray-400 p-2">
                           {row[index]}
                         </td>
                       ))}
