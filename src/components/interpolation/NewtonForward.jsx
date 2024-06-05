@@ -88,9 +88,9 @@ const NewtonForward = () => {
   };
 
   const substitutedValues = (pValue, n) => {
-    let product = `${pValue}`;
+    let product = `${pValue}`; 
     for (let i = 1; i < n; i++) {
-      product += ` (${pValue} - ${i})`;
+      product += ` (${pValue} - ${i})`;  
     }
     return product;
   }
