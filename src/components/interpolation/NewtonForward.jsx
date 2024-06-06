@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Fraction from '../utils/Fraction'
-import { Factorial, Superscript } from '../utils/Calculations';
-import { validateInputs } from '../utils/Validation';
-import InputForm from '../common/InputForm';
-import InterpolationTitle from '../common/InterpolationTitle';
-import Error from '../common/Error';
-import InterpolationGraph from '../common/InterpolationGraph';
-import Result from '../common/Result';
-import HPValues from '../common/HPValues'
+import { InputForm, InterpolationTitle, Error, InterpolationGraph, Result, HPValues } from '../common';
+import { Factorial, Superscript, validateInputs } from '../utils';
 import { scrollOnCondition, updateGraph } from '../hooks';
 
 const NewtonForward = () => {
