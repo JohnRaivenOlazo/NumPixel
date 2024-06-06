@@ -5,10 +5,10 @@ import { validateInputs } from '../utils/Validation';
 import InputForm from '../common/InputForm';
 import InterpolationTitle from '../common/InterpolationTitle';
 import Error from '../common/Error';
-import scrollOnCondition from '../hooks/scrollOnCondition';
-import updateGraph from '../hooks/updateGraph';
 import InterpolationGraph from '../common/InterpolationGraph';
 import Result from '../common/Result';
+import HPValues from '../common/HPValues'
+import { scrollOnCondition, updateGraph } from '../hooks';
 
 const NewtonForward = () => {
   const [xInput, setXInput] = useState('');
@@ -144,20 +144,13 @@ const NewtonForward = () => {
                   ))}
                 </tbody>
               </table>
-              <div className="result mt-4">
-                <label className="block mb-1"><strong>h</strong> (Step Size / Interval)</label>
-                <p><strong className="text-lg">h</strong> = x₁ - x₀</p>
-                <p><strong className="text-lg">h</strong> = {x[x0 + 1]} - {x[x0]} = <span className='font-bold'>{hValue}</span></p>
-              </div>
-              <div className="result mt-4 text-sm">
-                <p><strong className="text-lg">p</strong> =
-                  <Fraction numerator={"x - x₀"} denominator={"h"} />
-                </p>
-                <p className="result text-sm"><strong className="text-lg">p</strong> =
-                  <Fraction numerator={`${interpolationPointInput} - ${x[x0]}`} denominator={hValue} addEquals />
-                  <span className='font-bold'>{pValue}</span>
-                </p>
-              </div>
+              <HPValues
+                hValue={hValue}
+                pValue={pValue}
+                x0={x0}
+                x={x}
+                interpolationPointInput={interpolationPointInput}
+              />
             </div>
             <div className="result mt-4">
               <p className="text-sm font-semibold">Formula</p>
