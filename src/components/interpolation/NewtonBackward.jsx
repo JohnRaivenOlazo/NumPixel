@@ -18,7 +18,7 @@ const NewtonBackward = () => {
   const [graph, setGraph] = useState([]);
   const [hValue, setHValue] = useState('');
   const [pValue, setPValue] = useState('');
-  
+
   const [error, setError] = useState('');
   const isError = validateInputs(xInput, yInput, interpolationPointInput, x, y);
 
@@ -79,7 +79,7 @@ const NewtonBackward = () => {
     }
 
     interpolatedValue += term;
-    
+
     setX(xArray);
     setY(yArray);
     setTable(table);
@@ -136,20 +136,13 @@ const NewtonBackward = () => {
                 ))}
               </tbody>
             </table>
-            <div className="result mt-4">
-                <label className="block mb-1"><strong>h</strong> (Step Size / Interval)</label>
-                <p><strong className="text-lg">h</strong> = x₁ - x₀</p>
-                <p><strong className="text-lg">h</strong> = {x[x0 + 1]} - {x[x0]} = <span className='font-bold'>{hValue}</span></p>
-              </div>
-              <div className="result mt-4 text-sm">
-                <p><strong className="text-lg">p</strong> =
-                  <Fraction numerator={"x - x₀"} denominator={"h"} />
-                </p>
-                <p className="result text-sm"><strong className="text-lg">p</strong> =
-                  <Fraction numerator={`${interpolationPointInput} - ${x[x0]}`} denominator={hValue} addEquals />
-                  <span className='font-bold'>{pValue}</span>
-                </p>
-              </div>
+            <HPValues
+              hValue={hValue}
+              pValue={pValue}
+              x0={x0}
+              x={x}
+              interpolationPointInput={interpolationPointInput}
+            />
           </div>
           {result && (
             <div className="result mt-4">
