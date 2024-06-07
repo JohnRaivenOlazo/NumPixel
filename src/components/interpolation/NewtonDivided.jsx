@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
-import { validateInputs } from '../utils/Validation';
-import Error from '../common/Error';
-import InputForm from '../common/InputForm';
-import InterpolationTitle from '../common/InterpolationTitle';
-import { Superscript } from '../utils/Calculations';
-import Result from '../common/Result';
-import scrollOnCondition from '../hooks/scrollOnCondition';
-import updateGraph from '../hooks/updateGraph';
-import InterpolationGraph from '../common/InterpolationGraph';
+import React, { useState, useEffect } from 'react';
+import { InputForm, InterpolationTitle, Error, InterpolationGraph, Result, HPValues } from '../common';
+import { Fraction, Factorial, Superscript, validateInputs } from '../utils';
+import { scrollOnCondition, updateGraph } from '../hooks';
 
 const NewtonDivided = () => {
   const [xInput, setXInput] = useState('');

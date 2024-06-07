@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
-import Fraction from '../utils/Fraction';
-import { validateInputs } from '../utils/Validation';
-import Result from '../common/Result';
-import InterpolationTitle from '../common/InterpolationTitle';
-import InputForm from '../common/InputForm';
-import scrollOnCondition from '../hooks/scrollOnCondition';
-import updateGraph from '../hooks/updateGraph';
-import InterpolationGraph from '../common/InterpolationGraph';
-import Error from '../common/Error';
+import React, { useState, useEffect } from 'react';
+import { InputForm, InterpolationTitle, Error, InterpolationGraph, Result, HPValues } from '../common';
+import { Fraction, Factorial, Superscript, validateInputs } from '../utils';
+import { scrollOnCondition, updateGraph } from '../hooks';
 
 const LagrangeInterpolation = () => {
   const [xInput, setXInput] = useState('');

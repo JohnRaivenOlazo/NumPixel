@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Fraction from '../utils/Fraction'
-import { Factorial, Superscript } from '../utils/Calculations';
-import { validateInputs } from '../utils/Validation';
-import InputForm from '../common/InputForm';
-import InterpolationTitle from '../common/InterpolationTitle';
-import Error from '../common/Error';
-import scrollOnCondition from '../hooks/scrollOnCondition';
-import updateGraph from '../hooks/updateGraph';
-import InterpolationGraph from '../common/InterpolationGraph';
-import Result from '../common/Result';
+import { InputForm, InterpolationTitle, Error, InterpolationGraph, Result, HPValues } from '../common';
+import { Fraction, Factorial, Superscript, validateInputs } from '../utils';
+import { scrollOnCondition, updateGraph } from '../hooks';
 
 // if (table[1] && table[1][x0 - 0] && table[1][x0 - 1] != null) {
 //   termCoefficient = p / Factorial(1);
