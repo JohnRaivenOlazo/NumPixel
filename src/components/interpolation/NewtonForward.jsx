@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { InputForm, InterpolationTitle, Error, InterpolationGraph, Result, HPValues } from '../common';
-import { Factorial, Superscript, validateInputs } from '../utils';
+import { Fraction, Factorial, Superscript, validateInputs } from '../utils';
 import { scrollOnCondition, updateGraph } from '../hooks';
 
 const NewtonForward = () => {

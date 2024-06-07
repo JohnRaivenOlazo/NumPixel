@@ -2,14 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-
 :root {
   margin: 0;
   padding: 0;
   list-style: none;
   background: #000;
-  /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-decoration: none;
   box-sizing: border-box;

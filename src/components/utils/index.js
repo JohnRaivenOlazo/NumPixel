@@ -1,3 +1,3 @@
 export * from './Calculations';
-export * from './Fraction';
+export {default as Fraction} from './Fraction';
 export * from './Validation';
