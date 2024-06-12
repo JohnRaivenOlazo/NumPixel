@@ -102,10 +102,10 @@ const LagrangeInterpolation = () => {
             </p>
             <label className="block mb-1 font-bold">Substituted Values</label>
             <div className="interpolated-value-formula">
-              {resultFormula.map((element, index) => (
+              {resultFormula.map((element, index) => ( 
                 <span key={index}>  
-                  {element}
-                </span>
+                  {element} 
+                </span> 
               ))}
             </div>
             <Result result={result} interpolationPointInput={interpolationPointInput} />
