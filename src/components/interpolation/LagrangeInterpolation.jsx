@@ -24,7 +24,7 @@ const LagrangeInterpolation = () => {
   const calculate = () => {
     if (isError) {
       setError(isError);
-    }
+    } 
 
     const xArray = xInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
     const yArray = yInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
