@@ -30,10 +30,10 @@ const LagrangeInterpolation = () => {
     const yArray = yInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
     const interpolationPoint = parseFloat(interpolationPointInput.replace(/,/g, ''));
 
-    let interpolatedValue = 0; 
-    for (let i = 0; i < xArray.length; i++) {
+    let interpolatedValue = 0;  
+    for (let i = 0; i < xArray.length; i++) { 
       let term = yArray[i];
-      for (let j = 0; j < xArray.length; j++) {
+      for (let j = 0; j < xArray.length; j++) { 
         if (j !== i) {
           term *= (interpolationPoint - xArray[j]) / (xArray[i] - xArray[j]);
         }
