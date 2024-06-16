@@ -22,8 +22,8 @@ const LagrangeInterpolation = () => {
   updateGraph(xInput, yInput, interpolationPointInput, result, setGraph);
 
   const calculate = () => {
-    if (isError) {
-      setError(isError);
+    if (isError) {  
+      setError(isError);  
     } 
 
     const xArray = xInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
