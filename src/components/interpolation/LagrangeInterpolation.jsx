@@ -23,7 +23,7 @@ const LagrangeInterpolation = () => {
 
   const calculate = () => {
     if (isError) {  
-      setError(isError);  
+      setError(isError);   
     } 
 
     const xArray = xInput.trim().replace(/,/g, '').split(/\s+/).map(Number);
