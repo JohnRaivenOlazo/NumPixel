@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { InputForm, InterpolationTitle, Error, InterpolationGraph, Result, HPValues } from '../common';
-import { Fraction, Factorial, Superscript, validateInputs } from '../utils';
+import { Fraction, Factorial, Superscript, ValidateInputs } from '../utils';
 import { scrollOnCondition, updateGraph } from '../hooks';
 
 // if (table[1] && table[1][x0 - 0] && table[1][x0 - 1] != null) {
@@ -53,7 +53,7 @@ const StirlingInterpolation = () => {
   const [pValue, setPValue] = useState('');
 
   const [error, setError] = useState('');
-  const isError = validateInputs(xInput, yInput, interpolationPointInput, x, y);
+  const isError = ValidateInputs(xInput, yInput, interpolationPointInput, x, y);
 
   scrollOnCondition(result, ".interpolation-method, .error");
   updateGraph(xInput, yInput, interpolationPointInput, result, setGraph);

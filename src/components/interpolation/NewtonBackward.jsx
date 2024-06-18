@@ -7,7 +7,7 @@ import {
   Result,
   HPValues,
 } from "../common";
-import { Fraction, Factorial, Superscript, validateInputs } from "../utils";
+import { Fraction, Factorial, Superscript, ValidateInputs } from "../utils";
 import { scrollOnCondition, updateGraph } from "../hooks";
 
 const NewtonBackward = () => {
@@ -27,7 +27,7 @@ const NewtonBackward = () => {
   const [pValue, setPValue] = useState("");
 
   const [error, setError] = useState("");
-  const isError = validateInputs(xInput, yInput, interpolationPointInput, x, y);
+  const isError = ValidateInputs(xInput, yInput, interpolationPointInput, x, y);
 
   scrollOnCondition(result, ".interpolation-method, .error");
   updateGraph(xInput, yInput, interpolationPointInput, result, setGraph);

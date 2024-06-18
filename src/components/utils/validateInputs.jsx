@@ -1,4 +1,4 @@
-const validateInputs = (xInput, yInput, interpolationPointInput, x, y) => {
+const ValidateInputs = (xInput, yInput, interpolationPointInput, x, y) => {
     if (!xInput.trim() && !yInput.trim() && !interpolationPointInput.trim()) {
         return 'You clicked calculate, but no values were entered. Please input the required data.';
     } else if (!xInput.trim()) {
@@ -16,4 +16,4 @@ const validateInputs = (xInput, yInput, interpolationPointInput, x, y) => {
     }
 };
 
-export default validateInputs
+export default ValidateInputs
