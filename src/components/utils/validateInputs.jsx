@@ -1,4 +1,4 @@
-const ValidateInputs = (xInput, yInput, interpolationPointInput, x, y) => {
+export const ValidateInputs = (xInput, yInput, interpolationPointInput, x, y) => {
     if (!xInput.trim() && !yInput.trim() && !interpolationPointInput.trim()) {
         return 'You clicked calculate, but no values were entered. Please input the required data.';
     } else if (!xInput.trim()) {
@@ -15,5 +15,3 @@ const ValidateInputs = (xInput, yInput, interpolationPointInput, x, y) => {
         return 'Error: Insufficient data points. Please enter at least two data points for interpolation.';
     }
 };
-
-export default ValidateInputs

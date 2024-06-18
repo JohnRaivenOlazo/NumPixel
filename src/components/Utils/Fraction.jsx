@@ -1,4 +1,4 @@
-const Fraction = ({ numerator, denominator, addEquals, addPlus }) => {
+export const Fraction = ({ numerator, denominator, addEquals, addPlus }) => {
     return (
       <>
       {" "}
@@ -11,5 +11,3 @@ const Fraction = ({ numerator, denominator, addEquals, addPlus }) => {
       </>
     );
 }
-
-export default Fraction

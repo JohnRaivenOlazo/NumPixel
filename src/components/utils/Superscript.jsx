@@ -1,6 +1,4 @@
-
-
-const Superscript = ({ number }) => {
+export const Superscript = ({ number }) => {
   const superscript = ["⁰", "¹", "²", "³", "⁴", "⁵", "⁶", "⁷", "⁸", "⁹"];
 
   const getSuperscript = (number) => {
@@ -14,5 +12,3 @@ const Superscript = ({ number }) => {
 
   return <>{getSuperscript(number)}</>;
 }
-
-export default Superscript

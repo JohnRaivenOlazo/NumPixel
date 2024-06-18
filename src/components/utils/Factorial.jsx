@@ -1,4 +1,4 @@
-const Factorial = (n) => {
+export const Factorial = (n) => {
     if (n === 0 || n === 1) return 1;
     let result = 1;
     for (let i = 2; i <= n; i++) {
@@ -6,5 +6,3 @@ const Factorial = (n) => {
     }
     return result;
 }
-
-export default Factorial;

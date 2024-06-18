@@ -1,5 +1,4 @@
 import React from 'react';
-import { Fraction } from '../utils';
 
 const HPValues = ({ hValue, pValue, x0, x, interpolationPointInput }) => {
   return (
