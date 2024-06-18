@@ -12,4 +12,4 @@ const Fraction = ({ numerator, denominator, addEquals, addPlus }) => {
     );
 }
 
-export default Fraction
+export { Fraction };

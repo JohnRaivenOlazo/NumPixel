@@ -6,3 +6,5 @@ const Factorial = (n) => {
     }
     return result;
 }
+
+export { Factorial };
