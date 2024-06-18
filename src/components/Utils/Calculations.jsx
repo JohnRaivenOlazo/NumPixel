@@ -22,6 +22,5 @@ const Superscript = ({ number }) => {
   return <>{getSuperscript(number)}</>;
 }
 
-const Calculations = { Factorial, Superscript }
-
-export default Calculations
+export { Factorial, Superscript };
+export default { Factorial, Superscript };
