@@ -16,4 +16,4 @@ const validateInputs = (xInput, yInput, interpolationPointInput, x, y) => {
     }
 };
 
-export { validateInputs };
+export default validateInputs

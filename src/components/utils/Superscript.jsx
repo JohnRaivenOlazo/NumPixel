@@ -15,4 +15,4 @@ const Superscript = ({ number }) => {
   return <>{getSuperscript(number)}</>;
 }
 
-export { Superscript };
+export default Superscript
