@@ -1,7 +1,6 @@
 const Fraction = ({ numerator, denominator, addEquals, addPlus }) => {
     return (
-      <div>
-
+      <>
       {" "}
       <div className='fraction'>
         <span>{numerator}</span>
@@ -9,7 +8,7 @@ const Fraction = ({ numerator, denominator, addEquals, addPlus }) => {
       </div>
       {addEquals ? " = " : " "}
       {addPlus ? " + " : " "}
-      </div>
+      </>
     );
 }
 
