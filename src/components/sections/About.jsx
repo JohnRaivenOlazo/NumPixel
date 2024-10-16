@@ -162,7 +162,7 @@ const About = () => {
             </Fade>
 
             <Fade triggerOnce>
-              <div className="wheel flex flex-col md:flex-row gap-2 lg:gap-8 mt-8 items-start md:items-center">
+              <div className="wheel flex flex-col md:flex-row gap-2 lg:gap-8 mt-8 items-start md:items-center md:justify-center">
                 <div className="md:w-1/2 flex justify-center items-center">
                   <img
                     src={Interpolation}
