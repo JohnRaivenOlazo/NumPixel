@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../../../assets/styles/css/actionbutton.css';
 import PrivacyPolicy from './PrivacyPolicy';
-import Changelog from './Changelog';
 
 const ActionButton = ({ setCalculatorActive }) => {
   const [isOpen, setIsOpen] = useState(false);
