@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-    <img src="https://skillicons.dev/icons?i=react,javascript,vite,scss" /><br>
+    <img src="https://skillicons.dev/icons?i=react,javascript,vite,tailwind,scss" /><br>
   <p>
     NumPixel is an advanced numerical computing platform designed to elevate mathematical computations to new heights. With a sleek and intuitive user interface, real-time visualization tools, and a wide range of interpolation methods, NumPixel provides users with the precision and flexibility they need for complex mathematical analyses.
   </p>
@@ -23,7 +23,7 @@
 7. [License](#license)
 
 ## Introduction
-NumPixel is developed as a modern solution for mathematical computations, offering users an efficient and user-friendly platform to perform numerical analyses. Whether you're a student, researcher, or professional, NumPixel empowers you to explore mathematical concepts, visualize data, and obtain precise results with ease.
+NumPixel is developed as a modern solution for mathematical computations, offering users an efficient and user-friendly platform to perform numerical analysis. Whether you're a student, researcher, or professional, NumPixel empowers you to explore mathematical concepts, visualize data, and obtain precise results with ease.
 
 ## Features
 - **Immaculate User Interface:** Enjoy a well-crafted interface with intuitive layouts and easy-to-access features, providing seamless navigation and an enjoyable user experience.
@@ -33,7 +33,7 @@ NumPixel is developed as a modern solution for mathematical computations, offeri
 ## Getting Started
 To get started with NumPixel, follow these steps:
 1. Clone the repository to your local machine.
-2. Install the necessary dependencies using `npm install`.
+2. Install project necessary dependencies. `npm install`.
 3. Start the development server with `npm run dev`.
 4. Run `npm run node-sass` to compile SCSS files.
 
