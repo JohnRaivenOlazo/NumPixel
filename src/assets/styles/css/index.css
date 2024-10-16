@@ -2,14 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+/* Primary Purple: #4B0082 (a rich indigo)
+
+Secondary Purple: #7D3C98 (a vibrant amethyst)
+
+Tertiary Purple: #C39BD3 (a soft lavender) */
+
+/* Primary Text Color: Light Lavender (#E6E6FA)
+
+Secondary Text Color: Soft White (#F5F5F5)
+
+Accent Text Color: Pale Gold (#FFD700) */
+
+
 :root {
   margin: 0;
   padding: 0;
   list-style: none;
-  background: #000;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family:'Gill Sans', 'Gill Sans MT', sans-serif;
   text-decoration: none;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+	background: #4B0082;
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -20,21 +39,22 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: #000000;
+    background: linear-gradient(to top, #7D3C98, #4B0082);
   }
 
   .window::-webkit-scrollbar-track {
-    background: rgb(140, 27, 140);
+    background: linear-gradient(to top, #7D3C98, #4B0082);
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: rgb(147, 51, 234);
-    background: linear-gradient(to bottom, rgb(147, 51, 234), rgb(0, 0, 0));
+    background: #bb59e6;
     border-radius: 5px;
+	transition: all 1s ease;
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, rgb(132, 0, 255), rgb(0, 0, 0));
+	background: #9c49bf;
+
   }
 
   
@@ -117,7 +137,7 @@
 /* ========================================================================== */
 /* TAILWIND TWEAKS */
 
-.h-screenplus{
+.h-screen-plus{
   height: 105vh;
 }
 

@@ -11,8 +11,8 @@ export const Solution = ( {setCalculatorActive} ) => {
   };
 
   return (
-    <div className="solution-highlights bg-gradient-to-b from-purple-900 to-black pb-12 outline-none">
-      <div className="bg-gradient-to-t from-purple-900  to-black py-8 outline-none mb-12" />
+    <div className="solution-highlights pb-16 outline-none">
+      <div className=" py-8 outline-none mb-12" />
       <div className="container mx-auto px-4">
         <Fade triggerOnce={false}>
           <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-white text-center">
@@ -68,7 +68,7 @@ export const Solution = ( {setCalculatorActive} ) => {
           </Fade>
         </div>
         <div className="mt-12">
-          <Fade>
+          <Fade triggerOnce>
             <p className="text-lg text-white max-w-3xl text-center mx-auto">
               <span className="font-semibold">Ready to start its approach?</span> Experience the power of <span className="text-pink-400 font-semibold">NumPixel</span> now!
             </p>

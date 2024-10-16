@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Fade } from "react-awesome-reveal";
+import logo from '/logo.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDesktop, faClock } from "@fortawesome/free-solid-svg-icons";
 import "../../assets/styles/css/About.css";
@@ -24,6 +25,38 @@ const About = () => {
   const [transitioning, setTransitioning] = useState(false);
   const [transitionDirection, setTransitionDirection] = useState("");
   const wheelContainerRef = useRef(null);
+
+  const timelineData = [
+    {
+      title: "User-Friendly Interface",
+      content: "Navigate easily with a simple and clean design.",
+    },
+    {
+      title: "Simple Layout",
+      content: "Effortlessly access built-in tools for quick computations.",
+    },
+    {
+      title: "Live Data Visualization",
+      content: "Instantly view and understand numerical changes.",
+    },
+  ];
+
+  useEffect(() => {
+    const items = document.querySelectorAll('.timeline ul li');
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        setTimeout(() => {
+          entry.isIntersecting ? entry.target.classList.add('in-view') : entry.target.classList.remove('in-view');
+        }, 200);
+      });
+    };
+    const observer = new IntersectionObserver(observerCallback);
+    
+    items.forEach((item) => {
+      observer.observe(item);
+    });
+  }, []);
 
   useEffect(() => {
     const updateCurrentMethods = () => {
@@ -91,68 +124,45 @@ const About = () => {
 
   return (
     <>
-      <div id="about" className="features-section bg-black pt-24 pb-20 relative z-20 -mb-1">
+      <div id="about" className="features-section pt-24 pb-20 relative z-20 -mb-1">
         <div className="container mx-auto px-4">
-          <Fade>
+          <Fade><h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white text-center">About</h2></Fade>
+          
+          <div className='aboutAuthor'>
+      <div className='aboutCont'>
+        <img
+          alt='Logo'
+          src={logo}
+        />
+        <p className="text-xl text-gray-200 font-bolder">
+        <p>
+  <span className="font-bold">NumPixel</span> is a calculator for numerical interpolation. <br />
+  It allows users to calculate different numerical methods with real time visuals and solutions. <br />
+</p>
+</p>
+        <div className='athrBtn'></div>
+      </div>
+      </div>
+    <div className="timeline pb-40">
+      <ul>
+        {timelineData.map((item, index) => (
+          <li key={index} className={index % 2 === 0 ? 'even' : 'odd'}>
+            <div className="text-xl">{item.content}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white text-center">About</h2>
-          </Fade>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <Fade direction="left" triggerOnce>
-              <div className="flex justify-center">
-                <div className="feature-card bg-gradient-to-bl from-purple-800 rounded-lg shadow-lg p-8 h-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                  <div className="flex items-start gap-3">
-                    <FontAwesomeIcon icon={faDesktop} className="text-pink-400 text-4xl -m-1" />
-                    <h3 className="text-xl font-semibold mb-4 text-white">Immaculate User Interface</h3>
-                  </div>
-                  <p className="text-pink-100 mb-4">
-                    Experience ease of use with its well-crafted interface design, providing easier navigation and enjoyable user experience.
-                  </p>
-                  <ol className="text-pink-100 space-y-2 list-disc list-inside">
-                    <li>Intuitive layout with easy-to-access features</li>
-                    <li>Responsive design for all device sizes</li>
-                    <li>Quick access to frequently used tools</li>
-                    <li>Consistent and clean aesthetic throughout</li>
-                  </ol>
-                  <p className=" font-mono text-black text-sm mt-4 p-4 bg-white rounded-md">
-                    Designed with user experience in mind, ensuring that tasks can be performed with ease and precision.
-                  </p>
-                </div>
-              </div>
-            </Fade>
-            <Fade direction="right" triggerOnce>
-              <div className="flex justify-center">
-                <div className="feature-card bg-gradient-to-br from-purple-800 rounded-lg shadow-lg p-8 h-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-                  <div className="flex items-start gap-3">
-                    <FontAwesomeIcon icon={faClock} className="text-pink-400 text-4xl -m-1" />
-                    <h3 className="text-xl font-semibold mb-4 text-white">Real-time Visualization</h3>
-                  </div>
-                  <p className="text-pink-100 mb-4">
-                    Watch mathematical computations with visually captivating real-time representations.
-                  </p>
-                  <ul className="text-pink-100 space-y-2 list-disc list-inside">
-                    <li>Interactive graphs and charts</li>
-                    <li>Dynamic updates as you input data</li>
-                    <li>Easy Navigation</li>
-                    <li>High-quality rendering for clarity</li>
-                  </ul>
-                  <p className=" font-mono text-black text-sm mt-4 p-4 bg-white rounded-md">
-                    Enhance your understanding of complex data with our advanced visualization tools, designed to provide insights at a glance.
-                  </p>
-                </div>
-              </div>
-            </Fade>
-          </div>
-
-          <div className="mt-20">
+        <Fade triggerOnce>
+          <div className="wheel-title mt-20 p-5 sm:m-2 pt-6 rounded-lg">
             <Fade>
               <p className="text-lg text-white max-w-2xl font-bolder text-center m-auto">
                 Explore a wide range of numerical techniques integrated into this platform, providing precision and flexibility in your mathematical computations.
               </p>
             </Fade>
 
-            <Fade direction="up" triggerOnce>
-              <div className="flex flex-col md:flex-row gap-2 lg:gap-8 mt-8 items-start md:items-center">
+            <Fade triggerOnce>
+              <div className="wheel flex flex-col md:flex-row gap-2 lg:gap-8 mt-8 items-start md:items-center">
                 <div className="md:w-1/2 flex justify-center items-center">
                   <img
                     src={Interpolation}
@@ -195,6 +205,7 @@ const About = () => {
               </div>
             </Fade>
           </div>
+        </Fade>
         </div>
       </div>
     </>

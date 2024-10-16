@@ -3,8 +3,8 @@ import {Fade} from 'react-awesome-reveal'
 
 const Footer = () => {
   return (
-          <Fade>
     <footer className="bg-black text-white py-12">
+      <Fade> 
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -34,7 +34,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <hr className="border-purple-700 my-8" />
+        <hr className="border-purple-400 my-8" />
         <div className="flex justify-center">
           <a href="#header" className="text-sm text-gray-300 hover:text-white transition duration-300">Back to Top</a>
         </div>
@@ -42,8 +42,8 @@ const Footer = () => {
           © {new Date().getFullYear()} NumPixel. &nbsp;All Rights Reserved.
         </div>
       </div>
-    </footer>
         </Fade>
+    </footer>
   )
 }
 

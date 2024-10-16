@@ -1,24 +1,25 @@
-$action_button_width: 4em;
-$action_button_height: 4em;
-$action_button_color: linear-gradient(to bottom, purple, black);
-$inner_color: purple;
+$action_button_width: 3em;
+$action_button_height: 3em;
+$action_button_color: linear-gradient(to bottom, #7D3C98, #4B0082);
+$inner_color: #4B0082;
 
 .action-button {
   display: block;
   position: fixed;
   width: $action_button_width;
   height: $action_button_height;
+  background: $action_button_color;
   z-index: 10;
-  padding: 1em;
+  padding: 0.8em;
   bottom: 1em;
   right: 2em; /* Default position */
   color: #fff;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0.1em 0 0.25em rgba(0, 0, 0, 0.15), 0.2em 0 1em rgba(0, 0, 0, 0.2);
+
   animation: Pop 5s ease infinite;
   transition: all 0.3s ease;
-  box-shadow: 1px 1px 10px #000;
+  box-shadow: 1px 1px 3px #000;
   &:hover {
     animation-play-state: paused;
   }
@@ -69,7 +70,8 @@ $inner_color: purple;
     padding: 40px;
 
     h2 {
-      color: black;
+      color: #4B0082;
+      font-weight: bold;
       margin: 0 0 1em 0;
       padding: 0;
     }
@@ -132,10 +134,14 @@ $inner_color: purple;
 }
 
 @media (max-width: 500px) {
-  .action-button,
-  .action-button-content {
+  .action-button {
     animation: none;
-    right: 50%;
+    right: 3em;
     transform: translateX(50%);
+  }
+
+  .action-button-content {
+
+    transform: scale(0.7);
   }
 }

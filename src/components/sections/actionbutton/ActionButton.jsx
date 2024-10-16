@@ -40,12 +40,12 @@ const ActionButton = ({ setCalculatorActive }) => {
       {isChangelogOpen && <Changelog toggleActionButton={toggleActionButton} toggleChangelog={toggleChangelog} />}
       <div 
         id="actionBtn" 
-        className={`action-button bg-gradient-to-b from-purple-900 to-black ${isOpen && 'actionsBoxOpen'}`} 
+        className={`action-button bg-gradient-to-b ${isOpen && 'actionsBoxOpen'}`} 
         onClick={toggleActionButton}
       >
         <div className="action-button-content">
           <div className="action-button-content-inner">
-            <h2>How can we help you?</h2>
+            <h2>NumHelper</h2>
             <a className="openWindow btn" onClick={() => { setCalculatorActive(true); }}>Open Calculator</a>
             <a className="btn" onClick={toggleChangelog}>Changelog</a>
             <a className="btn" onClick={togglePrivacyPolicy}>Privacy Policy</a>

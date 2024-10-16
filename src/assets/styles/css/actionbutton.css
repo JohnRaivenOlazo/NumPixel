@@ -2,19 +2,19 @@
 .action-button {
   display: block;
   position: fixed;
-  width: 4em;
-  height: 4em;
+  width: 3em;
+  height: 3em;
+  background: linear-gradient(to bottom, #7D3C98, #4B0082);
   z-index: 10;
-  padding: 1em;
+  padding: 0.8em;
   bottom: 1em;
   right: 2em; /* Default position */
   color: #fff;
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0.1em 0 0.25em rgba(0, 0, 0, 0.15), 0.2em 0 1em rgba(0, 0, 0, 0.2);
   animation: Pop 5s ease infinite;
   transition: all 0.3s ease;
-  box-shadow: 1px 1px 10px #000;
+  box-shadow: 1px 1px 3px #000;
 }
 .action-button:hover {
   animation-play-state: paused;
@@ -62,7 +62,8 @@
   padding: 40px;
 }
 .action-button-content .action-button-content-inner h2 {
-  color: black;
+  color: #4B0082;
+  font-weight: bold;
   margin: 0 0 1em 0;
   padding: 0;
 }
@@ -70,8 +71,8 @@
   display: block;
   padding: 10px 0;
   text-align: center;
-  color: purple;
-  border: 1px solid purple;
+  color: #4B0082;
+  border: 1px solid #4B0082;
   border-radius: 3px;
   margin-bottom: 1.5em;
   transition: color 50ms linear, background 50ms linear;
@@ -79,7 +80,7 @@
 }
 .action-button-content .action-button-content-inner .btn:hover {
   color: white;
-  background: purple;
+  background: #4B0082;
 }
 .action-button-content .action-button-content-inner::after {
   content: "⌟";
@@ -119,11 +120,13 @@
 }
 
 @media (max-width: 500px) {
-  .action-button,
-  .action-button-content {
+  .action-button {
     animation: none;
-    right: 50%;
+    right: 3em;
     transform: translateX(50%);
+  }
+  .action-button-content {
+    transform: scale(0.7);
   }
 }
 

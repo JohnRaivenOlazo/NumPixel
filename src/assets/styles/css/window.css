@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Licorice&display=swap");
 .main {
   position: absolute;
   border-radius: 0;
@@ -60,8 +59,8 @@
   text-align: center;
 }
 .header .content .logo-text {
-  font-family: "Licorice", cursive;
-  font-weight: 800;
+  font-style: "VT323", sans-serif;
+  font-weight: 100;
 }
 
 .mac-window {
