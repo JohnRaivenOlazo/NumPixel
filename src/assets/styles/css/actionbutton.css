@@ -1,17 +1,5 @@
 @charset "UTF-8";
 .action-button {
-  display: block;
-  position: fixed;
-  width: 3em;
-  height: 3em;
-  background: linear-gradient(to bottom, #7D3C98, #4B0082);
-  z-index: 10;
-  padding: 0.8em;
-  bottom: 1em;
-  right: 2em; /* Default position */
-  color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
   animation: Pop 5s ease infinite;
   transition: all 0.3s ease;
   box-shadow: 1px 1px 3px #000;
@@ -39,42 +27,31 @@
 
 @keyframes Pop {
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
   100% {
     transform: translateY(0);
   }
 }
 .action-button-content {
-  background-color: white;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
   width: 0px;
   height: 0px;
   position: absolute;
   z-index: 15;
   bottom: 2em;
   right: 2em; /* Default position */
-  transform-origin: bottom right;
-  transition: box-shadow 50ms ease-out, border-radius 50ms ease-out 25ms, width 90ms ease-in, height 60ms ease-in;
+  transition: box-shadow 50ms ease-out, border-radius 50ms ease-out 25ms, width 90ms ease-in, height 60ms ease;
 }
 .action-button-content .action-button-content-inner {
   opacity: 0;
   transition: opacity 30ms ease-out 0;
   padding: 40px;
 }
-.action-button-content .action-button-content-inner h2 {
-  color: #4B0082;
-  font-weight: bold;
-  margin: 0 0 1em 0;
-  padding: 0;
-}
 .action-button-content .action-button-content-inner .btn {
-  display: block;
-  padding: 10px 0;
   text-align: center;
-  color: #4B0082;
   border: 1px solid #4B0082;
   border-radius: 3px;
-  margin-bottom: 1.5em;
   transition: color 50ms linear, background 50ms linear;
   text-decoration: none;
 }
@@ -96,15 +73,14 @@
 
 .actionsBoxOpen .action-button-content {
   pointer-events: none;
-  width: 400px;
-  height: 300px;
+  width: 25rem;
+  height: auto;
   cursor: default;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-  border-radius: 0;
+  border-radius: 10px;
   bottom: 2em;
   right: 2em; /* Default position */
-  transform-origin: bottom right;
-  transition: box-shadow 50ms ease-in 100ms, border-radius 50ms ease-in 100ms, width 150ms ease-in, height 150ms ease-in;
+  transition: all 0.8s ease;
 }
 @media (max-width: 500px) {
   .actionsBoxOpen .action-button-content {
