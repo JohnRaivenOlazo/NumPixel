@@ -29,9 +29,6 @@
   position: relative;
   z-index: 1;
 }
-.header .logo-text {
-  font-family: "VT323", sans-serif;
-}
 .header .content {
   position: relative;
   width: 100%;
