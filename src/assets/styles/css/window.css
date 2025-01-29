@@ -25,44 +25,6 @@
   pointer-events: none; /* Button Unhoverable */
 }
 
-.header {
-  position: relative;
-  z-index: 1;
-}
-.header .content {
-  position: relative;
-  width: 100%;
-  padding: 1rem auto;
-  z-index: 1;
-  transition: all 0.3s ease;
-}
-.header .content:hover {
-  transform: scale(1.02);
-}
-.header .content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  filter: blur(50px);
-  transition: all 0.3s ease;
-  z-index: -1;
-  opacity: 0;
-}
-.header .content:hover::before {
-  opacity: 1;
-}
-.header .content {
-  text-align: center;
-}
-.header .content .logo-text {
-  font-style: "VT323", sans-serif;
-  font-weight: 100;
-}
-
 .mac-window {
   position: fixed;
   top: 0;
