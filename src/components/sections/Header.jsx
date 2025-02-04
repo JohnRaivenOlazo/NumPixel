@@ -54,7 +54,7 @@ const Header = ( {setCalculatorActive} ) => {
               </button>
               <button
                 onClick={scrollToAbout}
-                className="learnMore group relative font-semibold bg-transparent border border-purple-400 text-purple-300 text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:bg-purple-500/10 hover:border-purple-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+                className="learnMore group relative font-semibold bg-transparent border border-purple-400 text-purple-300 text-lg px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:bg-purple-500/10 hover:border-purple-300 hover:text-white"
               >
                 Learn More
               </button>

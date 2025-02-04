@@ -36,7 +36,7 @@ const WindowContent = () => {
   return (
     <div className="min-h-screen flex flex-col justify-start items-center bg-gradient-to-b from-gray-800 to-gray-900">
       <Fade cascade>
-        <div className="bg-gray-700 my-5 p-8 rounded-lg shadow-lg max-w-lg w-full border border-gray-600">
+        <div className="bg-gray-700 my-5 p-8 rounded-lg shadow-lg w-full border border-gray-600">
             {selectedInterpolation === null && (
                 <Fade>
                 <div className="bg-gray-800 py-1 px-4 rounded-lg shadow-lg border border-gray-600 mb-8">

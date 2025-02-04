@@ -10,6 +10,7 @@ const Window = ({ calculatorActive, setCalculatorActive }) => {
   const handleClick = (e) => {
     if (calculatorActive) {
       e.stopPropagation();
+      e.preventDefault();
     }
   };
 
@@ -26,16 +27,16 @@ const Window = ({ calculatorActive, setCalculatorActive }) => {
   };
 
   return (
-    <div className="mac-window" onClick={() => { handleClick(); }}>
+    <div className="mac-window" onClick={() => handleClick}>
       <div className="title-bar bg-gray-800 text-white">
         <div className="buttons">
-          <div className="close"></div>
-          <div className="minimize" onClick={handleMinimizeClick}></div>
-          <div className="maximize" onClick={handleMaximizeClick}></div>
+          <div className="close" /><div className="minimize" onClick={handleMinimizeClick} /><div className="maximize" onClick={handleMaximizeClick} />
         </div>
-        <div className="title">Numerical Methods</div>
+        <div className="overflow-hidden h-full text-center mr-16 font-sans leading-5 text-sm font-bold text-white">
+          NumPixel
+        </div>
       </div>
-      <div className="window">
+      <div className="window overflow-x-hidden overflow-y-auto h-full">
         <WindowContent handleCalculatorClick={handleCalculatorClick} />
       </div>
     </div>
