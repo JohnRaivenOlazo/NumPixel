@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '/logo.png';
 import headerVideo from '/Header.mp4';
 import '../../assets/styles/css/index.css';
@@ -6,11 +6,27 @@ import '../../assets/styles/css/window.css';
 import { Fade } from 'react-awesome-reveal';
 
 
-const Header = ( {setCalculatorActive} ) => {
+const Header = ( {setCalculatorActive, calculatorActive} ) => {
   const scrollToAbout = () => {
     const About = document.getElementById('about');
     About.scrollIntoView({ behavior: 'smooth' });
   }
+
+  useEffect(() => {
+    // Pause the video when the calculator is active
+    const video = document.querySelector('video');
+    if (calculatorActive) {
+      video.pause();
+    } else {
+      video.play();
+    }
+
+    return () => {
+      video.play();
+    }
+  }, [calculatorActive]);
+
+  
 
   return (
     <div id="header" className="header z-50 relative bg-black">

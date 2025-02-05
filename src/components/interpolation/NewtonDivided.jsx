@@ -94,26 +94,26 @@ const NewtonDivided = () => {
       {isError ? (
         <Error error={error} />
       ) : (
-        <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-white overflow-auto">
+        <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-gray-800 text-white overflow-auto">
           <div className="mt-4">
             <label className="block mb-1"><strong>Newton Backward Difference</strong></label>
             <h3 className="font-bold mb-2">Difference Table</h3>
-            <table className="border-collapse border border-gray-400">
+            <table className="border-collapse border border-gray-600">
               <thead>
                 <tr>
-                  <th className="border border-gray-400 p-2">x</th>
-                  <th className="border border-gray-400 p-2">y</th>
-                  <th className="border border-gray-400 p-2">△y</th>
+                  <th className="border border-gray-600 p-2">x</th>
+                  <th className="border border-gray-600 p-2">y</th>
+                  <th className="border border-gray-600 p-2">△y</th>
                   {Array.from({ length: table[0].length - 3 }, (_, index) => (
-                    <th key={`difference-${index}`} className="border border-gray-400 p-2">{`△`}<Superscript number={2 + index} />{'y'}</th>
+                    <th key={`difference-${index}`} className="border border-gray-600 p-2">{`△`}<Superscript number={2 + index} />{'y'}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {table.map((row, rowIndex) => (
-                  <tr key={`row-${rowIndex}`} className="border border-gray-400">
+                  <tr key={`row-${rowIndex}`} className="border border-gray-600">
                     {row.map((value, colIndex) => (
-                      <td key={`data-${rowIndex}-${colIndex}`} className="border border-gray-400 p-2">
+                      <td key={`data-${rowIndex}-${colIndex}`} className="border border-gray-600 p-2">
                         {value.toFixed(decimalPlaces)}
                       </td>
                     ))}

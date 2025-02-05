@@ -106,19 +106,19 @@ const NewtonForward = () => {
       {isError ? (
         <Error error={error} />
       ) : (
-        <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-white overflow-auto">
+        <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-gray-800 text-white overflow-auto">
           <div className="mt-4">
             <label className="block mb-1"><strong>Newton Forward Difference</strong></label>
             <div className="table mt-4">
               <h3 className="font-bold mb-2">Interpolation table</h3>
-              <table className="border-collapse border border-gray-400">
+              <table className="border-collapse border border-gray-600">
                 <thead>
                   <tr>
-                    <th className="border border-gray-400 p-2">x</th>
-                    <th className="border border-gray-400 p-2">y</th>
-                    <th className="border border-gray-400 p-2">△y</th>
+                    <th className="border border-gray-600 p-2">x</th>
+                    <th className="border border-gray-600 p-2">y</th>
+                    <th className="border border-gray-600 p-2">△y</th>
                     {Array.from({ length: x.length - 2 }, (_, index) => (
-                      <th key={index} className="border border-gray-400 p-2">
+                      <th key={index} className="border border-gray-600 p-2">
                         {`△`}<Superscript number={2 + index} />{'y'}
                       </th>
                     ))}
@@ -127,9 +127,9 @@ const NewtonForward = () => {
                 <tbody>
                   {x.map((x, index) => (
                     <tr key={index}>
-                      <td className="border border-gray-400 p-2">{x}</td>
+                      <td className="border border-gray-600 p-2">{x}</td>
                       {table.map((row, rowIndex) => (
-                        <td key={rowIndex} className="border border-gray-400 p-2">
+                        <td key={rowIndex} className="border border-gray-600 p-2">
                           {row[index]}
                         </td>
                       ))}
@@ -147,7 +147,7 @@ const NewtonForward = () => {
             </div>
             <div className="result mt-4">
               <p className="text-sm font-semibold">Formula</p>
-              <p className="bg-gray-100 text-sm p-4 rounded-lg shadow-lg mb-4">
+              <p className="bg-gray-700 text-sm p-4 rounded-lg shadow-lg mb-4">
                 {"y₀ + "}
                 <Fraction numerator={"p"} denominator={"1!"} /> {" (△y₀) + "}
                 <Fraction numerator={"p (p - 1)"} denominator={"2!"} /> {" (△²y₀) + "}

@@ -144,28 +144,28 @@ const StirlingInterpolation = () => {
       {isError ? (
         <Error error={error} />
       ) : (
-        <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-white overflow-auto">
+        <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-gray-800 text-white overflow-auto">
           <div className="mt-4">
             <label className="block mb-1"><strong>Stirling Interpolation</strong></label>
             <div className="table mt-4">
               <h3 className="font-bold mb-2">Difference table</h3>
-              <table className="border-collapse border border-gray-400">
+              <table className="border-collapse border border-gray-600">
                 <thead>
                   <tr>
-                    <th className="border border-gray-400 p-2">x</th>
-                    <th className="border border-gray-400 p-2">y</th>
-                    <th className="border border-gray-400 p-2">△y</th>
+                    <th className="border border-gray-600 p-2">x</th>
+                    <th className="border border-gray-600 p-2">y</th>
+                    <th className="border border-gray-600 p-2">△y</th>
                     {Array.from({ length: table[0].length - 2 }, (_, index) => (
-                      <th key={`difference-${index}`} className="border border-gray-400 p-2">{`△`}<Superscript number={2 + index} />{'y'}</th>
+                      <th key={`difference-${index}`} className="border border-gray-600 p-2">{`△`}<Superscript number={2 + index} />{'y'}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {xInput.replace(/,/g, '').split(/\s+/).map((x, index) => (
                     <tr key={`row-x-${index}`}>
-                      <td className="border border-gray-400 p-2">{x}</td>
+                      <td className="border border-gray-600 p-2">{x}</td>
                       {table.map((row, rowIndex) => (
-                        <td key={`data-${rowIndex}-${index}`} className="border border-gray-400 p-2">
+                        <td key={`data-${rowIndex}-${index}`} className="border border-gray-600 p-2">
                           {row[index]}
                         </td>
                       ))}

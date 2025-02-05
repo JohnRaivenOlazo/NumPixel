@@ -38,7 +38,7 @@ const Window = ({ calculatorActive, setCalculatorActive }) => {
         </div>
       </div>
       <div className="window bg-[#1a1a1a] rounded-ee-md border border-[#333] overflow-x-hidden overflow-y-auto h-full">
-        <WindowContent handleCalculatorClick={handleCalculatorClick} />
+        <WindowContent handleCalculatorClick={handleCalculatorClick} setCalculatorActive={setCalculatorActive} />
       </div>
     </div>
   )
