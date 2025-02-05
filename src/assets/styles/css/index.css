@@ -4,21 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-/* Primary Purple: #4B0082 (a rich indigo)
-
-Secondary Purple: #7D3C98 (a vibrant amethyst)
-
-Tertiary Purple: #C39BD3 (a soft lavender) */
-
-/* Primary Text Color: Light Lavender (#E6E6FA)
-
-Secondary Text Color: Soft White (#F5F5F5)
-
-Accent Text Color: Pale Gold (#FFD700) */
-
-
 :root {
   margin: 0;
   padding: 0;
@@ -48,17 +33,7 @@ body {
 *::-webkit-scrollbar-thumb {
   background-color: #4B0082;
   border-radius: 10px;
-}
-
-body::-webkit-scrollbar-thumb:hover {
-  background-color: #7D3C98;
-}
-
-/* ===== Scrollbar CSS ===== */
-  /* Chrome, Edge, and Safari */
-
-
-  
+}  
 
 /* ========================================================================== */
 /*   FRACTIONS */
