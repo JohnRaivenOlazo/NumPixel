@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,11 +33,34 @@ Accent Text Color: Pale Gold (#FFD700) */
 }
 
 body {
-	background: #000;
+  background: #000;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #4B0082 transparent; /* Firefox */
+}
+
+/* Chrome, Edge, and Safari */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #4B0082;
+  border-radius: 10px;
+  border: 2px solid #000;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #7D3C98;
 }
 
 /* ===== Scrollbar CSS ===== */
   /* Chrome, Edge, and Safari */
+
+  
   .window::-webkit-scrollbar {
     width: 10px;
 	transition: all 0.3s ease;
