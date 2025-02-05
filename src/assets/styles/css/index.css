@@ -34,23 +34,20 @@ Accent Text Color: Pale Gold (#FFD700) */
 
 body {
   background: #000;
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #4B0082 transparent; /* Firefox */
 }
 
 /* Chrome, Edge, and Safari */
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   width: 8px;
 }
 
-body::-webkit-scrollbar-track {
-  background: #000;
+*::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   background-color: #4B0082;
   border-radius: 10px;
-  border: 2px solid #000;
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -60,19 +57,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* ===== Scrollbar CSS ===== */
   /* Chrome, Edge, and Safari */
 
-  
-  .window::-webkit-scrollbar {
-    width: 10px;
-	transition: all 0.3s ease;
-  }
 
-  .window::-webkit-scrollbar-track {
-    background: linear-gradient(to top, #7D3C98, #4B0082);
-  }
-
-  .window::-webkit-scrollbar-track {
-    background: linear-gradient(to top, #7D3C98, #4B0082);
-  }
   
 
 /* ========================================================================== */
