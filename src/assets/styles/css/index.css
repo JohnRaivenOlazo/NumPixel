@@ -44,7 +44,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: transparent;
+  background: #000;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -73,18 +73,6 @@ body::-webkit-scrollbar-thumb:hover {
   .window::-webkit-scrollbar-track {
     background: linear-gradient(to top, #7D3C98, #4B0082);
   }
-
-*::-webkit-scrollbar-thumb {
-    background: #bb59e6;
-    border-radius: 5px;
-	transition: all 1s ease;
-  }
-
-  *::-webkit-scrollbar-thumb:hover {
-	background: #9c49bf;
-
-  }
-
   
 
 /* ========================================================================== */

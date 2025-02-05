@@ -12,6 +12,10 @@
   opacity: 0;
   transition: all 0.25s;
   z-index: 999;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 @media screen and (max-width: 700px) {
   .mac-window {
@@ -42,9 +46,9 @@
 .mac-window .title-bar {
   height: 26px;
   padding-top: 2px;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background: linear-gradient(to top, purple, pink);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: linear-gradient(to top, #333, #1a1a1a);
   width: 100.112%;
   clear: both;
   user-select: none;
@@ -62,7 +66,7 @@
   width: 10px;
   border-radius: 50%;
   margin-top: 5px;
-  background: rgb(251, 73, 72);
+  background: #fb4948;
   border: solid 1px rgba(214, 46, 48, 0.15);
   position: relative;
 }
@@ -71,7 +75,7 @@
   position: absolute;
   height: 1px;
   width: 6px;
-  background: purple;
+  background: #1a1a1a;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%) rotate(45deg);
@@ -83,7 +87,7 @@
   position: absolute;
   height: 1px;
   width: 6px;
-  background: purple;
+  background: #1a1a1a;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%) rotate(-45deg);
@@ -91,7 +95,7 @@
   transition: 0.2s ease;
 }
 .mac-window .title-bar .buttons .minimize {
-  background: rgb(253, 178, 37);
+  background: #fdb225;
   margin-left: 10.5px;
   border-color: rgba(213, 142, 27, 0.15);
   position: relative;
@@ -101,7 +105,7 @@
   position: absolute;
   height: 1px;
   width: 6px;
-  background: purple;
+  background: #1a1a1a;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
@@ -112,22 +116,22 @@
 }
 .mac-window .title-bar .buttons .maximize {
   float: right;
-  background: rgb(42, 200, 51);
+  background: #2ac833;
   border-color: rgba(30, 159, 32, 0.15);
 }
 .mac-window .title-bar .buttons .maximize:before {
   width: 6px;
   height: 6px;
-  background: rgb(11, 84, 1);
+  background: #0b5401;
   transform: translateY(-50%) translateX(-50%);
-  border: solid rgb(42, 200, 51) 1px;
+  border: solid #2ac833 1px;
   border-radius: 2px;
   transition: 0.2s ease;
 }
 .mac-window .title-bar .buttons .maximize:after {
   width: 10px;
   height: 2px;
-  background: rgb(42, 200, 51);
+  background: #2ac833;
   transform: translateY(-50%) translateX(-50%) rotate(45deg);
   transition: 0.2s ease;
 }
