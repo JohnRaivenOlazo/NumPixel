@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Fade } from "react-awesome-reveal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faChartLine, faPalette, faHeart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
-import '../../assets/styles/css/Solution.css';
+import { faCog, faChartLine, faHeart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 
 const solutionCards = [
   {
@@ -65,8 +64,9 @@ export const Solution = ( {setCalculatorActive} ) => {
               Ready to level up your workflow? Start using <span className="text-pink-400 font-semibold">NumPixel</span> today!
             </p>
           <div className="text-center mt-4">
-            <button className="openWindow btn-cool" onClick={handleButtonClick}>
+            <button className="relative inline-block px-6 py-3 bg-purple-800 text-white font-bold rounded-lg cursor-pointer overflow-hidden transition-all duration-400 shadow-lg hover:bg-purple-900 hover:shadow-xl" onClick={handleButtonClick}>
               Get Started
+              <span className="absolute top-0 left-0 w-full h-full bg-gradient-radial from-white/20 to-transparent opacity-0 transition-all duration-400 hover:opacity-100"></span>
             </button>
           </div>
           </Fade>
