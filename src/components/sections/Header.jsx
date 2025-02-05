@@ -14,7 +14,6 @@ const Header = ( {setCalculatorActive} ) => {
 
   return (
     <div id="header" className="header z-50 relative bg-black">
-      {/* Logo positioned at top left */}
       <div className="absolute top-0 left-0 p-6 z-30">
         <div className="logo-container flex items-center transform hover:scale-105 transition-transform duration-300">
           <img src={logo} alt="Logo" className="logo w-10 h-auto mr-3" />
@@ -22,7 +21,7 @@ const Header = ( {setCalculatorActive} ) => {
         </div>
       </div>
 
-      <div className="relative top-0 w-full h-screen-plus flex flex-col justify-center items-start z-20">
+      <div className="relative top-0 h-screen-plus flex flex-col justify-center items-start z-20">
         <video
           autoPlay
           muted
@@ -34,8 +33,8 @@ const Header = ( {setCalculatorActive} ) => {
           <source src={headerVideo} type="video/mp4" />
         </video>
         <Fade cascade triggerOnce>
-          <div className="content relative w-full text-center py-4 px-auto transition-all duration-300 ease text-white flex flex-col justify-center items-start p-8 lg:p-12 z-30 mb-10 mx-4 lg:mx-16 backdrop-blur-sm bg-black/30 rounded-2xl shadow-2xl
-          before:content-[''] before:absolute before:transition-all before:duration-300 before:ease before:top-0 before:left-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.6)] before:rounded-2xl before:z-[-1] before:shadow-2xl before:backdrop-blur-sm before:blur[50px] before:opacity-0 before:hover:opacity-100
+          <div className="content relative w-full text-center py-4 px-auto transition-all duration-300 ease text-white flex flex-col justify-center items-start p-8 lg:p-12 z-30 mb-10 backdrop-blur-sm bg-black/30 rounded-2xl shadow-2xl
+          before:content-[''] before:absolute before:transition-all before:duration-300 before:ease before:top-0 before:left-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.6)] before:rounded-md before:rounded-2xl before:z-[-1] before:shadow-2xl before:backdrop-blur-sm before:blur[50px] before:opacity-0 before:hover:opacity-100
           ">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-left leading-tight">
               A <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-300">powerful calculator</span> for numerical interpolations.
