@@ -1,8 +1,31 @@
 import React, { useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faChartLine, faPalette, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faChartLine, faPalette, faHeart, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import '../../assets/styles/css/Solution.css';
+
+const solutionCards = [
+  {
+    icon: faSignInAlt,
+    title: "No Unnecessary Signup",
+    description: "Use it right away without any unnecessary signups. Get started instantly and save time."
+  },
+  {
+    icon: faHeart,
+    title: "Simple & Intuitive",
+    description: "Jump right in with our clean, straightforward interface that feels natural from day one."
+  },
+  {
+    icon: faChartLine,
+    title: "Pixel-Perfect Results",
+    description: "Our site handles the math while you focus on what matters most."
+  },
+  {
+    icon: faCog,
+    title: "Lightning Fast",
+    description: "Get instant results with our process that saves you hours of number crunching."
+  }
+];
 
 export const Solution = ( {setCalculatorActive} ) => {
   const handleButtonClick = () => {
@@ -19,41 +42,21 @@ export const Solution = ( {setCalculatorActive} ) => {
             Why Choose NumPixel?
           </h2>
         </Fade>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-4 gap-8">
           <Fade cascade triggerOnce damping={0.1}>
-            <div className="solution-card bg-purple-800 rounded-lg shadow-lg p-8 flex flex-col items-center justify-center text-center transition duration-300 transform hover:scale-105">
-              <div className="solution-icon mb-4">
-                <FontAwesomeIcon icon={faHeart} className="text-pink-400 text-4xl" />
+            {solutionCards.map((card, index) => (
+              <div key={index} className="solution-card h-full bg-purple-800 rounded-lg shadow-lg p-8 flex flex-col items-center justify-center text-center transition duration-300 transform hover:scale-105">
+                <div className="solution-icon mb-4">
+                  <FontAwesomeIcon icon={card.icon} className="text-pink-400 text-4xl" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4 text-white">
+                  {card.title}
+                </h3>
+                <p className="text-pink-100">
+                  {card.description}
+                </p>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">
-                Simple & Intuitive
-              </h3>
-              <p className="text-pink-100">
-                Skip the learning curve. Jump right in with our clean, straightforward interface that feels natural from day one.
-              </p>
-            </div>
-            <div className="solution-card bg-purple-800 rounded-lg shadow-lg p-8 flex flex-col items-center justify-center text-center transition duration-300 transform hover:scale-105">
-              <div className="solution-icon mb-4">
-                <FontAwesomeIcon icon={faChartLine} className="text-pink-400 text-4xl" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">
-                Pixel-Perfect Results
-              </h3>
-              <p className="text-pink-100">
-                Get spot-on measurements every time. Our smart tech handles the math while you focus on what matters most.
-              </p>
-            </div>
-            <div className="solution-card bg-purple-800 rounded-lg shadow-lg p-8 flex flex-col items-center justify-center text-center transition duration-300 transform hover:scale-105">
-              <div className="solution-icon mb-4">
-                <FontAwesomeIcon icon={faCog} className="text-pink-400 text-4xl" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">
-                Lightning Fast
-              </h3>
-              <p className="text-pink-100">
-                Ditch the manual work. Get instant results with our streamlined process that saves you hours of number crunching.
-              </p>
-            </div>
+            ))}
           </Fade>
         </div>
         <div className="mt-12">
