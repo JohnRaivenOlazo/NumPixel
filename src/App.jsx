@@ -55,7 +55,7 @@ const App = () => {
 
           <ActionButton setCalculatorActive={setCalculatorActive}/>
         </div>
-          <div className={`main absolute w-full h-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all overflow-x-hidden duration-200 ${isShown && 'showed'} ${calculatorActive && 'blurred'}`}>
+          <div className={`main absolute w-full h-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all overflow-x-hidden duration-200 ${isShown && 'showed'} ${calculatorActive && 'blurred active'}`}>
             <Header setCalculatorActive={setCalculatorActive} />
             <About />
             <Solution setCalculatorActive={setCalculatorActive} />
