@@ -50,7 +50,7 @@ const Header = ( {setCalculatorActive, calculatorActive} ) => {
         </video>
         <Fade cascade triggerOnce>
           <div className="content relative w-full text-center py-4 px-auto transition-all duration-300 ease text-white flex flex-col justify-center items-start p-8 lg:p-12 z-30 mb-10 backdrop-blur-sm bg-black/30 rounded-2xl shadow-2xl
-          before:content-[''] before:absolute before:transition-all before:duration-300 before:ease before:top-0 before:left-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.6)] before:rounded-md before:rounded-2xl before:z-[-1] before:shadow-2xl before:backdrop-blur-sm before:blur[50px] before:opacity-0 before:hover:opacity-100
+          before:content-[''] before:absolute before:transition-all before:duration-300 before:ease before:top-0 before:left-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.6)] before:rounded-md before:z-[-1] before:shadow-2xl before:backdrop-blur-sm before:blur[50px] before:opacity-0 before:hover:opacity-100
           ">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 text-left leading-tight">
               A <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-300">powerful calculator</span> for numerical interpolations.
