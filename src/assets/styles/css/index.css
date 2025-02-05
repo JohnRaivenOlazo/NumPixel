@@ -314,3 +314,20 @@ body {
 		-moz-transform: rotate(360deg);
 	}
 }
+
+
+/* UTILITY */
+.showed {
+    opacity: 1;
+}
+
+.blurred {
+	transition: opacity 0.3s ease;
+	filter: blur(3px) brightness(0.3);
+	overflow: hidden;
+	user-select: none;
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	pointer-events: none; /* Button Unhoverable */
+}
