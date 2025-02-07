@@ -140,7 +140,7 @@ const WindowContent = () => {
 
           {selectedInterpolation !== null && (
             <button
-              className="bg-gradient-to-b border-purple-400/20 hover:bg-purple-600 border border-purple-700 text-white font-bold py-1 px-6 rounded-lg flex justify-center items-center transform transition duration-200 hover:scale-105 focus:outline-none mt-6"
+              className="bg-gradient-to-b border-gray-200/20 border border-purple-700 text-white font-bold py-1 px-6 rounded-lg flex justify-center items-center transform transition duration-100 hover:scale-105 focus:outline-none mt-6"
               onClick={handleBackButtonClick}
             >
               Back
