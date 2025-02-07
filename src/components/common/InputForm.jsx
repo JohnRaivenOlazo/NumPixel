@@ -4,7 +4,7 @@ const InputForm = ({ xInput, setXInput, yInput, setYInput, interpolationPointInp
   return (
     <>
       <div className="input-container mb-4">
-        <label className="block mb-1 font-bold italic">x Values:</label>
+        <label className="block mb-1 font-bold italic text-white">x Values:</label>
         <input
           type="text"
           className="w-full p-2 border border-purple-700 rounded-md"
@@ -14,7 +14,7 @@ const InputForm = ({ xInput, setXInput, yInput, setYInput, interpolationPointInp
         />
       </div>
       <div className="input-container mb-4">
-        <label className="block mb-1 font-bold italic">y or f(x) Values:</label>
+        <label className="block mb-1 font-bold italic text-white">y or f(x) Values:</label>
         <input
           type="text"
           className="w-full p-2 border border-purple-700 rounded-md"
@@ -24,7 +24,7 @@ const InputForm = ({ xInput, setXInput, yInput, setYInput, interpolationPointInp
         />
       </div>
       <div className="input-container mb-4">
-        <label className="block mb-1 font-bold">Interpolation Point:</label>
+        <label className="block mb-1 font-bold text-white">Interpolation Point:</label>
         <input
           type="text"
           className="w-full p-2 border border-purple-700 rounded-md"
@@ -35,13 +35,13 @@ const InputForm = ({ xInput, setXInput, yInput, setYInput, interpolationPointInp
       </div>
       <div className="input-container mb-4 flex items-center justify-start gap-3">
         <button
-          className="bg-purple-500 hover:bg-purple-600 text-white p-4 rounded-full uppercase font-bold text-xs transition duration-300"
+          className="bg-green-500 hover:bg-green-500/80 text-white py-2 px-4 rounded-full uppercase font-bold text-xs transition duration-200"
           onClick={calculate}
         >
           Calculate
         </button>
         <div className='flex flex-row-reverse items-center gap-2'>
-          <label className="block mb-1 text-xs font-bold">Decimal Places</label>
+          <label className="block mb-1 text-xs font-bold text-white">Decimal Places</label>
           <input
             type="number"
             className="w-14 h-8 p-2 border border-purple-700 rounded-md"
