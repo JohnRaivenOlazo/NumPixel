@@ -34,7 +34,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <hr className="border-purple-400 my-8" />
+        <hr className="border-purple-800 my-8" />
         <div className="flex justify-center">
           <a href="#header" className="text-sm text-gray-300 hover:text-white transition duration-300">Back to Top</a>
         </div>
