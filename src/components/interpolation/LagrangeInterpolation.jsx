@@ -78,7 +78,7 @@ const LagrangeInterpolation = () => {
       <InterpolationTitle title="Lagrange" />
       <InputForm
         xInput={xInput}
-        setXInput={setXInput}
+        setXInput={setXInput} 
         yInput={yInput}
         setYInput={setYInput}
         interpolationPointInput={interpolationPointInput}

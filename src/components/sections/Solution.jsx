@@ -37,14 +37,15 @@ export const Solution = ( {setCalculatorActive} ) => {
       <div className=" py-8 outline-none mb-12" />
       <div className="container mx-auto px-4">
         <Fade triggerOnce={false}>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-white text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-14 text-white text-center">
             Why Choose NumPixel?
           </h2>
         </Fade>
         <div className="grid sm:grid-cols-1 lg:grid-cols-4 gap-8">
           <Fade cascade triggerOnce damping={0.1}>
             {solutionCards.map((card, index) => (
-              <div key={index} className="solution-card h-full bg-purple-800 rounded-lg shadow-lg p-8 flex flex-col items-center justify-center text-center transition duration-300 transform hover:scale-105">
+              // {background: linear-gradient(to bottom, #7D3C98, #4B0082);}
+              <div key={index} className="solution-card h-full bg-gradient-to-b from-[#7D3C98] to [#4b0082] rounded-lg shadow-lg p-8 flex flex-col items-center justify-center text-center transition duration-300 transform hover:scale-105">
                 <div className="solution-icon mb-4">
                   <FontAwesomeIcon icon={card.icon} className="text-pink-400 text-4xl" />
                 </div>
@@ -64,7 +65,7 @@ export const Solution = ( {setCalculatorActive} ) => {
               Ready to level up your workflow? Start using <span className="text-pink-400 font-semibold">NumPixel</span> today!
             </p>
           <div className="text-center mt-4">
-            <button className="openWindow relative inline-block px-6 py-3 bg-purple-800 text-white font-bold rounded-lg cursor-pointer overflow-hidden transition-all duration-400 shadow-lg hover:bg-purple-900 hover:shadow-xl" onClick={handleButtonClick}>
+            <button className="openWindow relative inline-block px-6 py-3 bg-[#7D3C98] text-white font-bold rounded-lg cursor-pointer overflow-hidden transition-all duration-400 shadow-lg hover:bg-purple-900 hover:shadow-xl" onClick={handleButtonClick}>
               Get Started
               <span className="absolute top-0 left-0 w-full h-full bg-gradient-radial from-white/20 to-transparent opacity-0 transition-all duration-400 hover:opacity-100"></span>
             </button>

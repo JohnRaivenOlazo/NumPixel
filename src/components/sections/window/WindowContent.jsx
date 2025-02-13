@@ -103,9 +103,10 @@ const WindowContent = () => {
                   data points.
                 </p>
               </div>
-              <div className="space-y-4 w-full">
+              <div className='flex flex-col items-center'>
+              <div className="space-y-5 w-1/2">
                 <button
-                  className="border border-purple-400/20 bg-gradient-to-t from-purple-800 hover:bg-purple-600 text-white font-semibold py-4 rounded-lg mt-10 flex justify-center items-center transform transition duration-200 hover:scale-105 hover:drop-shadow-xl focus:outline-none w-full"
+                  className="border border-purple-400/20 bg-gradient-to-t from-purple-800 hover:bg-purple-600 text-white font-semibold py-4 rounded-lg flex justify-center items-center transform transition duration-200 hover:scale-105 hover:drop-shadow-xl focus:outline-none w-full"
                   onClick={() => handleInterpolationSelection('ForwardDifference')}
                 >
                   Newton's Forward Difference Interpolation
@@ -122,6 +123,7 @@ const WindowContent = () => {
                 >
                   Newton's Divided Difference Interpolation
                 </button>
+              </div>
               </div>
             </Fade>
           )}
@@ -140,7 +142,7 @@ const WindowContent = () => {
 
           {selectedInterpolation !== null && (
             <button
-              className="bg-gradient-to-b border-gray-200/20 border border-purple-700 text-white font-bold py-1 px-6 rounded-lg flex justify-center items-center transform transition duration-100 hover:scale-105 focus:outline-none mt-6"
+              className="absolute bottom-0 left-6 bg-gradient-to-b border-gray-200/20 border border-purple-700 text-white font-bold py-1 px-6 rounded-lg flex justify-center items-center transform transition duration-100 hover:scale-105 focus:outline-none mt-6"
               onClick={handleBackButtonClick}
             >
               Back
