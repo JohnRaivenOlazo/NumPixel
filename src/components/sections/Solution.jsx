@@ -65,7 +65,7 @@ export const Solution = ( {setCalculatorActive} ) => {
               Ready to level up your workflow? Start using <span className="text-pink-400 font-semibold">NumPixel</span> today!
             </p>
           <div className="text-center mt-4">
-            <button className="openWindow relative inline-block px-6 py-3 bg-[#7D3C98] text-white font-bold rounded-lg cursor-pointer overflow-hidden transition-all duration-400 shadow-lg hover:bg-purple-900 hover:shadow-xl" onClick={handleButtonClick}>
+            <button className="openWindow relative inline-block px-6 py-3 bg-[#7D3C98] text-white font-bold rounded-lg cursor-pointer overflow-hidden transition-all duration-400 shadow-lg hover:bg-[#7D3C98]/60 hover:shadow-xl" onClick={handleButtonClick}>
               Get Started
               <span className="absolute top-0 left-0 w-full h-full bg-gradient-radial from-white/20 to-transparent opacity-0 transition-all duration-400 hover:opacity-100"></span>
             </button>

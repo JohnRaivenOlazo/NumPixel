@@ -135,10 +135,12 @@ const About = () => {
                 src={logo}
               />
               <p className="text-xl text-gray-200 font-bolder">
+                <Fade>
                 <p>
                   <span className="font-bold">NumPixel</span> is a calculator for numerical interpolation. <br />
                   It allows users to calculate different numerical methods with real time visuals and solutions. <br />
                 </p>
+                </Fade>
               </p>
               <div className='athrBtn'></div>
             </div>
