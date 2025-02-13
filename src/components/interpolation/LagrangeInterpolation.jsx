@@ -90,7 +90,7 @@ const LagrangeInterpolation = () => {
       {isError ? (
         <Error error={error} />
       ) : (
-        <div className="interpolation-method mt-4">
+        <div className="interpolation-method mt-4 px-5 py-2 rounded-lg bg-gray-800 text-white overflow-auto">
           <div className="result mt-4">
             <label className="block mb-1"><strong>Formula</strong></label>
             <p className="text-xs mb-3">
