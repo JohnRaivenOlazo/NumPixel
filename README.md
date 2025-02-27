@@ -13,7 +13,7 @@
   </p>
 </div>
 
-**🚀 Try NumPixel [here](https://numpixel.vercel.app)!**
+**🚀 Demo [here](https://numpixel.vercel.app)!**
 
 ## ✨ Core Features
 
@@ -76,7 +76,5 @@
 - SCSS
 - Recharts for visualizations
 - React Awesome Reveal for animations
-
-## 📝 License
 
 Released under MIT License - feel free to use it in your projects!
