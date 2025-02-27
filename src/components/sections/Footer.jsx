@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-50" />
       <div className="absolute inset-0 bg-[url('/logo.png')] bg-center opacity-[0.02]" />
       
-      <Fade> 
+      <Fade cascade triggerOnce> 
         <div className="relative container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* About Section */}
