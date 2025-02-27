@@ -1,6 +1,6 @@
 <div align="center">
 <a href="https://numpixel.vercel.app"><img src="public/logo.png" alt="NumPixel Logo" width="100" height="100"/></a>   
-<h1>NumPixel ✨</h1>
+<h1>NumPixel</h1>
 <a href="https://numpixel.vercel.app"><img src="https://github.com/JohnRaivenOlazo/NumPixel/assets/137252774/46642be6-3b02-4cf3-aab9-39e20dce7d04" alt="NumPixel Demo"></a>  
 </div>
 
@@ -9,7 +9,7 @@
   <p>
     NumPixel started as my freshman year project for Numerical Methods class, transforming complex mathematical 
     computations into beautiful, interactive visualizations. What began as a simple calculator evolved into a 
-    comprehensive tool that helps students understand interpolation methods through real-time graphs and step-by-step solutions. ✨
+    comprehensive tool that helps students understand interpolation methods through real-time graphs and step-by-step solutions.
   </p>
 </div>
 
@@ -80,8 +80,3 @@
 ## 📝 License
 
 Released under MIT License - feel free to use it in your projects!
-
----
-<div align="center">
-  Created with 💜 by John Raiven Olazo
-</div>
