@@ -126,7 +126,7 @@ const About = () => {
     <>
       <div id="about" className="features-section pt-24 pb-20 relative z-20 -mb-1">
         <div className="container mx-auto px-4">
-          <Fade><h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white text-center">About</h2></Fade>
+          <Fade triggerOnce><h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white text-center">About</h2></Fade>
 
           <div className='aboutAuthor'>
             <div className='aboutCont'>
@@ -135,7 +135,7 @@ const About = () => {
                 src={logo}
               />
               <p className="text-xl text-gray-200 font-bolder">
-                <Fade>
+                <Fade triggerOnce>
                 <p>
                   <span className="font-bold">NumPixel</span> is a calculator for numerical interpolation. <br />
                   It allows users to calculate different numerical methods with real time visuals and solutions. <br />
@@ -157,7 +157,7 @@ const About = () => {
 
           <Fade triggerOnce>
             <div className="wheel-title mt-20 p-5 sm:m-2 pt-6 rounded-lg">
-              <Fade>
+              <Fade triggerOnce>
                 <p className="text-lg text-white max-w-2xl font-bolder text-center m-auto">
                   Explore a wide range of numerical techniques integrated into this platform, providing precision and flexibility in your mathematical computations.
                 </p>
