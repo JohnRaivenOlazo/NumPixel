@@ -36,44 +36,34 @@ const PrivacyPolicy = ({ toggleActionButton, togglePrivacyPolicy }) => {
         <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-300 bg-clip-text text-transparent">Privacy Policy</h2>
         
         <div className="text-gray-300 space-y-6">
-          <p className="leading-relaxed">Welcome to NumPixel! We are committed to safeguarding your privacy and ensuring that your personal information is protected.</p>
+          <p className="leading-relaxed">Welcome to NumPixel! This privacy policy explains how we handle information when you use our calculator application.</p>
           
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-purple-400">Information Collection</h3>
-            <p className="leading-relaxed">We collect personal information only when necessary, using fair and transparent methods. This may include your name, email address, and other contact details provided with your consent.</p>
+            <h3 className="text-xl font-semibold text-purple-400">Data Collection</h3>
+            <p className="leading-relaxed">NumPixel is a client-side application. We do not collect, store, or transmit any personal information. All calculations and data processing happen directly in your browser.</p>
           </div>
           
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-purple-400">Usage of Information</h3>
-            <p className="leading-relaxed">Your information is used solely to provide the services you request, improve our offerings, and communicate with you. We do not sell, trade, or otherwise transfer your information to outside parties, except as required by law.</p>
+            <h3 className="text-xl font-semibold text-purple-400">Usage Information</h3>
+            <p className="leading-relaxed">Your input values and calculation results remain on your device and are not saved or transmitted to any servers. Each session starts fresh, ensuring your privacy.</p>
           </div>
           
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-purple-400">Data Security</h3>
-            <p className="leading-relaxed">We implement robust security measures to protect your data from unauthorized access, alteration, disclosure, or destruction. Our systems are regularly reviewed and updated to maintain data security.</p>
+            <h3 className="text-xl font-semibold text-purple-400">Third-Party Services</h3>
+            <p className="leading-relaxed">We use Vercel for hosting our application. Please refer to Vercel's privacy policy for information about their data practices.</p>
           </div>
           
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-purple-400">Third-Party Links</h3>
-            <p className="leading-relaxed">Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these sites. We encourage you to review their privacy policies.</p>
+            <h3 className="text-xl font-semibold text-purple-400">Updates</h3>
+            <p className="leading-relaxed">As we add new features, we'll update this privacy policy accordingly. Check back periodically for any changes.</p>
           </div>
           
           <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-purple-400">Your Rights</h3>
-            <p className="leading-relaxed">You have the right to access, update, or delete your personal information at any time. You can also withdraw consent for us to use your data, with the understanding that this may affect the services we can provide.</p>
+            <h3 className="text-xl font-semibold text-purple-400">Contact</h3>
+            <p className="leading-relaxed">If you have questions about this privacy policy, feel free to reach out to the developer through GitHub!</p>
           </div>
           
-          <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-purple-400">Changes to This Policy</h3>
-            <p className="leading-relaxed">We may update our privacy policy from time to time. We will notify you of any changes by posting the new policy on this page. We encourage you to review this policy periodically for any updates.</p>
-          </div>
-          
-          <div className="space-y-3">
-            <h3 className="text-xl font-semibold text-purple-400">Contact Us</h3>
-            <p className="leading-relaxed">If you have any questions or concerns about our privacy policy or practices, please reach out to the developer!</p>
-          </div>
-          
-          <p className="text-sm text-gray-500 pt-4 border-t border-purple-900/30">Effective Date: 1 January 2024</p>
+          <p className="text-sm text-gray-500 pt-4 border-t border-purple-900/30">Last Updated: 1 January 2024</p>
         </div>
       </div>
     </div>
